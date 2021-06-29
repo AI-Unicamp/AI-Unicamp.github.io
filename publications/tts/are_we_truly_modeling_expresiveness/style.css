@@ -1,0 +1,34 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    margin: 20px 15px;
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+audio {
+    margin-bottom: 10px;
+}
+
+.item {
+    background-color: #deffff;
+    padding: 0px 5px;
+    padding-top: 1px;
+    margin-top: 10px;
+}
