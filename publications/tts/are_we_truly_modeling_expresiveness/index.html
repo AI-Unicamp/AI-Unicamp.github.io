@@ -43,17 +43,135 @@
 
     </div>
 
+    <h2> Examples of speeches recordings</h2>
+
 
     <div class="item">
-      <h3>Utterance: "Muito Obrigado pela sua generosidade e amor para com nossas crianças" </h3>
+      <h4>Groundtruth and Griffin Lim of neutral speeches </h4>
 
       <table>
-        <tr><td class="transcript">Neutral</td></tr>
-        <tr><td><audio controls><source src="audio/frase1_neutro_df3_st_gen.wav"></audio></td></tr>
+        <tr>
+          <td class="transcript" align='center'>Speaker 1</td>
+          <td class="transcript" align='center'>Speaker 2</td>
+          <td class="transcript" align='center'>Speaker 3</td>
+        </tr>
+        <tr>
+          <td><audio controls><source src="audio/examples/speaker1_gt.wav"></audio></td>
+          <td><audio controls><source src="audio/examples/speaker2_gt.wav"></audio></td>
+          <td><audio controls><source src="audio/examples/speaker3_gt.wav"></audio></td>
+        </tr>
+        <tr>
+          <td><audio controls><source src="audio/examples/speaker1_gl.wav"></audio></td>
+          <td><audio controls><source src="audio/examples/speaker2_gl.wav"></audio></td>
+          <td><audio controls><source src="audio/examples/speaker3_gl.wav"></audio></td>
+        </tr>
+
       </table>
+
+      <h4>Groundtruth and Griffin Lim of expressive speeches (Speaker 1 only) </h4>
+
       <table>
-        <tr><td class="transcript">Animated</td></tr>
-        <tr><td><audio controls><source src="audio/frase1_animado_df3_st_gen.wav"></audio></td></tr>
+        <tr>
+          <td class="transcript" align='center'>Medium Quality</td>
+          <td class="transcript" align='center'>Studio Quality</td>
+        </tr>
+        <tr>
+          <td><audio controls><source src="audio/examples/speaker1_medium_gt.wav"></audio></td>
+          <td><audio controls><source src="audio/examples/speaker1_high_gt.wav"></audio></td>
+        </tr>
+        <tr>
+          <td><audio controls><source src="audio/examples/speaker1_medium_gl.wav"></audio></td>
+          <td><audio controls><source src="audio/examples/speaker1_high_gl.wav"></audio></td>
+        </tr>
+
+      </table>
+
+    </div>
+
+    <h2> Synthesis with SGRE-Tacotron2 on different data configurations </h2>
+    
+
+    <div class="item">
+      <h4>Utterance: "Nossas tarifas são as menores da região, confira e verá que somos imbatíveis" </h4>
+
+      <table>
+      <tr> <td align='center'>Griffin Lim </td> </tr>
+      <tr> <td> <audio controls><source src="audio/sgre/frase1_medium_gt.wav"></audio> </td></tr>
+      </table>
+      
+      <br>
+
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'></td>
+          <td class="transcript" align='center'>DC2</td>
+          <td class="transcript" align='center'>DC3</td>
+          <td class="transcript" align='center'>DC4</td>
+        </tr>
+        <tr>
+          <td align='center'>Neutral</td>
+          <td><audio controls><source src="audio/sgre/frase1_medium_dc2_neutral.wav"></audio></td>
+          <td><audio controls><source src="audio/sgre/frase1_medium_dc3_neutral.wav"></audio></td>
+          <td><audio controls><source src="audio/sgre/frase1_medium_dc4_neutral.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'>Centroid</td>
+          <td><audio controls><source src="audio/sgre/frase1_medium_dc2_expressive.wav"></audio></td>
+          <td><audio controls><source src="audio/sgre/frase1_medium_dc3_expressive.wav"></audio></td>
+          <td><audio controls><source src="audio/sgre/frase1_medium_dc4_expressive.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'>EMDP</td>
+          <td><audio controls><source src="audio/sgre/frase1_medium_dc2_emdp.wav"></audio></td>
+          <td><audio controls><source src="audio/sgre/frase1_medium_dc3_emdp.wav"></audio></td>
+          <td><audio controls><source src="audio/sgre/frase1_medium_dc4_emdp.wav"></audio></td>
+        </tr>
+
+
+      </table>
+
+    </div>
+
+
+    <div class="item">
+      <h4>Utterance: "Para melhorar o papel de sustentável, moreira se explicou ." </h4>
+
+      <table>
+      <tr> <td align='center'>Griffin Lim </td> </tr>
+      <tr> <td> <audio controls><source src="audio/sgre/frase3_high_gt.wav"></audio> </td></tr>
+      </table>
+      
+      <br>
+
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'></td>
+          <td class="transcript" align='center'>DC2</td>
+          <td class="transcript" align='center'>DC3</td>
+          <td class="transcript" align='center'>DC4</td>
+        </tr>
+        <tr>
+          <td align='center'>Neutral</td>
+          <td><audio controls><source src="audio/sgre/frase3_high_dc2_neutral.wav"></audio></td>
+          <td><audio controls><source src="audio/sgre/frase3_high_dc3_neutral.wav"></audio></td>
+          <td><audio controls><source src="audio/sgre/frase3_high_dc4_neutral.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'>Centroid</td>
+          <td><audio controls><source src="audio/sgre/frase3_high_dc2_expressive.wav"></audio></td>
+          <td><audio controls><source src="audio/sgre/frase3_high_dc3_expressive.wav"></audio></td>
+          <td><audio controls><source src="audio/sgre/frase3_high_dc4_expressive.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'>EMDP</td>
+          <td><audio controls><source src="audio/sgre/frase3_high_dc2_emdp.wav"></audio></td>
+          <td><audio controls><source src="audio/sgre/frase3_high_dc3_emdp.wav"></audio></td>
+          <td><audio controls><source src="audio/sgre/frase3_high_dc4_emdp.wav"></audio></td>
+        </tr>
+
+
       </table>
 
     </div>
