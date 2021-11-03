@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Audio samples from "Expressive Text-to-Speech with style representions"</title>
+    <link rel="stylesheet" href="./style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+        <article>
+        <header>
+            <h1>Expressive Text-to-Speech with style representions</h1>
+        </header>
+        </article>
+
+        <p><b>Paper:</b> <a href="">Dissertation</a></p>
+        <p><b>Authors:</b> Lucas H. Ueda</p>
+        <p style="text-align: center;"><b>Abstract:</b> Artificial speech has been present in our lives in several aspects. From automaticmessages when you didn’t answer your phone years ago to movies that portray robotscapable of interacting with humans through speech. Recent advances in Text-to-speech(TTS) have allowed the development of technologies capable of converting an arbitrarysentence into a speech signal close to a human-like speech. However, human speech is notonly characterized by the clear reading of a sentence. To make speech more expressive, weuse emphasis to guide the listener’s attention to a specific word or even use different speechstyles, such as happy or sad speech. This work explores recent approaches in expressiveTTSapplied to Brazilian Portuguese for three speech styles: neutral, enthusiastic, andreceptive. Based on contemporary works, we use a neural network capable of mappingan arbitrary character sequence into the spectral representation of speech, the Tacotron2.To model expressiveness in speech, we propose theSGRE-Tacotron2, where an additionalmodule responsible for coding the speeches in numerical representations is adopted togenerate different style speech. Several experiments are conducted, comparing the proposedarchitecture and base methodologies present in the literature in two dataset configurations.One where all expressive data has the same recording condition and the other wheredata has different recording conditions. Two objective metrics are proposed to assess theability of models to generate expressive speech in intermediate results. The first is basedon measuring the ability of models to create different representations for speeches withdifferent styles. This is done using theAUC-ROCmetric of a logistic regression trainedto classify different styles using speech representations. As a second metric, a classifiertrained in theeGeMAPSprosodic parameters are used to measure the ability of models togenerate expressive speech with the correct styles. The results indicate that the modelstrained on the mixed recording conditions dataset generate more distinct representationsamong different styles. Furthermore, the proposed architecture can generate better resultsthan the baseline in the adopted metrics. As contributions of this work, we highlightthe study of contemporary architectures in expressive text-to-speech applied to BrazilianPortuguese and the proposal of a new architecture exploring different model configurations,datasets, and ways to condition the expressive synthesis.
+        </p>
+    </div>
+
+  </body>
+</html>
