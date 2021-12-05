@@ -17,7 +17,7 @@
 
         <p><b>Paper:</b> <a href="">Dissertation</a></p>
         <p><b>Authors:</b> Lucas H. Ueda</p>
-        <p style="text-align: center;"><b>Abstract:</b> Artificial speech has been present in our lives in several aspects. From automatic messages when you didn’t answer your phone years ago to movies that portray robots capable of interacting with humans through speech. Recent advances in Text-to-speech(TTS) have allowed the development of technologies capable of converting an arbitrary sentence into a speech signal close to a human-like speech. However, human speech is not only characterized by the clear reading of a sentence. To make speech more expressive, we use emphasis to guide the listener’s attention to a specific word or even use different speech styles, such as happy or sad speech. This work explores recent approaches in expressive TTS applied to Brazilian Portuguese for three speech styles: neutral, enthusiastic, andreceptive. Based on contemporary works, we use a neural network capable of mapping an arbitrary character sequence into the spectral representation of speech, the Tacotron2. To model expressiveness in speech, we propose the SGRE-Tacotron2, where an additional module responsible for coding the speeches in numerical representations is adopted to generate different style speech. Several experiments are conducted, comparing the proposed architecture and base methodologies present in the literature in two dataset configurations. One where all expressive data has the same recording condition and the other wheredata has different recording conditions. Two objective metrics are proposed to assess the ability of models to generate expressive speech in intermediate results. The first is based on measuring the ability of models to create different representations for speeches with different styles. This is done using the AUC-ROC metric of a logistic regression trainedto classify different styles using speech representations. As a second metric, a classifier trained in the eGeMAPS prosodic parameters are used to measure the ability of models to generate expressive speech with the correct styles. The results indicate that the models trained on the mixed recording conditions dataset generate more distinct representations among different styles. Furthermore, the proposed architecture can generate better results than the baseline in the adopted metrics. As contributions of this work, we highlight the study of contemporary architectures in expressive text-to-speech applied to Brazilian Portuguese and the proposal of a new architecture exploring different model configurations, datasets, and ways to condition the expressive synthesis.
+        <p style="text-align: center;"><b>Abstract:</b> Artificial speech has been present in our lives in several aspects. From automatic messages when you didn’t answer your phone years ago to movies that portray robots capable of interacting with humans through speech. Recent advances in Text-to-speech (TTS) have allowed the development of technologies capable of converting an arbitrary sentence into a speech signal close to a human-like speech. However, human speech is not only characterized by the clear reading of a sentence. To make speech more expressive, we use emphasis to guide the listener’s attention to a specific word or even use different speech styles, such as happy or sad speech. This work explores recent approaches in expressive TTS applied to Brazilian Portuguese for three speech styles: neutral, enthusiastic, and receptive. Based on contemporary works, we use a neural network capable of mapping an arbitrary character sequence into the spectral representation of speech, the Tacotron2. To model expressiveness in speech, we propose the SGRE-Tacotron2, where an additional module responsible for coding the speeches in numerical representations is adopted to generate different style speech. Several experiments are conducted, comparing the proposed architecture and base methodologies present in the literature in two dataset configurations. One where all expressive data has the same recording condition and the other wheredata has different recording conditions. Two objective metrics are proposed to assess the ability of models to generate expressive speech in intermediate results. The first is based on measuring the ability of models to create different representations for speeches with different styles. This is done using the AUC-ROC metric of a logistic regression trainedto classify different styles using speech representations. As a second metric, a classifier trained in the eGeMAPS prosodic parameters are used to measure the ability of models to generate expressive speech with the correct styles. The results indicate that the models trained on the mixed recording conditions dataset generate more distinct representations among different styles. Furthermore, the proposed architecture can generate better results than the baseline in the adopted metrics. As contributions of this work, we highlight the study of contemporary architectures in expressive text-to-speech applied to Brazilian Portuguese and the proposal of a new architecture exploring different model configurations, datasets, and ways to condition the expressive synthesis.
         </p>
     </div>
 
@@ -332,6 +332,414 @@
        
       </table>
     </div>
+
+
+    <div class='item'>
+      <h4> Proposed-SumCat-FT </h4>
+      Style Guided Reference Encoder Tacotron2 representation-based fine-tuned with sum-based style encoder.
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Neutral</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <!-- <td class="transcript" align='center'>EMDP</td> -->
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/neutro/frase_28_speaker_adriana_t_neutro_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/neutro/frase_28_speaker_adriana_t_neutro_with_pca_gen.wav"></audio></td>
+          <!-- <td><audio controls><source src="audio/ft-acolhedor/frase_59_speaker_None_t_acolhedor_with_centroid_gen.wav"></audio></td> -->
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/neutro/frase_30_speaker_adriana_t_neutro_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/neutro/frase_30_speaker_adriana_t_neutro_with_pca_gen.wav"></audio></td>
+          <!-- <td><audio controls><source src="audio/ft-acolhedor/frase_18_speaker_None_t_acolhedor_with_centroid_gen.wav"></audio></td> -->
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Enthusiastic</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <td class="transcript" align='center'>EMDP</td>
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/animado/frase_1_speaker_adriana_t_animado_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/animado/frase_1_speaker_adriana_t_animado_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/animado/frase_1_speaker_adriana_t_animado_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/animado/frase_2_speaker_adriana_t_animado_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/animado/frase_2_speaker_adriana_t_animado_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/animado/frase_2_speaker_adriana_t_animado_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <br>
+        <br>
+      </table>
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Receptive</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <td class="transcript" align='center'>EMDP</td>
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/acolhedor/frase_45_speaker_adriana_t_acolhedor_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/acolhedor/frase_45_speaker_adriana_t_acolhedor_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/acolhedor/frase_45_speaker_adriana_t_acolhedor_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/acolhedor/frase_59_speaker_adriana_t_acolhedor_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/acolhedor/frase_59_speaker_adriana_t_acolhedor_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/eid/acolhedor/frase_59_speaker_adriana_t_acolhedor_with_emdp_gen.wav"></audio></td>
+        </tr>
+       
+      </table>
+    </div>
+
+    <div class='item'>
+      <h2> Expressive Mixed Dataset (EMD) experiments </h2>
+    </div>
+
+    <div class='item'>
+      <h4> RE-Baseline </h4>
+      Reference Encoder Tacotron2 representation-based.
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Neutral</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <!-- <td class="transcript" align='center'>EMDP</td> -->
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/re-baseline/emd/neutro/frase_54_speaker_adriana_t_neutro_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/re-baseline/emd/neutro/frase_54_speaker_adriana_t_neutro_with_pca_gen.wav"></audio></td>
+          <!-- <td><audio controls><source src="audio/ft-acolhedor/frase_59_speaker_None_t_acolhedor_with_centroid_gen.wav"></audio></td> -->
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/re-baseline/emd/neutro/frase_69_speaker_adriana_t_neutro_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/re-baseline/emd/neutro/frase_69_speaker_adriana_t_neutro_with_pca_gen.wav"></audio></td>
+          <!-- <td><audio controls><source src="audio/ft-acolhedor/frase_18_speaker_None_t_acolhedor_with_centroid_gen.wav"></audio></td> -->
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Enthusiastic</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <td class="transcript" align='center'>EMDP</td>
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/re-baseline/emd/animado/frase_39_speaker_adriana_t_animado_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/re-baseline/emd/animado/frase_39_speaker_adriana_t_animado_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/re-baseline/emd/animado/frase_39_speaker_adriana_t_animado_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/re-baseline/emd/animado/frase_50_speaker_adriana_t_animado_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/re-baseline/emd/animado/frase_50_speaker_adriana_t_animado_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/re-baseline/emd/animado/frase_50_speaker_adriana_t_animado_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <br>
+        <br>
+      </table>
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Receptive</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <td class="transcript" align='center'>EMDP</td>
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/re-baseline/emd/acolhedor/frase_1_speaker_adriana_t_acolhedor_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/re-baseline/emd/acolhedor/frase_1_speaker_adriana_t_acolhedor_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/re-baseline/emd/acolhedor/frase_1_speaker_adriana_t_acolhedor_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/re-baseline/emd/acolhedor/frase_40_speaker_adriana_t_acolhedor_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/re-baseline/emd/acolhedor/frase_40_speaker_adriana_t_acolhedor_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/re-baseline/emd/acolhedor/frase_40_speaker_adriana_t_acolhedor_with_emdp_gen.wav"></audio></td>
+        </tr>
+       
+      </table>
+    </div>
+
+    <div class='item'>
+      <h4> Proposed-Raw </h4>
+      Style Guided Reference Encoder Tacotron2 representation-based from scratch.
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Neutral</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <!-- <td class="transcript" align='center'>EMDP</td> -->
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/proposed-raw/emd/neutro/frase_21_speaker_adriana_t_neutro_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-raw/emd/neutro/frase_21_speaker_adriana_t_neutro_with_pca_gen.wav"></audio></td>
+          <!-- <td><audio controls><source src="audio/ft-acolhedor/frase_59_speaker_None_t_acolhedor_with_centroid_gen.wav"></audio></td> -->
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/proposed-raw/emd/neutro/frase_22_speaker_adriana_t_neutro_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-raw/emd/neutro/frase_22_speaker_adriana_t_neutro_with_pca_gen.wav"></audio></td>
+          <!-- <td><audio controls><source src="audio/ft-acolhedor/frase_18_speaker_None_t_acolhedor_with_centroid_gen.wav"></audio></td> -->
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Enthusiastic</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <td class="transcript" align='center'>EMDP</td>
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/proposed-raw/emd/animado/frase_23_speaker_adriana_t_animado_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-raw/emd/animado/frase_23_speaker_adriana_t_animado_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-raw/emd/animado/frase_23_speaker_adriana_t_animado_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/proposed-raw/emd/animado/frase_39_speaker_adriana_t_animado_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-raw/emd/animado/frase_39_speaker_adriana_t_animado_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-raw/emd/animado/frase_39_speaker_adriana_t_animado_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <br>
+        <br>
+      </table>
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Receptive</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <td class="transcript" align='center'>EMDP</td>
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/proposed-raw/emd/acolhedor/frase_38_speaker_adriana_t_acolhedor_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-raw/emd/acolhedor/frase_38_speaker_adriana_t_acolhedor_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-raw/emd/acolhedor/frase_38_speaker_adriana_t_acolhedor_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/proposed-raw/emd/acolhedor/frase_44_speaker_adriana_t_acolhedor_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-raw/emd/acolhedor/frase_44_speaker_adriana_t_acolhedor_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-raw/emd/acolhedor/frase_44_speaker_adriana_t_acolhedor_with_emdp_gen.wav"></audio></td>
+        </tr>
+       
+      </table>
+    </div>
+
+    <div class='item'>
+      <h4> Proposed-Raw-FT </h4>
+      Style Guided Reference Encoder Tacotron2 representation-based fine-tuned.
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Neutral</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <!-- <td class="transcript" align='center'>EMDP</td> -->
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/proposed-ft/emd/neutro/frase_43_speaker_adriana_t_neutro_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-ft/emd/neutro/frase_43_speaker_adriana_t_neutro_with_pca_gen.wav"></audio></td>
+          <!-- <td><audio controls><source src="audio/ft-acolhedor/frase_59_speaker_None_t_acolhedor_with_centroid_gen.wav"></audio></td> -->
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/proposed-ft/emd/neutro/frase_54_speaker_adriana_t_neutro_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-ft/emd/neutro/frase_54_speaker_adriana_t_neutro_with_pca_gen.wav"></audio></td>
+          <!-- <td><audio controls><source src="audio/ft-acolhedor/frase_18_speaker_None_t_acolhedor_with_centroid_gen.wav"></audio></td> -->
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Enthusiastic</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <td class="transcript" align='center'>EMDP</td>
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/proposed-ft/emd/animado/frase_0_speaker_adriana_t_animado_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-ft/emd/animado/frase_0_speaker_adriana_t_animado_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-ft/emd/animado/frase_0_speaker_adriana_t_animado_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/proposed-ft/emd/animado/frase_50_speaker_adriana_t_animado_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-ft/emd/animado/frase_50_speaker_adriana_t_animado_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-ft/emd/animado/frase_50_speaker_adriana_t_animado_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <br>
+        <br>
+      </table>
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Receptive</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <td class="transcript" align='center'>EMDP</td>
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/proposed-ft/emd/acolhedor/frase_29_speaker_adriana_t_acolhedor_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-ft/emd/acolhedor/frase_29_speaker_adriana_t_acolhedor_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-ft/emd/acolhedor/frase_29_speaker_adriana_t_acolhedor_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/proposed-ft/emd/acolhedor/frase_36_speaker_adriana_t_acolhedor_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-ft/emd/acolhedor/frase_36_speaker_adriana_t_acolhedor_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-ft/emd/acolhedor/frase_36_speaker_adriana_t_acolhedor_with_emdp_gen.wav"></audio></td>
+        </tr>
+       
+      </table>
+    </div>
+
+
+    <div class='item'>
+      <h4> Proposed-SumCat-FT </h4>
+      Style Guided Reference Encoder Tacotron2 representation-based fine-tuned with sum-based style encoder.
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Neutral</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <!-- <td class="transcript" align='center'>EMDP</td> -->
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/neutro/frase_21_speaker_adriana_t_neutro_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/neutro/frase_21_speaker_adriana_t_neutro_with_pca_gen.wav"></audio></td>
+          <!-- <td><audio controls><source src="audio/ft-acolhedor/frase_59_speaker_None_t_acolhedor_with_centroid_gen.wav"></audio></td> -->
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/neutro/frase_22_speaker_adriana_t_neutro_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/neutro/frase_22_speaker_adriana_t_neutro_with_pca_gen.wav"></audio></td>
+          <!-- <td><audio controls><source src="audio/ft-acolhedor/frase_18_speaker_None_t_acolhedor_with_centroid_gen.wav"></audio></td> -->
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Enthusiastic</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <td class="transcript" align='center'>EMDP</td>
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/animado/frase_0_speaker_adriana_t_animado_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/animado/frase_0_speaker_adriana_t_animado_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/animado/frase_0_speaker_adriana_t_animado_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/animado/frase_4_speaker_adriana_t_animado_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/animado/frase_4_speaker_adriana_t_animado_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/animado/frase_4_speaker_adriana_t_animado_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <br>
+        <br>
+      </table>
+
+      <table>
+        <tr>
+          <td class="transcript" align='center'><b>Receptive</b></td>
+          <td class="transcript" align='center'>Centroid</td>
+          <td class="transcript" align='center'>PCA</td>
+          <td class="transcript" align='center'>EMDP</td>
+        </tr>
+        <br>
+        <br>
+        <br>
+        <tr>
+          <td align='center'>  </td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/acolhedor/frase_45_speaker_adriana_t_acolhedor_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/acolhedor/frase_45_speaker_adriana_t_acolhedor_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/acolhedor/frase_45_speaker_adriana_t_acolhedor_with_emdp_gen.wav"></audio></td>
+        </tr>
+        <tr>
+          <td align='center'> </td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/acolhedor/frase_48_speaker_adriana_t_acolhedor_with_centroid_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/acolhedor/frase_48_speaker_adriana_t_acolhedor_with_pca_gen.wav"></audio></td>
+          <td><audio controls><source src="audio/proposed-sumcat-ft/emd/acolhedor/frase_48_speaker_adriana_t_acolhedor_with_emdp_gen.wav"></audio></td>
+        </tr>
+       
+      </table>
+    </div>
+
+
 
   </body>
 </html>
