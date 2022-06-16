@@ -60,7 +60,21 @@
         </h1>
 
         <p id="project-description">
-          In this article, diffusion models are aggregated to an end-to-end text-to-speech sytem, to learn a distribution of reference speaking styles in an unsupervised manner. Through the use of a noising-denoising process of the reference embedding, and a combined denoising and spectrogram reconstruction loss, style transfer and the conditioning of the acoustic model are achieved. The proposed approach improves several objective metrics. A perceptual MUSHRA evaluation shows a 5 point increment on the mean of naturalness ratings and a paired comparison (ABX test) on style transfer reveals preference of the raters (43%) of our proposed approach over state-of-the-art models (29%). 
+          In this article, we propose an aggregation of denoising dif-
+fusion probabilistic models (DDPMs) onto an end-to-end text-to-speech
+system to learn a distribution of reference speaking styles in an unsu-
+pervised manner. By applying a few steps of a forward noising process
+to an embedding extracted from a reference mel spectrogram, we make
+profit of its information to reduce the diffusion backward chain and re-
+construct an improved style embedding with only a few reverse steps,
+performing style transfer. Additionally, a combined spectrogram recon-
+struction and denoising loss allows for conditioning of the acoustic model
+on the synthesized style embeddings. A subjective perceptual evaluation
+is conducted to evaluate naturalness and style transfer capability of the
+proposed approach. A MUSHRA test shows a 5 point increment on the
+mean of naturalness ratings and a paired comparison (ABX test) on style
+transfer reveals preference of the raters (43%) of our proposed approach
+over state-of-the-art models (29%). 
         </p>
       </div>
     </div>
