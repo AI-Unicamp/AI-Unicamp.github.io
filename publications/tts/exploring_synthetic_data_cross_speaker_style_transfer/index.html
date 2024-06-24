@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Diffusion for Style</title>
+  <title>Exploring Synthetic Data</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -24,10 +24,10 @@
           <a class="nav-link" href="#team-description">Abstract</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#title-section1">Naturalness</a>
+          <a class="nav-link" href="#title-section1">Cross-Speaker Style Transfer</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#title-section2">Style Transfer</a>
+          <a class="nav-link" href="#title-section2">Cross-Language Accent Transfer</a>
         </li>
       </ul>
     </div>
@@ -51,7 +51,7 @@
 
       <p id="authors">
         <span class="team-description" id="team-description">Authors: </span>
-        Leonardo B. de M. M. Marques, Paula D. P. Costa, Lucas H. Ueda, Flávio O. Simões, Mário Uliani Neto, Fernando O. Runstein, Edson J. Nagle, Bianca Dal Bó
+        Lucas H. Ueda, Leonardo B. de M. M. Marques, Flávio O. Simões, Mário U. Neto, Fernando Runstein, Bianca Dal Bó, Paula D. P. Costa
       </p>
 
       <div class="project-description-div">
@@ -68,600 +68,539 @@
 
   <div class="project-description-div">
     <h1 class="section-title" id="title-section1">
-      1. Naturalness (MUSHRA)
+      1. Cross-Speaker Style Transfer
     </h1>
   </div>
 
   <div class="container">
-    <h2>Best Cases: </h2>
+    <h2>Neutral samples: </h2>
     <p id="project-description">
-      Here are presented the top 2 samples per style that our model obtained in the overall naturalness rating:
+    
     </p>
 
     <table class="audios-table">
       <tr>
-        <th class="index">Harsh Utterances</th>
-        <th class="index">GT+Vocoder</th>
-        <th class="index">VAETacotron</th>
-        <th class="index">VAE+Flow</th>
-        <th class="index">Diffusion</th>
+        <th class="index">Speaker</th>
+        <th class="index">Ground truth</th>
+        <th class="index">Voice Conversion</th>
+        <th class="index">Synth none</th>
+        <th class="index">Synth TTS</th>
+        <th class="index">Synth both</th>
       </tr>
 
       <tr>
         <td class="phrase">
-          (78/100) Ok, estou aguardando!
+          PTBR 1
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/gtres/frase_26.wav">
+            <source src="audio/gt/frase23_adriana_neutro.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vae/frase_26_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/vc/frase23_adriana_neutro.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vaeflow/frase_26_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/synth_none/frase23_adriana_neutro.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/diff/frase_26_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/synth_tts/frase23_adriana_neutro.wav">
           </audio>
         </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_both/frase23_adriana_neutro.wav">
+          </audio>
+        </td>
+
       </tr>
 
       <tr>
         <td class="phrase">
-          (72/100) Teve a festa cheia de parentes e amigos!
+          PTBR 2
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control"> -->
+            <!-- <source src="audio/gt/frase
+             23_chiquinho_neutro.wav"> -->
+          <!-- </audio> -->
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/gtres/frase_93.wav">
+            <source src="audio/vc/frase23_chiquinho_neutro.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vae/frase_93_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/synth_none/frase23_chiquinho_neutro.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vaeflow/frase_93_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/synth_tts/frase23_chiquinho_neutro.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/diff/frase_93_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/synth_both/frase23_chiquinho_neutro.wav">
           </audio>
         </td>
-      </tr>
 
-      </tr>
-    </table>
-
-    <table class="audios-table">
-      <tr>
-        <th class="index">Lively Utterances</th>
-        <th class="index">GT+Vocoder</th>
-        <th class="index">VAETacotron</th>
-        <th class="index">VAE+Flow</th>
-        <th class="index">Diffusion</th>
       </tr>
 
       <tr>
         <td class="phrase">
-        (69/100) Gostaria de fazer uma observação.
+          PTBR 3
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control"> -->
+            <!-- <source src="audio/gt/frase
+             23_chiquinho_neutro.wav"> -->
+          <!-- </audio> -->
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/gtres/frase_147.wav">
+            <source src="audio/vc/frase23_rosana_neutro.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vae/frase_147_speaker_adriana_emotion_animado.wav">
+            <source src="audio/synth_none/frase23_rosana_neutro.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vaeflow/frase_147_speaker_adriana_emotion_animado.wav">
+            <source src="audio/synth_tts/frase23_rosana_neutro.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/diff/frase_147_speaker_adriana_emotion_animado.wav">
-          </audio>
+            <source src="audio/synth_both/frase23_rosana_neutro.wav">
         </td>
-      </tr>
-
-      <tr>
-        <td class="phrase">
-          (67/100) Desculpe, não entendi o que você falou.
-        </td>
-
-        <td>
-          <audio controls class="audio-control">
-            <source src="audio/gtres/frase_170.wav">
-          </audio>
-        </td>
-
-        <td>
-          <audio controls class="audio-control">
-            <source src="audio/vae/frase_170_speaker_adriana_emotion_animado.wav">
-          </audio>
-        </td>
-
-        <td>
-          <audio controls class="audio-control">
-            <source src="audio/vaeflow/frase_170_speaker_adriana_emotion_animado.wav">
-          </audio>
-        </td>
-
-        <td>
-          <audio controls class="audio-control">
-            <source src="audio/diff/frase_170_speaker_adriana_emotion_animado.wav">
-          </audio>
-        </td>
-      </tr>
-
-      <table class="audios-table">
-        <tr>
-          <th class="index">Welcoming Utterances</th>
-          <th class="index">GT+Vocoder</th>
-          <th class="index">VAETacotron</th>
-          <th class="index">VAE+Flow</th>
-          <th class="index">Diffusion</th>
-        </tr>
-  
-        <tr>
-          <td class="phrase">
-            (67/100) Espero que as coisas melhorem a partir de agora.
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/gtres/frase_141.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vae/frase_141_speaker_adriana_emotion_acolhedor.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vaeflow/frase_141_speaker_adriana_emotion_acolhedor.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/diff/frase_141_speaker_adriana_emotion_acolhedor.wav">
-            </audio>
-          </td>
-        </tr>
-  
-        <tr>
-          <td class="phrase">
-            (66/100) O uso de recursos do clube fora de casa, na verdade, foi uma probição da justiça.
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/gtres/frase_70.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vae/frase_70_speaker_adriana_emotion_acolhedor.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vaeflow/frase_70_speaker_adriana_emotion_acolhedor.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/diff/frase_70_speaker_adriana_emotion_acolhedor.wav">
-            </audio>
-          </td>
-        </tr>
-  
-        </tr>
-      </table>
-
-      <table class="audios-table">
-        <tr>
-          <th class="index">Neutral Utterances</th>
-          <th class="index">GT+Vocoder</th>
-          <th class="index">VAETacotron</th>
-          <th class="index">VAE+Flow</th>
-          <th class="index">Diffusion</th>
-        </tr>
-  
-        <tr>
-          <td class="phrase">
-            (79/100) Entraremos em contato.
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/gtres/frase_45.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vae/frase_45_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vaeflow/frase_45_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/diff/frase_45_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-        </tr>
-  
-        <tr>
-          <td class="phrase">
-            (65/100) Vieram seus filhos ao México neste dia.
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/gtres/frase_203.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vae/frase_203_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vaeflow/frase_203_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/diff/frase_203_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-        </tr>
-  
-        </tr>
-      </table>
 
       </tr>
+    </tr>
+
+
     </table>
 
     <hr>
 
-    <h2>Worst Cases: </h2>
+    <h2>Welcoming samples: </h2>
     <p id="project-description">
-      Here are presented the worst 2 samples per style that our model obtained in the overall naturalness rating:
+      <!-- Here are presented the worst 2 samples per style that our model obtained in the overall naturalness rating: -->
     </p>
 
     <table class="audios-table">
       <tr>
-        <th class="index">Harsh Utterances</th>
-        <th class="index">GT+Vocoder</th>
-        <th class="index">VAETacotron</th>
-        <th class="index">VAE+Flow</th>
-        <th class="index">Diffusion</th>
+        <th class="index">Speaker</th>
+        <th class="index">Ground truth</th>
+        <th class="index">Voice Conversion</th>
+        <th class="index">Synth none</th>
+        <th class="index">Synth TTS</th>
+        <th class="index">Synth both</th>
       </tr>
 
       <tr>
         <td class="phrase">
-          (55/100) Esse foi o motivo do dinheiro não ter sido creditado.
+          PTBR 1
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/gtres/frase_177.wav">
+            <source src="audio/gt/frase24_adriana_acolhedor.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vae/frase_177_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/vc/frase24_adriana_acolhedor.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vaeflow/frase_177_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/synth_none/frase24_adriana_acolhedor.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/diff/frase_177_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/synth_tts/frase24_adriana_acolhedor.wav">
           </audio>
         </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_both/frase24_adriana_acolhedor.wav">
+          </audio>
+        </td>
+
       </tr>
 
       <tr>
         <td class="phrase">
-          (57/100) Um mau caráter desse só podia terminar mal.
+          PTBR 2
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control"> -->
+            <!-- <source src="audio/gt/frase
+             23_chiquinho_neutro.wav"> -->
+          <!-- </audio> -->
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/gtres/frase_20.wav">
+            <source src="audio/vc/frase24_chiquinho_acolhedor.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vae/frase_20_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/synth_none/frase24_chiquinho_acolhedor.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vaeflow/frase_20_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/synth_tts/frase24_chiquinho_acolhedor.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/diff/frase_20_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/synth_both/frase24_chiquinho_acolhedor.wav">
           </audio>
         </td>
+
       </tr>
 
+      <tr>
+        <td class="phrase">
+          PTBR 3
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control"> -->
+            <!-- <source src="audio/gt/frase
+             23_chiquinho_neutro.wav"> -->
+          <!-- </audio> -->
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/vc/frase24_rosana_acolhedor.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_none/frase24_rosana_acolhedor.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_tts/frase24_rosana_acolhedor.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_both/frase24_rosana_acolhedor.wav">
+        </td>
+
       </tr>
+    </tr>
+
+
     </table>
+
+
+    <h2>Lively samples: </h2>
+    <p id="project-description">
+      <!-- Here are presented the worst 2 samples per style that our model obtained in the overall naturalness rating: -->
+    </p>
 
     <table class="audios-table">
       <tr>
-        <th class="index">Lively Utterances</th>
-        <th class="index">GT+Vocoder</th>
-        <th class="index">VAETacotron</th>
-        <th class="index">VAE+Flow</th>
-        <th class="index">Diffusion</th>
+        <th class="index">Speaker</th>
+        <th class="index">Ground truth</th>
+        <th class="index">Voice Conversion</th>
+        <th class="index">Synth none</th>
+        <th class="index">Synth TTS</th>
+        <th class="index">Synth both</th>
       </tr>
 
       <tr>
         <td class="phrase">
-          (52/100) Sem mais delongas, você é o grande ganhador desta noite!
+          PTBR 1
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/gtres/frase_198.wav">
+            <source src="audio/gt/frase13_adriana_animado.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vae/frase_198_speaker_adriana_emotion_animado.wav">
+            <source src="audio/vc/frase13_adriana_animado.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vaeflow/frase_198_speaker_adriana_emotion_animado.wav">
+            <source src="audio/synth_none/frase13_adriana_animado.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/diff/frase_198_speaker_adriana_emotion_animado.wav">
+            <source src="audio/synth_tts/frase13_adriana_animado.wav">
           </audio>
         </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_both/frase13_adriana_animado.wav">
+          </audio>
+        </td>
+
       </tr>
 
       <tr>
         <td class="phrase">
-          (54/100) Por falta de comunicação, esta ligação está sendo encerrada!
+          PTBR 2
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control"> -->
+            <!-- <source src="audio/gt/frase
+             23_chiquinho_neutro.wav"> -->
+          <!-- </audio> -->
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/gtres/frase_191.wav">
+            <source src="audio/vc/frase13_chiquinho_animado.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vae/frase_191_speaker_adriana_emotion_animado.wav">
+            <source src="audio/synth_none/frase13_chiquinho_animado.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vaeflow/frase_191_speaker_adriana_emotion_animado.wav">
+            <source src="audio/synth_tts/frase13_chiquinho_animado.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/diff/frase_191_speaker_adriana_emotion_animado.wav">
+            <source src="audio/synth_both/frase13_chiquinho_animado.wav">
           </audio>
         </td>
+
       </tr>
 
-      
+      <tr>
+        <td class="phrase">
+          PTBR 3
+        </td>
 
-      <table class="audios-table">
-        <tr>
-          <th class="index">Welcoming Utterances</th>
-          <th class="index">GT+Vocoder</th>
-          <th class="index">VAETacotron</th>
-          <th class="index">VAE+Flow</th>
-          <th class="index">Diffusion</th>
-        </tr>
-  
-        <tr>
-          <td class="phrase">
-            (44/100) Se você quiser, eu passo pela sua casa hoje de tarde e levo o monstruário para escolher o tecido.
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/gtres/frase_49.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vae/frase_49_speaker_adriana_emotion_acolhedor.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vaeflow/frase_49_speaker_adriana_emotion_acolhedor.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/diff/frase_49_speaker_adriana_emotion_acolhedor.wav">
-            </audio>
-          </td>
-        </tr>
-  
-        <tr>
-          <td class="phrase">
-            (56/100) Como presidente interino, comandou o conselho de ética.
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/gtres/frase_101.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vae/frase_101_speaker_adriana_emotion_acolhedor.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vaeflow/frase_101_speaker_adriana_emotion_acolhedor.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/diff/frase_101_speaker_adriana_emotion_acolhedor.wav">
-            </audio>
-          </td>
-        </tr>
-  
-        </tr>
-      </table>
+        <td>
+          <!-- <audio controls class="audio-control"> -->
+            <!-- <source src="audio/gt/frase
+             23_chiquinho_neutro.wav"> -->
+          <!-- </audio> -->
+        </td>
 
-      <table class="audios-table">
-        <tr>
-          <th class="index">Neutral Utterances</th>
-          <th class="index">GT+Vocoder</th>
-          <th class="index">VAETacotron</th>
-          <th class="index">VAE+Flow</th>
-          <th class="index">Diffusion</th>
-        </tr>
-  
-        <tr>
-          <td class="phrase">
-            (51/100) Tenho boas notícias para você, dona Suzana.
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/gtres/frase_161.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vae/frase_161_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vaeflow/frase_161_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/diff/frase_161_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-        </tr>
-  
-        <tr>
-          <td class="phrase">
-            (58/100) Siga o twitter pelo facebook.
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/gtres/frase_97.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vae/frase_97_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vaeflow/frase_97_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/diff/frase_97_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-        </tr>
-  
-        </tr>
-      </table>
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/vc/frase13_rosana_animado.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_none/frase13_rosana_animado.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_tts/frase13_rosana_animado.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_both/frase13_rosana_animado.wav">
+        </td>
 
       </tr>
+    </tr>
+
+
     </table>
+
+    <h2>Harsh samples: </h2>
+    <p id="project-description">
+      <!-- Here are presented the worst 2 samples per style that our model obtained in the overall naturalness rating: -->
+    </p>
+
+    <table class="audios-table">
+      <tr>
+        <th class="index">Speaker</th>
+        <th class="index">Ground truth</th>
+        <th class="index">Voice Conversion</th>
+        <th class="index">Synth none</th>
+        <th class="index">Synth TTS</th>
+        <th class="index">Synth both</th>
+      </tr>
+
+      <tr>
+        <td class="phrase">
+          PTBR 1
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/gt/frase0_adriana_rispido.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/vc/frase0_adriana_rispido.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_none/frase0_adriana_rispido.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_tts/frase0_adriana_rispido.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_both/frase0_adriana_rispido.wav">
+          </audio>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td class="phrase">
+          PTBR 2
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control"> -->
+            <!-- <source src="audio/gt/frase
+             23_chiquinho_neutro.wav"> -->
+          <!-- </audio> -->
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/vc/frase0_chiquinho_rispido.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_none/frase0_chiquinho_rispido.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_tts/frase0_chiquinho_rispido.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_both/frase0_chiquinho_rispido.wav">
+          </audio>
+        </td>
+
+      </tr>
+
+      <tr>
+        <td class="phrase">
+          PTBR 3
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control"> -->
+            <!-- <source src="audio/gt/frase
+             23_chiquinho_neutro.wav"> -->
+          <!-- </audio> -->
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/vc/frase0_rosana_rispido.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_none/frase0_rosana_rispido.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_tts/frase0_rosana_rispido.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/synth_both/frase0_rosana_rispido.wav">
+        </td>
+
+      </tr>
+    </tr>
+
+
+    </table>
+
+
 
   </div>
 
