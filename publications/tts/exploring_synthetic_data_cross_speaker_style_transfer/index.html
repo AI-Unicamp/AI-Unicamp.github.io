@@ -66,11 +66,57 @@
     </div>
   </div>
 
+
+
+
+
   <div class="project-description-div">
     <h1 class="section-title" id="title-section1">
       1. Cross-Speaker Style Transfer
     </h1>
   </div>
+
+  <div class="container">
+    <h2>Speakers groundtruth samples: </h2>
+    <p id="project-description">
+    
+    </p>
+
+    <table class="audios-table">
+      <tbody>
+      <tr align="center">
+        <th class="index">PTBR 1 (Female)</th>
+        <th class="index">PTBR 2 (Male)</th>
+        <th class="index">PTBR 3 (Female)</th>
+      </tr>
+
+      <tr align="center">
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/ref_spk/a2.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/ref_spk/c2.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/ref_spk/r2.wav">
+          </audio>
+        </td>
+
+
+      </tr>
+    </tbody>
+    </table>
+  </div>
+
+  <br><br>
 
   <div class="container">
     <h2>Neutral samples: </h2>
@@ -603,287 +649,556 @@
 
 
   </div>
+  <br><br><br><br><br><br><br>
+
 
   <div class="project-description-div">
     <h1 class="section-title" id="title-section2">
-      2. Style Transfer (ABX Test)
+      2. Cross-Speaker Cross-Language Accent Transfer
     </h1>
   </div>
 
   <div class="container">
-    <h2>Best Cases: </h2>
+    <h2>Speakers groundtruth samples for English and Spanish: </h2>
     <p id="project-description">
-      Here are presented the five utterances that our model received the most choices. 
+    
+    </p>
+
+    <table class="audios-table">
+      <tbody>
+      <tr align="center">
+        <th class="index">English: LJSpeech (Female)</th>
+        <th class="index">Spanish: Blizzard2021 (Female)</th>
+      </tr>
+
+      <tr align="center">
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/frase_eng_19_adriana.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/frase_es_19_adriana.wav">
+          </audio>
+        </td>
+
+
+      </tr>
+    </tbody>
+    </table>
+  </div>
+
+  <br><br>
+
+
+  <div class="container">
+    <h2>English samples: </h2>
+    <p id="project-description">
+      <!-- Here are presented the worst 2 samples per style that our model obtained in the overall naturalness rating: -->
     </p>
 
     <table class="audios-table">
       <tr>
-        <th class="index">Utterances</th>
-        <th class="index">Reference</th>
-        <th class="index">VAE+Flow</th>
-        <th class="index">Diffusion</th>
+        <th class="index">Ground truth</th>
+        <th class="index">Voice Conversion</th>
+        <th class="index">Speaker</th>
+        <th class="index">Synth none</th>
+        <th class="index">Synth TTS</th>
+        <th class="index">Synth both</th>
       </tr>
 
       <tr>
+
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/frase_eng_1_adriana.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/vc/frase_eng_1_adriana.wav">
+          </audio>
+        </td>
+
         <td class="phrase">
-          (22/30 Choices) O acusado de construir o laboratório.
+          PTBR 1 (English centroid)
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/gtres/frase_103.wav">
+            <source src="audio/crosslanguage/synth_none/frase_eng_1_adriana_eng.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vaeflow/frase_103_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/crosslanguage/synth_tts/frase_eng_1_adriana_eng.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/diff/frase_103_speaker_adriana_emotion_rispido.wav">
+            <source src="audio/crosslanguage/synth_both/frase_eng_1_adriana_eng.wav">
           </audio>
         </td>
 
       </tr>
 
-      <tr class="phrase">
+      <tr>
+
+
         <td>
-          (22/30 Choices) Quando Rosa pediu ajuda a Miguel, percebeu o quanto ele gostava dela.
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/frase_eng_1_adriana.wav">
+          </audio> -->
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/vc/fr.wav">
+          </audio> -->
+        </td>
+
+        <td class="phrase">
+          PTBR 1 (PT-BR centroid)
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/gtres/frase_95.wav">
+            <source src="audio/crosslanguage/synth_none/frase_eng_1_adriana_ptbr.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vaeflow/frase_95_speaker_adriana_emotion_animado.wav">
+            <source src="audio/crosslanguage/synth_tts/frase_eng_1_adriana_ptbr.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/diff/frase_95_speaker_adriana_emotion_animado.wav">
+            <source src="audio/crosslanguage/synth_both/frase_eng_1_adriana_ptbr.wav">
           </audio>
         </td>
-
-        <tr class="phrase">
-          <td>
-            (22/30 Choices) Bem, eu ligo mais tarde.
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/gtres/frase_119.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vaeflow/frase_119_speaker_adriana_emotion_rispido.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/diff/frase_119_speaker_adriana_emotion_rispido.wav">
-            </audio>
-          </td>
-
-          <tr class="phrase">
-            <td>
-              (21/30 Choices) Porque muitos vão comprar grades de cerveja, para juntos dos amigos, beber até amanhecer.
-            </td>
-    
-            <td>
-              <audio controls class="audio-control">
-                <source src="audio/gtres/frase_23.wav">
-              </audio>
-            </td>
-    
-            <td>
-              <audio controls class="audio-control">
-                <source src="audio/vaeflow/audios_nonparallel/frase_5_speaker_adriana_emotion_animado.wav">
-              </audio>
-            </td>
-    
-            <td>
-              <audio controls class="audio-control">
-                <source src="audio/diff/audios_nonparallel/frase_5_speaker_adriana_emotion_animado.wav">
-              </audio>
-            </td>
-
-            <tr class="phrase">
-              <td>
-                (20/30 Choices) Acho que liguei para o número errado.
-              </td>
-      
-              <td>
-                <audio controls class="audio-control">
-                  <source src="audio/gtres/frase_32.wav">
-                </audio>
-              </td>
-      
-              <td>
-                <audio controls class="audio-control">
-                  <source src="audio/vaeflow/audios_nonparallel/frase_11_speaker_adriana_emotion_rispido.wav">
-                </audio>
-              </td>
-      
-              <td>
-                <audio controls class="audio-control">
-                  <source src="audio/diff/audios_nonparallel/frase_11_speaker_adriana_emotion_rispido.wav">
-                </audio>
-              </td>
-
 
       </tr>
+
+      <tr>
+
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/fra.wav">
+          </audio> -->
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/vc/frase_eng_1_chiquinho.wav">
+          </audio>
+        </td>
+
+        <td class="phrase">
+          PTBR 2 (English centroid)
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_none/frase_eng_1_chiquinho_eng.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_tts/frase_eng_1_chiquinho_eng.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_both/frase_eng_1_chiquinho_eng.wav">
+          </audio>
+        </td>
+
+      </tr>
+
+      <tr>
+
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/frase_eng_1_adriana.wav">
+          </audio> -->
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/vc/fr.wav">
+          </audio> -->
+        </td>
+
+        <td class="phrase">
+          PTBR 2 (PT-BR centroid)
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_none/frase_eng_1_chiquinho_ptbr.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_tts/frase_eng_1_chiquinho_ptbr.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_both/frase_eng_1_chiquinho_ptbr.wav">
+          </audio>
+        </td>
+
+      </tr>
+
+      <tr>
+
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/fra.wav">
+          </audio> -->
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/vc/frase_eng_1_rosana.wav">
+          </audio>
+        </td>
+
+        <td class="phrase">
+          PTBR 3 (English centroid)
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_none/frase_eng_1_rosana_eng.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_tts/frase_eng_1_rosana_eng.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_both/frase_eng_1_rosana_eng.wav">
+          </audio>
+        </td>
+
+      </tr>
+
+      <tr>
+
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/frase_eng_1_adriana.wav">
+          </audio> -->
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/vc/fr.wav">
+          </audio> -->
+        </td>
+
+        <td class="phrase">
+          PTBR 3 (PT-BR centroid)
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_none/frase_eng_1_rosana_ptbr.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_tts/frase_eng_1_rosana_ptbr.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_both/frase_eng_1_rosana_ptbr.wav">
+          </audio>
+        </td>
+
+      </tr>
+
 
     </table>
 
-    
-
-    <hr>
-
-    <h2>Worst Cases : </h2>
+    <h2>Spanish samples: </h2>
     <p id="project-description">
-      Here are presented five utterances that our model received the least choices. 
+      <!-- Here are presented the worst 2 samples per style that our model obtained in the overall naturalness rating: -->
     </p>
 
     <table class="audios-table">
       <tr>
-        <th class="index">Utterances</th>
-        <th class="index">Reference</th>
-        <th class="index">VAE+Flow</th>
-        <th class="index">Diffusion</th>
+        <th class="index">Ground truth</th>
+        <th class="index">Voice Conversion</th>
+        <th class="index">Speaker</th>
+        <th class="index">Synth none</th>
+        <th class="index">Synth TTS</th>
+        <th class="index">Synth both</th>
       </tr>
 
       <tr>
+
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/frase_es_0_adriana.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/vc/frase_es_0_adriana.wav">
+          </audio>
+        </td>
+
         <td class="phrase">
-          (1/30 Choices) Pagou para ver se o japonês era famoso no Texas, mas não teve sucesso.
+          PTBR 1 (Spanish centroid)
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/gtres/frase_31.wav">
+            <source src="audio/crosslanguage/synth_none/frase_es_0_adriana_es.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vaeflow/audios_nonparallel/frase_15_speaker_adriana_emotion_neutro.wav">
+            <source src="audio/crosslanguage/synth_tts/frase_es_0_adriana_es.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/diff/audios_nonparallel/frase_15_speaker_adriana_emotion_neutro.wav">
+            <source src="audio/crosslanguage/synth_both/frase_es_0_adriana_es.wav">
           </audio>
         </td>
 
       </tr>
 
-      <tr class="phrase">
+      <tr>
+
+
         <td>
-        (3/30 Choices) Siga o twitter pelo facebook. 
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/frase_eng_1_adriana.wav">
+          </audio> -->
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/vc/fr.wav">
+          </audio> -->
+        </td>
+
+        <td class="phrase">
+          PTBR 1 (PT-BR centroid)
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/gtres/frase_22.wav">
+            <source src="audio/crosslanguage/synth_none/frase_es_0_adriana_ptbr.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/vaeflow/audios_nonparallel/frase_12_speaker_adriana_emotion_neutro.wav">
+            <source src="audio/crosslanguage/synth_tts/frase_es_0_adriana_ptbr.wav">
           </audio>
         </td>
 
         <td>
           <audio controls class="audio-control">
-            <source src="audio/diff/audios_nonparallel/frase_12_speaker_adriana_emotion_neutro.wav">
+            <source src="audio/crosslanguage/synth_both/frase_es_0_adriana_ptbr.wav">
           </audio>
         </td>
-
-        <tr class="phrase">
-          <td>
-            (4/30 Choices) A sociedade vai poder, desta vez, ter direito a ser assim.
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/gtres/frase_24.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/vaeflow/audios_nonparallel/frase_13_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-  
-          <td>
-            <audio controls class="audio-control">
-              <source src="audio/diff/audios_nonparallel/frase_13_speaker_adriana_emotion_neutro.wav">
-            </audio>
-          </td>
-
-          <tr class="phrase">
-            <td>
-              (5/30 Choices) Ok, estou aguardando.
-            </td>
-    
-            <td>
-              <audio controls class="audio-control">
-                <source src="audio/gtres/frase_20.wav">
-              </audio>
-            </td>
-    
-            <td>
-              <audio controls class="audio-control">
-                <source src="audio/vaeflow/audios_nonparallel/frase_8_speaker_adriana_emotion_rispido.wav">
-              </audio>
-            </td>
-    
-            <td>
-              <audio controls class="audio-control">
-                <source src="audio/diff/audios_nonparallel/frase_8_speaker_adriana_emotion_rispido.wav">
-              </audio>
-            </td>
-
-            <tr class="phrase">
-              <td>
-                (6/30 Choices) 6973-6087. 
-              </td>
-      
-              <td>
-                <audio controls class="audio-control">
-                  <source src="audio/gtres/frase_37.wav">
-                </audio>
-              </td>
-      
-              <td>
-                <audio controls class="audio-control">
-                  <source src="audio/vaeflow/audios_nonparallel/frase_3_speaker_adriana_emotion_acolhedor.wav">
-                </audio>
-              </td>
-      
-              <td>
-                <audio controls class="audio-control">
-                  <source src="audio/diff/audios_nonparallel/frase_3_speaker_adriana_emotion_acolhedor.wav">
-                </audio>
-              </td>
-
 
       </tr>
+
+      <tr>
+
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/fra.wav">
+          </audio> -->
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/vc/frase_es_0_chiquinho.wav">
+          </audio>
+        </td>
+
+        <td class="phrase">
+          PTBR 2 (Spanish centroid)
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_none/frase_es_0_chiquinho_es.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_tts/frase_es_0_chiquinho_es.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_both/frase_es_0_chiquinho_es.wav">
+          </audio>
+        </td>
+
+      </tr>
+
+      <tr>
+
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/frase_eng_1_adriana.wav">
+          </audio> -->
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/vc/fr.wav">
+          </audio> -->
+        </td>
+
+        <td class="phrase">
+          PTBR 2 (PT-BR centroid)
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_none/frase_es_0_chiquinho_ptbr.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_tts/frase_es_0_chiquinho_ptbr.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_both/frase_es_0_chiquinho_ptbr.wav">
+          </audio>
+        </td>
+
+      </tr>
+
+      <tr>
+
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/fra.wav">
+          </audio> -->
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/vc/frase_es_0_rosana.wav">
+          </audio>
+        </td>
+
+        <td class="phrase">
+          PTBR 3 (Spanish centroid)
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_none/frase_es_0_rosana_es.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_tts/frase_es_0_rosana_es.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_both/frase_es_0_rosana_es.wav">
+          </audio>
+        </td>
+
+      </tr>
+
+      <tr>
+
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/gt/frase_eng_1_adriana.wav">
+          </audio> -->
+        </td>
+
+        <td>
+          <!-- <audio controls class="audio-control">
+            <source src="audio/crosslanguage/vc/fr.wav">
+          </audio> -->
+        </td>
+
+        <td class="phrase">
+          PTBR 3 (PT-BR centroid)
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_none/frase_es_0_rosana_ptbr.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_tts/frase_es_0_rosana_ptbr.wav">
+          </audio>
+        </td>
+
+        <td>
+          <audio controls class="audio-control">
+            <source src="audio/crosslanguage/synth_both/frase_es_0_rosana_ptbr.wav">
+          </audio>
+        </td>
+
+      </tr>
+
 
     </table>
+
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
