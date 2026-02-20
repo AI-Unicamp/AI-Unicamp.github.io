@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exploring Synthetic Data</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-trans fixed-top">
+    <a class="navbar-brand" href="#">Audio Demos</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#team-description">Abstract</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#title-section1">Cross-Speaker Style Transfer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#title-section2">Cross-Language Accent Transfer</a>
+        </li>
+      </ul>
+    </div> -->
+  </nav>
+
+
+  <div class="div-logo">
+    <div id="logo1"></div>
+    <!-- <div id="logo2"></div> -->
+  </div>
+
+  <div class="header">
+    <h1 id="search-title">
+      SelfTTS: cross-speaker style transfer through explicit embedding disentanglement and self-refinement using self-augmentation
+    </h1>
+
+    <div class="description">
+      <p id="paper">
+        <span class="team-description">Paper: </span>Not available yet
+      </p>
+
+      <p id="authors">
+        <span class="team-description" id="team-description">Authors: </span>
+        Lucas H. Ueda, João G.T. Lima, Pedro R. Corrêa and Paula D. P. Costa
+      </p>
+
+      <div class="project-description-div">
+        <h1 class="section-title" id="title-section">
+          ABSTRACT
+        </h1>
+
+        <p id="project-description">
+          This paper presents SelfTTS, a text-to-speech (TTS) model designed for cross-speaker style transfer that eliminates the need for external pre-trained speaker or emotion encoders. The architecture achieves emotional expressivity in neutral speakers through an explicit disentanglement strategy utilizing Gradient Reversal Layers (GRL) combined with cosine similarity loss to decouple speaker and emotion information. We introduce Multi Positive Contrastive Learning (MPCL) to induce clustered representations of speaker and emotion embeddings based on their respective labels. Furthermore, SelfTTS employs a self-refinement strategy via self-augmentation, leveraging its inherent voice conversion capabilities to enhance the naturalness of synthesized speech. Experimental results demonstrate that SelfTTS achieves superior emotional naturalness (eMOS) and robust stability in target timbre and emotion compared to state-of-the-art baselines.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
