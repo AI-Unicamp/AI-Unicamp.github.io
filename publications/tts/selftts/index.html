@@ -13,8 +13,12 @@
 
     .site-header { background: #fff; border-bottom: 0.5px solid #e0e0d8; padding: 2.5rem 0 2rem; margin-bottom: 2.5rem; }
     .site-header h1 { font-size: 1.35rem; font-weight: 600; color: #1a1a1a; margin-bottom: .5rem; }
-    .site-header .authors { color: #666; font-size: .9rem; margin-bottom: .75rem; }
+    .site-header .authors { color: #666; font-size: .9rem; margin-bottom: .5rem; }
     
+    /* Project Links */
+    .project-links { margin-bottom: 1.25rem; }
+    .project-links .btn { font-weight: 500; font-size: 0.85rem; border-radius: 6px; padding: 0.3rem 0.75rem; }
+
     /* Logo Styles Integration */
     .div-logo { display: flex; gap: 20px; margin-bottom: 1.25rem; align-items: center; }
     .header-logo { height: 75px; width: auto; object-fit: contain; }
@@ -88,13 +92,16 @@
     </div>
     
     <h1>SelfTTS: cross-speaker style transfer through explicit embedding disentanglement and self-refinement using self-augmentation</h1>
-    <p class="authors"><strong>Authors:</strong> Anonymous Authors &nbsp;·&nbsp; Anonymous Institution</p>
+    <p class="authors"><strong>Authors:</strong> Lucas H. Ueda, João G. T. Lima, Pedro R. Corrêa, Flávio O. Simões, Mário U. Neto, Paula D. P. Costa &nbsp;·&nbsp; Universidade Estadual de Campinas (UNICAMP) and CPQD </p>
+    
+    <!-- Project Links -->
+    <div class="project-links">
+      <a href="https://arxiv.org/pdf/2603.22252" target="_blank" class="btn btn-outline-primary btn-sm mr-2">📄 Paper (PDF)</a>
+      <a href="https://github.com/AI-Unicamp/SelfTTS?tab=readme-ov-file" target="_blank" class="btn btn-outline-dark btn-sm">💻 GitHub Code</a>
+    </div>
+
     <div class="abstract">
-      This paper presents SelfTTS, a TTS model for cross-speaker style transfer that eliminates external pre-trained speaker or emotion encoders.
-      It achieves emotional expressivity via explicit disentanglement with Gradient Reversal Layers (GRL) and cosine similarity loss, combined with
-      Multi Positive Contrastive Learning (MPCL) for clustered speaker and emotion representations. A self-refinement strategy using self-augmentation
-      further improves naturalness. Results show SelfTTS achieves superior emotional naturalness (eMOS) and robust stability in target timbre and emotion
-      compared to state-of-the-art baselines.
+      This paper presents SelfTTS, a text-to-speech (TTS) model designed for cross-speaker style transfer that eliminates the need for external pre-trained speaker or emotion encoders. The architecture achieves emotional expressivity in neutral speakers through an explicit disentanglement strategy utilizing Gradient Reversal Layers (GRL) combined with cosine similarity loss to decouple speaker and emotion information. We introduce Multi Positive Contrastive Learning (MPCL) to induce clustered representations of speaker and emotion embeddings based on their respective labels. Furthermore, SelfTTS employs a self-refinement strategy via Self-Augmentation, exploiting the model’s voice conversion capabilities to enhance the naturalness of synthesized speech. Experimental results demonstrate that SelfTTS achieves superior emotional naturalness (eMOS) and robust stability in target timbre and emotion compared to state-of-the-art baselines.
     </div>
   </div>
 </div>
