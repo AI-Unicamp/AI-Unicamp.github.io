@@ -1,15 +1,31 @@
 :root {
   color-scheme: light dark;
+
   --bg: #f7f7f4;
   --text: #181817;
   --muted: #686865;
   --line: #d9d9d3;
+  --surface: #efefea;
+
   --page: 76rem;
   --gutter: clamp(1.25rem, 4vw, 4rem);
   --section-space: clamp(4rem, 9vw, 8rem);
-  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --font-sans:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
 }
+
+
+/* ---------------------------------------------------------
+   Dark mode
+   --------------------------------------------------------- */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -17,42 +33,76 @@
     --text: #f1f1ec;
     --muted: #aaa9a2;
     --line: #31322f;
+    --surface: #191a17;
   }
 }
 
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+
+/* ---------------------------------------------------------
+   Base
+   --------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
+
   background: var(--bg);
   color: var(--text);
+
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.6;
+
   text-rendering: optimizeLegibility;
 }
 
 a {
   color: inherit;
+
   text-underline-offset: 0.22em;
   text-decoration-thickness: 0.08em;
 }
 
-a:hover { text-decoration-thickness: 0.13em; }
+a:hover {
+  text-decoration-thickness: 0.13em;
+}
 
-.site-header, main, .site-footer {
+
+/* ---------------------------------------------------------
+   Global page structure
+   --------------------------------------------------------- */
+
+.site-header,
+main,
+.site-footer {
   width: min(100%, var(--page));
   margin-inline: auto;
   padding-inline: var(--gutter);
 }
 
+
+/* ---------------------------------------------------------
+   Header and navigation
+   --------------------------------------------------------- */
+
 .site-header {
   min-height: 5.25rem;
+
   display: grid;
   grid-template-columns: 1fr auto auto;
   align-items: center;
+
   gap: clamp(1rem, 3vw, 2.5rem);
+
   border-bottom: 1px solid var(--line);
 }
 
@@ -63,32 +113,52 @@ a:hover { text-decoration-thickness: 0.13em; }
   text-decoration: none;
 }
 
-.site-nav, .utility-nav {
+.site-nav,
+.utility-nav {
   display: flex;
   align-items: center;
+
   gap: clamp(0.8rem, 2vw, 1.5rem);
+
   font-size: 0.84rem;
 }
 
-.site-nav a, .utility-nav a { text-decoration: none; }
-.site-nav a:hover, .utility-nav a:hover { text-decoration: underline; }
+.site-nav a,
+.utility-nav a {
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.utility-nav a:hover {
+  text-decoration: underline;
+}
 
 .utility-nav {
   gap: 0.4rem;
   color: var(--muted);
 }
 
+
+/* ---------------------------------------------------------
+   Homepage hero
+   --------------------------------------------------------- */
+
 .hero {
   min-height: min(76vh, 48rem);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   padding-block: clamp(5rem, 12vw, 10rem);
 }
 
-.eyebrow, .section-label {
+.eyebrow,
+.section-label {
   margin: 0;
+
   color: var(--muted);
+
   font-size: 0.76rem;
   font-weight: 650;
   letter-spacing: 0.08em;
@@ -97,7 +167,9 @@ a:hover { text-decoration-thickness: 0.13em; }
 
 .hero h1 {
   max-width: 16ch;
+
   margin: 1rem 0 1.75rem;
+
   font-size: clamp(2.6rem, 7vw, 6.4rem);
   font-weight: 560;
   letter-spacing: -0.055em;
@@ -106,24 +178,60 @@ a:hover { text-decoration-thickness: 0.13em; }
 
 .hero-text {
   max-width: 46rem;
+
   margin: 0;
+
   color: var(--muted);
+
   font-size: clamp(1.05rem, 2vw, 1.35rem);
   line-height: 1.55;
 }
 
+
+/* ---------------------------------------------------------
+   Internal page hero
+   --------------------------------------------------------- */
+
+.page-hero {
+  min-height: auto;
+
+  padding-block: clamp(3rem, 5vw, 4.5rem);
+}
+
+.page-hero h1 {
+  max-width: none;
+
+  margin: 0.65rem 0 0;
+
+  font-size: clamp(2.25rem, 4vw, 3.6rem);
+  font-weight: 430;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+
+/* ---------------------------------------------------------
+   Generic sections
+   --------------------------------------------------------- */
+
 .section {
   display: grid;
   grid-template-columns: minmax(8rem, 1fr) minmax(0, 3fr);
+
   gap: clamp(2rem, 6vw, 6rem);
+
   padding-block: var(--section-space);
+
   border-top: 1px solid var(--line);
 }
 
-.section-content { max-width: 46rem; }
+.section-content {
+  max-width: 46rem;
+}
 
 .section-content h2 {
   margin: -0.2rem 0 1.4rem;
+
   font-size: clamp(1.8rem, 3.6vw, 3.4rem);
   font-weight: 520;
   letter-spacing: -0.035em;
@@ -132,51 +240,280 @@ a:hover { text-decoration-thickness: 0.13em; }
 
 .section-content p {
   max-width: 40rem;
+
   margin: 0 0 1.4rem;
+
   color: var(--muted);
+
   font-size: 1.04rem;
 }
 
-.text-link {
-  display: inline-block;
-  margin-top: 0.4rem;
+
+/* ---------------------------------------------------------
+   People
+   --------------------------------------------------------- */
+
+.people-group {
+  padding-block: clamp(2.5rem, 4vw, 4rem);
 }
+
+
+/*
+   Only groups after the first one need visual separation.
+*/
+
+.people-group + .people-group {
+  border-top: 1px solid var(--line);
+}
+
+.people-group > .section-label {
+  margin-bottom: 1.6rem;
+
+  font-size: 0.84rem;
+  letter-spacing: 0.07em;
+}
+
+
+/* ---------------------------------------------------------
+   People grid
+   --------------------------------------------------------- */
+
+.people-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.people-grid-featured {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+
+.person-card {
+  min-width: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Person image
+   --------------------------------------------------------- */
+
+.person-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  margin-bottom: 1.1rem;
+
+  overflow: hidden;
+}
+
+.person-photo img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/*
+   Typographic fallback for profiles without a photograph.
+*/
+
+.person-photo-placeholder {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  padding: 1.1rem;
+
+  background: var(--surface);
+  color: var(--muted);
+}
+
+.person-photo-placeholder span {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+
+/* ---------------------------------------------------------
+   Person information
+   --------------------------------------------------------- */
+
+.person-name {
+  margin: 0;
+
+  font-size: 1.3rem;
+  font-weight: 560;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.person-role {
+  margin: 0.35rem 0 0;
+
+  color: var(--text);
+
+  font-size: 1rem;
+}
+
+
+/* ---------------------------------------------------------
+   Research keywords
+   --------------------------------------------------------- */
+
+.person-keywords {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.4rem;
+
+  margin-top: 0.7rem;
+}
+
+.person-keyword {
+  display: inline-block;
+
+  padding: 0.18rem 0.55rem;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  color: var(--muted);
+
+  font-size: 0.78rem;
+  line-height: 1.45;
+
+  white-space: nowrap;
+
+  transition:
+    color 120ms ease,
+    border-color 120ms ease,
+    background-color 120ms ease;
+}
+
+.person-keyword:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+
+/* ---------------------------------------------------------
+   Profile links
+   --------------------------------------------------------- */
+
+.person-links {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.9rem;
+
+  margin: 0.85rem 0 0;
+
+  color: var(--muted);
+
+  font-size: 0.9rem;
+}
+
+
+/* ---------------------------------------------------------
+   Alumni
+   --------------------------------------------------------- */
+
+.alumni-list {
+  max-width: 46rem;
+  color: var(--muted);
+}
+
+
+/* ---------------------------------------------------------
+   Footer
+   --------------------------------------------------------- */
 
 .site-footer {
   display: flex;
   justify-content: space-between;
+
   gap: 2rem;
+
   padding-block: 2rem 3rem;
+
   border-top: 1px solid var(--line);
+
   color: var(--muted);
+
   font-size: 0.82rem;
 }
 
-.site-footer p { margin: 0; }
+.site-footer p {
+  margin: 0;
+}
+
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 60rem) {
+  .people-grid,
+  .people-grid-featured {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
 
 @media (max-width: 44rem) {
   .site-header {
     grid-template-columns: 1fr auto;
+
     padding-block: 1rem;
   }
 
   .site-nav {
     grid-column: 1 / -1;
     grid-row: 2;
+
     width: 100%;
+
     justify-content: space-between;
+
     padding-top: 0.8rem;
+
     border-top: 1px solid var(--line);
   }
 
   .hero {
     min-height: auto;
-    padding-block: 6rem 5rem;
+
+    padding-block: 5rem 4rem;
   }
 
   .hero h1 {
     max-width: 12ch;
-    font-size: clamp(2.7rem, 14vw, 4.6rem);
+
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .page-hero {
+    padding-block: 3.5rem;
+  }
+
+  .page-hero h1 {
+    max-width: none;
+
+    font-size: clamp(2.2rem, 10vw, 3rem);
   }
 
   .section {
@@ -188,12 +525,28 @@ a:hover { text-decoration-thickness: 0.13em; }
     font-size: clamp(1.9rem, 9vw, 2.8rem);
   }
 
+  .people-grid,
+  .people-grid-featured {
+    grid-template-columns: 1fr;
+  }
+
   .site-footer {
     flex-direction: column;
     gap: 0.4rem;
   }
 }
 
+
+/* ---------------------------------------------------------
+   Accessibility
+   --------------------------------------------------------- */
+
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  .person-keyword {
+    transition: none;
+  }
 }
