@@ -165,15 +165,23 @@ main,
   text-transform: uppercase;
 }
 
+
+/*
+   Main homepage title.
+
+   Deliberately restrained: the title should have presence
+   without dominating a normal laptop display.
+*/
+
 .hero h1 {
-  max-width: 16ch;
+  max-width: 22ch;
 
   margin: 1rem 0 1.75rem;
 
-  font-size: clamp(2.6rem, 7vw, 6.4rem);
-  font-weight: 560;
-  letter-spacing: -0.055em;
-  line-height: 0.98;
+  font-size: clamp(2.5rem, 4vw, 4.2rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
 }
 
 .hero-text {
@@ -259,7 +267,7 @@ main,
 
 
 /*
-   Only groups after the first one need visual separation.
+   Groups after the first one receive a subtle separator.
 */
 
 .people-group + .people-group {
@@ -501,9 +509,9 @@ main,
   }
 
   .hero h1 {
-    max-width: 12ch;
+    max-width: 18ch;
 
-    font-size: clamp(2.5rem, 12vw, 4rem);
+    font-size: clamp(2.2rem, 10vw, 3.4rem);
   }
 
   .page-hero {
