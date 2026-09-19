@@ -6,81 +6,264 @@
 
   <meta
     name="description"
-    content="AIMS — Artificial Intelligence through Multimodal Signal Processing na Universidade Estadual de Campinas."
+    content="AIMS — Artificial Intelligence and Multimodal Signal Processing na UNICAMP."
   >
 
-  <title>AIMS · Universidade Estadual de Campinas</title>
+  <title>AIMS · UNICAMP</title>
 
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+
   <header class="site-header">
-    <a class="site-name" href="/pt/" aria-label="Página inicial do AIMS">
-      AIMS
+
+    <a class="site-logo" href="/pt/" aria-label="Página inicial do AIMS">
+      <img
+        src="/assets/identity/aims-logo.png"
+        alt="AIMS"
+      >
     </a>
 
-    <nav class="site-nav" aria-label="Navegação principal">
-      <a href="/pt/" aria-current="page">Início</a>
-      <a href="/pt/people/">Pessoas</a>
-      <a href="/pt/research/">Pesquisa</a>
-      <a href="/pt/news/">Notícias</a>
+
+    <!-- Navegação desktop -->
+
+    <nav class="site-nav desktop-nav" aria-label="Navegação principal">
+
+      <div class="nav-group">
+
+        <div class="nav-parent">
+          <a class="nav-link" href="/pt/research/">
+            Pesquisa
+          </a>
+
+          <span class="nav-arrow" aria-hidden="true"></span>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="/pt/research/#projects">Projetos</a>
+          <a href="/pt/research/#publications">Publicações</a>
+          <a href="/pt/research/#patents">Patentes</a>
+          <a href="/pt/research/#software">Software</a>
+          <a href="/pt/research/#data">Dados</a>
+        </div>
+
+      </div>
+
+
+      <div class="nav-group">
+
+        <div class="nav-parent">
+          <a class="nav-link" href="/pt/news/">
+            Notícias
+          </a>
+
+          <span class="nav-arrow" aria-hidden="true"></span>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="/pt/news/#latest">Novidades</a>
+          <a href="/pt/news/#open-positions">Oportunidades</a>
+          <a href="/pt/news/#press-media">Press &amp; Media</a>
+        </div>
+
+      </div>
+
+
+      <a class="nav-link" href="/pt/people/">
+        Pessoas
+      </a>
+
     </nav>
 
-    <nav class="utility-nav" aria-label="Idioma">
-      <a href="/" lang="en">EN</a>
+
+    <!-- Seletor de idioma desktop -->
+
+    <nav
+      class="utility-nav desktop-utility"
+      aria-label="Idioma"
+    >
+      <a href="/" lang="en">
+        EN
+      </a>
+
       <span aria-hidden="true">/</span>
-      <a href="/pt/" lang="pt-BR" aria-current="page">PT</a>
+
+      <a
+        href="/pt/"
+        lang="pt-BR"
+        aria-current="page"
+      >
+        PT
+      </a>
     </nav>
+
+
+    <!-- Seletor de idioma mobile -->
+
+    <nav
+      class="mobile-utility"
+      aria-label="Idioma"
+    >
+      <a href="/" lang="en">
+        EN
+      </a>
+
+      <span aria-hidden="true">/</span>
+
+      <a
+        href="/pt/"
+        lang="pt-BR"
+        aria-current="page"
+      >
+        PT
+      </a>
+    </nav>
+
+
+    <!-- Navegação mobile -->
+
+    <details class="mobile-menu">
+
+      <summary aria-label="Menu de navegação">
+        <span
+          class="mobile-menu-icon"
+          aria-hidden="true"
+        ></span>
+      </summary>
+
+      <nav
+        class="mobile-menu-content"
+        aria-label="Navegação móvel"
+      >
+
+        <div class="mobile-menu-group">
+
+          <a
+            class="mobile-menu-heading"
+            href="/pt/research/"
+          >
+            Pesquisa
+          </a>
+
+          <div class="mobile-menu-links">
+            <a href="/pt/research/#projects">Projetos</a>
+            <a href="/pt/research/#publications">Publicações</a>
+            <a href="/pt/research/#patents">Patentes</a>
+            <a href="/pt/research/#software">Software</a>
+            <a href="/pt/research/#data">Dados</a>
+          </div>
+
+        </div>
+
+
+        <div class="mobile-menu-group">
+
+          <a
+            class="mobile-menu-heading"
+            href="/pt/news/"
+          >
+            Notícias
+          </a>
+
+          <div class="mobile-menu-links">
+            <a href="/pt/news/#latest">Novidades</a>
+            <a href="/pt/news/#open-positions">Oportunidades</a>
+            <a href="/pt/news/#press-media">Press &amp; Media</a>
+          </div>
+
+        </div>
+
+
+        <div class="mobile-menu-group">
+
+          <a
+            class="mobile-menu-heading"
+            href="/pt/people/"
+          >
+            Pessoas
+          </a>
+
+        </div>
+
+      </nav>
+
+    </details>
+
   </header>
 
+
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <p class="eyebrow">
-        Universidade Estadual de Campinas · Brasil
+
+    <section
+      class="hero"
+      aria-labelledby="hero-title"
+    >
+
+      <p class="eyebrow institutional-line">
+        AIMS ·
+        <a href="https://www.fee.unicamp.br/">FEEC</a> ·
+        <a href="https://www.unicamp.br/">UNICAMP</a>
       </p>
 
       <h1 id="hero-title">
-        Inteligência Artificial através do
+        Inteligência Artificial e
         Processamento de Sinais Multimodais.
       </h1>
 
       <p class="hero-text">
         Estudamos a relação entre sinais, percepção e inteligência:
-        como sinais multimodais contribuem para sistemas inteligentes
-        e como a inteligência artificial pode nos ajudar a compreendê-los,
+        como sinais multimodais contribuem para sistemas inteligentes e como
+        a inteligência artificial pode nos ajudar a compreendê-los,
         processá-los e gerá-los.
       </p>
+
     </section>
 
-    <section class="section" aria-labelledby="about-title">
+
+    <section
+      class="section"
+      aria-labelledby="about-title"
+    >
+
       <p class="section-label">
         Sobre
       </p>
 
       <div class="section-content">
+
         <h2 id="about-title">
           Pesquisa na interseção entre IA e percepção multimodal.
         </h2>
 
         <p>
-          O AIMS é um grupo de pesquisa da Universidade Estadual de Campinas
-          (Unicamp). Nosso trabalho conecta inteligência artificial e
-          processamento de sinais, tendo a percepção multimodal como uma
-          perspectiva científica central.
+          O AIMS é um grupo de pesquisa da UNICAMP. Nosso trabalho conecta
+          inteligência artificial e processamento de sinais, tendo a percepção
+          multimodal como uma perspectiva científica central.
         </p>
+
       </div>
+
     </section>
+
   </main>
 
+
   <footer class="site-footer">
-    <p>
-      AIMS · Universidade Estadual de Campinas
+
+    <p class="institutional-line">
+      AIMS ·
+      <a href="https://www.fee.unicamp.br/">FEEC</a> ·
+      <a href="https://www.unicamp.br/">UNICAMP</a>
     </p>
 
     <p>
-      <a href="https://github.com/AI-Unicamp">GitHub</a>
+      <a href="https://github.com/AI-Unicamp">
+        GitHub
+      </a>
     </p>
+
   </footer>
+
 </body>
 </html>

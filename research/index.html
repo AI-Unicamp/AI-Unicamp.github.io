@@ -6,57 +6,336 @@
 
   <meta
     name="description"
-    content="Research at AIMS — Artificial Intelligence through Multimodal Signal Processing."
+    content="Research at AIMS — Artificial Intelligence and Multimodal Signal Processing at UNICAMP."
   >
 
   <title>Research · AIMS</title>
 
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
+
   <header class="site-header">
-    <a class="site-name" href="/" aria-label="AIMS home">
-      AIMS
+
+    <a class="site-logo" href="/" aria-label="AIMS home">
+      <img
+        src="/assets/identity/aims-logo.png"
+        alt="AIMS"
+      >
     </a>
 
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a href="/">Home</a>
-      <a href="/people/">People</a>
-      <a href="/research/" aria-current="page">Research</a>
-      <a href="/news/">News</a>
+
+    <!-- Desktop navigation -->
+
+    <nav class="site-nav desktop-nav" aria-label="Primary navigation">
+
+      <div class="nav-group">
+
+        <div class="nav-parent">
+          <a
+            class="nav-link"
+            href="/research/"
+            aria-current="page"
+          >
+            Research
+          </a>
+
+          <span class="nav-arrow" aria-hidden="true"></span>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="/research/#projects">Projects</a>
+          <a href="/research/#publications">Publications</a>
+          <a href="/research/#patents">Patents</a>
+          <a href="/research/#software">Software</a>
+          <a href="/research/#data">Data</a>
+        </div>
+
+      </div>
+
+
+      <div class="nav-group">
+
+        <div class="nav-parent">
+          <a class="nav-link" href="/news/">
+            News
+          </a>
+
+          <span class="nav-arrow" aria-hidden="true"></span>
+        </div>
+
+        <div class="nav-dropdown">
+          <a href="/news/#latest">Latest</a>
+          <a href="/news/#open-positions">Open Positions</a>
+          <a href="/news/#press-media">Press &amp; Media</a>
+        </div>
+
+      </div>
+
+
+      <a class="nav-link" href="/people/">
+        People
+      </a>
+
     </nav>
 
-    <nav class="utility-nav" aria-label="Language">
-      <a href="/research/" lang="en" aria-current="page">EN</a>
+
+    <!-- Desktop language selector -->
+
+    <nav
+      class="utility-nav desktop-utility"
+      aria-label="Language"
+    >
+      <a
+        href="/research/"
+        lang="en"
+        aria-current="page"
+      >
+        EN
+      </a>
+
       <span aria-hidden="true">/</span>
-      <a href="/pt/research/" lang="pt-BR">PT</a>
+
+      <a
+        href="/pt/research/"
+        lang="pt-BR"
+      >
+        PT
+      </a>
     </nav>
+
+
+    <!-- Mobile language selector -->
+
+    <nav
+      class="mobile-utility"
+      aria-label="Language"
+    >
+      <a
+        href="/research/"
+        lang="en"
+        aria-current="page"
+      >
+        EN
+      </a>
+
+      <span aria-hidden="true">/</span>
+
+      <a
+        href="/pt/research/"
+        lang="pt-BR"
+      >
+        PT
+      </a>
+    </nav>
+
+
+    <!-- Mobile navigation -->
+
+    <details class="mobile-menu">
+
+      <summary aria-label="Navigation menu">
+        <span
+          class="mobile-menu-icon"
+          aria-hidden="true"
+        ></span>
+      </summary>
+
+      <nav
+        class="mobile-menu-content"
+        aria-label="Mobile navigation"
+      >
+
+        <div class="mobile-menu-group">
+
+          <a
+            class="mobile-menu-heading"
+            href="/research/"
+            aria-current="page"
+          >
+            Research
+          </a>
+
+          <div class="mobile-menu-links">
+            <a href="/research/#projects">Projects</a>
+            <a href="/research/#publications">Publications</a>
+            <a href="/research/#patents">Patents</a>
+            <a href="/research/#software">Software</a>
+            <a href="/research/#data">Data</a>
+          </div>
+
+        </div>
+
+
+        <div class="mobile-menu-group">
+
+          <a
+            class="mobile-menu-heading"
+            href="/news/"
+          >
+            News
+          </a>
+
+          <div class="mobile-menu-links">
+            <a href="/news/#latest">Latest</a>
+            <a href="/news/#open-positions">Open Positions</a>
+            <a href="/news/#press-media">Press &amp; Media</a>
+          </div>
+
+        </div>
+
+
+        <div class="mobile-menu-group">
+
+          <a
+            class="mobile-menu-heading"
+            href="/people/"
+          >
+            People
+          </a>
+
+        </div>
+
+      </nav>
+
+    </details>
+
   </header>
 
+
   <main>
-    <section class="hero" aria-labelledby="page-title">
-      <p class="eyebrow">
-        AIMS · University of Campinas
+
+    <section
+      class="hero page-hero"
+      aria-labelledby="page-title"
+    >
+
+      <p class="eyebrow institutional-line">
+        AIMS ·
+        <a href="https://www.fee.unicamp.br/">FEEC</a> ·
+        <a href="https://www.unicamp.br/">UNICAMP</a>
       </p>
 
       <h1 id="page-title">
         Research
       </h1>
 
-      <p class="hero-text">
-        Research outputs across artificial intelligence, signal processing
-        and multimodal perception.
-      </p>
     </section>
+
+
+    <section
+      class="section"
+      id="projects"
+      aria-labelledby="projects-title"
+    >
+
+      <p class="section-label">
+        Projects
+      </p>
+
+      <div class="section-content">
+        <h2 id="projects-title">
+          Projects
+        </h2>
+      </div>
+
+    </section>
+
+
+    <section
+      class="section"
+      id="publications"
+      aria-labelledby="publications-title"
+    >
+
+      <p class="section-label">
+        Publications
+      </p>
+
+      <div class="section-content">
+        <h2 id="publications-title">
+          Publications
+        </h2>
+      </div>
+
+    </section>
+
+
+    <section
+      class="section"
+      id="patents"
+      aria-labelledby="patents-title"
+    >
+
+      <p class="section-label">
+        Patents
+      </p>
+
+      <div class="section-content">
+        <h2 id="patents-title">
+          Patents
+        </h2>
+      </div>
+
+    </section>
+
+
+    <section
+      class="section"
+      id="software"
+      aria-labelledby="software-title"
+    >
+
+      <p class="section-label">
+        Software
+      </p>
+
+      <div class="section-content">
+        <h2 id="software-title">
+          Software
+        </h2>
+      </div>
+
+    </section>
+
+
+    <section
+      class="section"
+      id="data"
+      aria-labelledby="data-title"
+    >
+
+      <p class="section-label">
+        Data
+      </p>
+
+      <div class="section-content">
+        <h2 id="data-title">
+          Data
+        </h2>
+      </div>
+
+    </section>
+
   </main>
 
+
   <footer class="site-footer">
-    <p>AIMS · University of Campinas</p>
+
+    <p class="institutional-line">
+      AIMS ·
+      <a href="https://www.fee.unicamp.br/">FEEC</a> ·
+      <a href="https://www.unicamp.br/">UNICAMP</a>
+    </p>
 
     <p>
-      <a href="https://github.com/AI-Unicamp">GitHub</a>
+      <a href="https://github.com/AI-Unicamp">
+        GitHub
+      </a>
     </p>
+
   </footer>
+
 </body>
 </html>
