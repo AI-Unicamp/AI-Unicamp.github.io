@@ -3,47 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta
-    name="description"
-    content="Research at AIMS — Artificial Intelligence and Multimodal Signal Processing at UNICAMP."
-  >
-
+  <meta name="description" content="Research at AIMS — Artificial Intelligence and Multimodal Signal Processing at UNICAMP.">
   <title>Research · AIMS</title>
-
   <link rel="stylesheet" href="/styles.css">
+  <script src="/assets/js/research.js" defer></script>
 </head>
-
 <body>
-
   <header class="site-header">
-
     <a class="site-logo" href="/" aria-label="AIMS home">
-      <img
-        src="/assets/identity/aims-logo.png"
-        alt="AIMS"
-      >
+      <img src="/assets/identity/aims-logo.png" alt="AIMS">
     </a>
 
-
-    <!-- Desktop navigation -->
-
     <nav class="site-nav desktop-nav" aria-label="Primary navigation">
-
       <div class="nav-group">
-
         <div class="nav-parent">
-          <a
-            class="nav-link"
-            href="/research/"
-            aria-current="page"
-          >
-            Research
-          </a>
-
+          <a class="nav-link" href="/research/" aria-current="page">Research</a>
           <span class="nav-arrow" aria-hidden="true"></span>
         </div>
-
         <div class="nav-dropdown">
           <a href="/research/#projects">Projects</a>
           <a href="/research/#publications">Publications</a>
@@ -51,112 +27,40 @@
           <a href="/research/#software">Software</a>
           <a href="/research/#data">Data</a>
         </div>
-
       </div>
-
-
       <div class="nav-group">
-
         <div class="nav-parent">
-          <a class="nav-link" href="/news/">
-            News
-          </a>
-
+          <a class="nav-link" href="/news/">News</a>
           <span class="nav-arrow" aria-hidden="true"></span>
         </div>
-
         <div class="nav-dropdown">
           <a href="/news/#latest">Latest</a>
           <a href="/news/#open-positions">Open Positions</a>
           <a href="/news/#press-media">Press &amp; Media</a>
         </div>
-
       </div>
-
-
-      <a class="nav-link" href="/people/">
-        People
-      </a>
-
+      <a class="nav-link" href="/people/">People</a>
     </nav>
 
-
-    <!-- Desktop language selector -->
-
-    <nav
-      class="utility-nav desktop-utility"
-      aria-label="Language"
-    >
-      <a
-        href="/research/"
-        lang="en"
-        aria-current="page"
-      >
-        EN
-      </a>
-
+    <nav class="utility-nav desktop-utility" aria-label="Language">
+      <a href="/research/" lang="en" aria-current="page">EN</a>
       <span aria-hidden="true">/</span>
-
-      <a
-        href="/pt/research/"
-        lang="pt-BR"
-      >
-        PT
-      </a>
+      <a href="/pt/research/" lang="pt-BR">PT</a>
     </nav>
 
-
-    <!-- Mobile language selector -->
-
-    <nav
-      class="mobile-utility"
-      aria-label="Language"
-    >
-      <a
-        href="/research/"
-        lang="en"
-        aria-current="page"
-      >
-        EN
-      </a>
-
+    <nav class="mobile-utility" aria-label="Language">
+      <a href="/research/" lang="en" aria-current="page">EN</a>
       <span aria-hidden="true">/</span>
-
-      <a
-        href="/pt/research/"
-        lang="pt-BR"
-      >
-        PT
-      </a>
+      <a href="/pt/research/" lang="pt-BR">PT</a>
     </nav>
-
-
-    <!-- Mobile navigation -->
 
     <details class="mobile-menu">
-
       <summary aria-label="Navigation menu">
-        <span
-          class="mobile-menu-icon"
-          aria-hidden="true"
-        ></span>
+        <span class="mobile-menu-icon" aria-hidden="true"></span>
       </summary>
-
-      <nav
-        class="mobile-menu-content"
-        aria-label="Mobile navigation"
-      >
-
+      <nav class="mobile-menu-content" aria-label="Mobile navigation">
         <div class="mobile-menu-group">
-
-          <a
-            class="mobile-menu-heading"
-            href="/research/"
-            aria-current="page"
-          >
-            Research
-          </a>
-
+          <a class="mobile-menu-heading" href="/research/" aria-current="page">Research</a>
           <div class="mobile-menu-links">
             <a href="/research/#projects">Projects</a>
             <a href="/research/#publications">Publications</a>
@@ -164,178 +68,656 @@
             <a href="/research/#software">Software</a>
             <a href="/research/#data">Data</a>
           </div>
-
         </div>
-
-
         <div class="mobile-menu-group">
-
-          <a
-            class="mobile-menu-heading"
-            href="/news/"
-          >
-            News
-          </a>
-
+          <a class="mobile-menu-heading" href="/news/">News</a>
           <div class="mobile-menu-links">
             <a href="/news/#latest">Latest</a>
             <a href="/news/#open-positions">Open Positions</a>
             <a href="/news/#press-media">Press &amp; Media</a>
           </div>
-
         </div>
-
-
         <div class="mobile-menu-group">
-
-          <a
-            class="mobile-menu-heading"
-            href="/people/"
-          >
-            People
-          </a>
-
+          <a class="mobile-menu-heading" href="/people/">People</a>
         </div>
-
       </nav>
-
     </details>
-
   </header>
 
-
   <main>
-
-    <section
-      class="hero page-hero"
-      aria-labelledby="page-title"
-    >
-
+    <section class="hero page-hero research-page-hero" aria-labelledby="page-title">
       <p class="eyebrow institutional-line">
         AIMS ·
         <a href="https://www.fee.unicamp.br/">FEEC</a> ·
         <a href="https://www.unicamp.br/">UNICAMP</a>
       </p>
-
-      <h1 id="page-title">
-        Research
-      </h1>
-
+      <h1 id="page-title">Research</h1>
     </section>
 
-
-    <section
-      class="section"
-      id="projects"
-      aria-labelledby="projects-title"
-    >
-
-      <p class="section-label">
-        Projects
-      </p>
-
+    <section class="section research-section" id="projects" aria-labelledby="projects-title">
+      <p class="section-label">Projects</p>
       <div class="section-content">
-        <h2 id="projects-title">
-          Projects
-        </h2>
+        <h2 id="projects-title">Projects</h2>
+        <!-- PROJECTS:START -->
+<section class="project-group" aria-labelledby="project-group-research">
+  <h3 class="project-group-title" id="project-group-research">Ongoing</h3>
+<article class="project-item project-item--featured" id="project-inspire">
+  <h4 class="project-title">INSPIRE — Speech Technologies for Brazilian Public Services</h4>
+  <p class="project-institutions">UNICAMP · CPQD · INSPIRE</p>
+  <p class="project-description">Our research on speech technologies for Brazilian public services focuses on expressive and accessible speech synthesis, robust speech recognition across regional accents and dialects, and computationally efficient models. The proposed collaboration with CPQD aims to support more inclusive, personalized voice-based interactions between citizens and digital public services.</p>
+</article>
+<article class="project-item" id="project-horus">
+  <h4 class="project-title"><a class="project-title-link" href="https://recod.ai/projeto/horus-tecnicas-de-inteligencia-artificial-para-identificar-e-prevenir-realidades-sinteticas/" target="_blank" rel="noopener noreferrer">HORUS — Detecting Synthetic Realities<span aria-hidden="true"> ↗</span></a></h4>
+  <p class="project-institutions">FAPESP · RECOD.ai</p>
+  <p class="project-description">Within HORUS, we investigate techniques for detecting synthetic and manipulated audio, including AI-generated speech. This work contributes to methods for identifying increasingly realistic synthetic media and assessing the reliability of audio content.</p>
+  <p class="project-links"><a href="https://recod.ai/projeto/horus-tecnicas-de-inteligencia-artificial-para-identificar-e-prevenir-realidades-sinteticas/" target="_blank" rel="noopener noreferrer">Project website<span aria-hidden="true"> ↗</span></a></p>
+</article>
+</section>
+<section class="project-group" aria-labelledby="project-group-centers">
+  <h3 class="project-group-title" id="project-group-centers">Centers &amp; Collaborations</h3>
+<article class="project-item" id="project-ccd-flood-resilience">
+  <h4 class="project-title"><a class="project-title-link" href="https://ccd.fapesp.br/cidades-resilientes" target="_blank" rel="noopener noreferrer">CCD — Flood-Resilient Cities<span aria-hidden="true"> ↗</span></a></h4>
+  <p class="project-institutions">FAPESP · Science Center for Development</p>
+  <p class="project-description">We explore multimodal data synthesis and world-modeling approaches for urban digital twins. The research aims to support simulations of extreme flooding scenarios and computational tools for urban planning and resilience.</p>
+  <p class="project-links"><a href="https://ccd.fapesp.br/cidades-resilientes" target="_blank" rel="noopener noreferrer">Center website<span aria-hidden="true"> ↗</span></a></p>
+</article>
+<article class="project-item" id="project-cdtic">
+  <h4 class="project-title"><a class="project-title-link" href="https://museudoipiranga.org.br/cdtic/" target="_blank" rel="noopener noreferrer">CDTIC — Digital Cultural Heritage<span aria-hidden="true"> ↗</span></a></h4>
+  <p class="project-institutions">Museu do Ipiranga</p>
+  <p class="project-description">We investigate image-processing and AI methods for extracting metadata from digitized cultural collections, particularly handwritten documents. The work supports digital preservation, access to historical materials, and intelligent tools for cultural heritage.</p>
+  <p class="project-links"><a href="https://museudoipiranga.org.br/cdtic/" target="_blank" rel="noopener noreferrer">Center website<span aria-hidden="true"> ↗</span></a></p>
+</article>
+<article class="project-item" id="project-hiaac">
+  <h4 class="project-title"><a class="project-title-link" href="https://hiaac.unicamp.br/en/" target="_blank" rel="noopener noreferrer">H.IAAC — Artificial Intelligence and Cognitive Architectures Hub<span aria-hidden="true"> ↗</span></a></h4>
+  <p class="project-institutions">UNICAMP · H.IAAC</p>
+  <p class="project-description">How does perceptual intelligence emerge from multimodal signals? How can world models, cognitive architectures, and signal synthesis support intelligent systems? These questions guide our research within the broader H.IAAC initiative.</p>
+  <p class="project-links"><a href="https://hiaac.unicamp.br/en/" target="_blank" rel="noopener noreferrer">Center website<span aria-hidden="true"> ↗</span></a></p>
+</article>
+<article class="project-item" id="project-bi0s">
+  <h4 class="project-title"><a class="project-title-link" href="https://www.bi0s.unicamp.br/" target="_blank" rel="noopener noreferrer">BI0S — Brazilian Institute of Data Science<span aria-hidden="true"> ↗</span></a></h4>
+  <p class="project-institutions">FAPESP · BI0S · Methods track</p>
+  <p class="project-description">Within the Methods track, we investigate applied machine-learning approaches and computational methods for artificial intelligence. The work contributes methodological perspectives to interdisciplinary research.</p>
+  <p class="project-links"><a href="https://www.bi0s.unicamp.br/" target="_blank" rel="noopener noreferrer">Center website<span aria-hidden="true"> ↗</span></a></p>
+</article>
+</section>
+<section class="project-group" aria-labelledby="project-group-past">
+  <h3 class="project-group-title" id="project-group-past">Completed</h3>
+<article class="project-item" id="project-climate-health">
+  <h4 class="project-title"><a class="project-title-link" href="https://bv.fapesp.br/pt/auxilios/100804/saude-humana-e-adaptacao-a-mudancas-climaticas-no-brasil-a-ciencia-dos-dados-como-abordagem/" target="_blank" rel="noopener noreferrer">Climate &amp; Health — Data Science for Climate Adaptation<span aria-hidden="true"> ↗</span></a></h4>
+  <p class="project-institutions">FAPESP</p>
+  <p class="project-description">We contributed data-visualization and exploratory-analysis methods to investigate relationships between extreme climate events and human health, supporting interdisciplinary research on climate adaptation.</p>
+  <p class="project-links"><a href="https://bv.fapesp.br/pt/auxilios/100804/saude-humana-e-adaptacao-a-mudancas-climaticas-no-brasil-a-ciencia-dos-dados-como-abordagem/" target="_blank" rel="noopener noreferrer">FAPESP record<span aria-hidden="true"> ↗</span></a></p>
+</article>
+<article class="project-item" id="project-multimodal-cognitive-robotics">
+  <h4 class="project-title"><a class="project-title-link" href="https://bv.fapesp.br/pt/auxilios/97313/condicoes-de-partida-para-aprendizagem-multimodal-interativa-em-robotica-cognitiva/" target="_blank" rel="noopener noreferrer">Interactive Multimodal Learning in Cognitive Robotics<span aria-hidden="true"> ↗</span></a></h4>
+  <p class="project-institutions">FAPESP</p>
+  <p class="project-description">This project explored how cognitive abilities can develop through interactive multimodal learning, combining sensory information and prior knowledge in robotic agents. The work helped establish research directions later pursued in perceptual intelligence and cognitive architectures.</p>
+  <p class="project-links"><a href="https://bv.fapesp.br/pt/auxilios/97313/condicoes-de-partida-para-aprendizagem-multimodal-interativa-em-robotica-cognitiva/" target="_blank" rel="noopener noreferrer">FAPESP record<span aria-hidden="true"> ↗</span></a></p>
+</article>
+</section>
+<!-- PROJECTS:END -->
       </div>
-
     </section>
 
-
-    <section
-      class="section"
-      id="publications"
-      aria-labelledby="publications-title"
-    >
-
-      <p class="section-label">
-        Publications
-      </p>
-
+    <section class="section research-section" id="publications" aria-labelledby="publications-title">
+      <p class="section-label">Publications</p>
       <div class="section-content">
-        <h2 id="publications-title">
-          Publications
-        </h2>
+        <h2 id="publications-title">Publications</h2>
+        <!-- RESEARCH:PUBLICATIONS:START -->
+<div class="publications-list" data-publications-list data-page-size="10" data-total="63">
+  <section class="publication-year-group" aria-label="Publications from 2026">
+    <h3 class="publication-year-heading">2026</h3>
+    <article class="publication-item" data-citation-key="berto2025curiosity">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1109/TAFFC.2025.3551512" target="_blank" rel="noopener noreferrer">Curiosity and Affect-Driven Cognitive Architecture for HRI<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Letícia Mara Berto, Ana Tanevska, Azamor Cirne, Paula Dornhofer Paro Costa, Alexandre da Silva Simões, Ricardo Ribeiro Gudwin, Francesco Rea, Esther Luna Colombini and Alessandra Sciutti</p>
+  <p class="publication-venue">IEEE Transactions on Affective Computing</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2026</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1109/TAFFC.2025.3551512" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+  </section>
+  <section class="publication-year-group" aria-label="Publications from 2025">
+    <h3 class="publication-year-heading">2025</h3>
+    <article class="publication-item" data-citation-key="morais2025general">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1016/j.cogsys.2025.101354" target="_blank" rel="noopener noreferrer">A general framework for reinforcement learning in cognitive architectures<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Gustavo Morais, Eduardo Yuji Sakabe, Paula Dornhofer Paro Costa, Alexandre da Silva Simões, Ricardo Ribeiro Gudwin and Esther Luna Colombini</p>
+  <p class="publication-venue">Cognitive Systems Research</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2025</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1016/j.cogsys.2025.101354" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="sakabe2025episode">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1016/j.cogsys.2025.101397" target="_blank" rel="noopener noreferrer">An episode encoding mechanism for cognitive architectures<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Eduardo Yuji Sakabe, Carlos Eduardo Pires de Camargo, Alexandre da Silva Simões, Esther Luna Colombini, Paula Dornhofer Paro Costa and Ricardo Ribeiro Gudwin</p>
+  <p class="publication-venue">Cognitive Systems Research</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2025</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1016/j.cogsys.2025.101397" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="florencio2025driverbehavior">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://prp.unicamp.br/inscricao-congresso/resumos/2025P25263A41398O5240.pdf" target="_blank" rel="noopener noreferrer">Classificação de Comportamento de Motoristas a partir da Análise de Dados Inerciais<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Renan Matheus da Silva Florêncio, Silvio Fernandes and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Anais do XXXIII Congresso de Iniciação Científica da Unicamp</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2025</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://prp.unicamp.br/inscricao-congresso/resumos/2025P25263A41398O5240.pdf" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="correia2025dreamerrl">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://hdl.handle.net/20.500.12733/32101" target="_blank" rel="noopener noreferrer">DreamerRL: empowering representation learning via predictive world models for robot manipulation tasks<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Alana de Santana Correia</p>
+  <p class="publication-venue">Universidade Estadual de Campinas (UNICAMP), Instituto de Computação</p>
+  <div class="publication-details"><span class="publication-type publication-type--phd">PhD thesis</span><span class="publication-item-year">2025</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://hdl.handle.net/20.500.12733/32101" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="sanchez2025genea">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1145/3746268.3759431" target="_blank" rel="noopener noreferrer">From Embeddings to Language Models: A Comparative Analysis of Feature Extractors for Text-Only and Multimodal Gesture Generation<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Johsac Isbac Gomez Sanchez and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">GENEA Workshop 2025</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2025</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1145/3746268.3759431" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="ueda2025crossmodalser">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.21437/Interspeech.2025-2014" target="_blank" rel="noopener noreferrer">Improving Speech Emotion Recognition Through Cross Modal Attention Alignment and Balanced Stacking Model<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Lucas Hideki Ueda, João Lima, Leonardo Boulitreau de Menezes Martins Marques and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Interspeech 2025</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2025</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.21437/Interspeech.2025-2014" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a><a href="https://example.org/" target="_blank" rel="noopener noreferrer">Demo<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="correa2025llmfacial">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://sol.sbc.org.br/index.php/sibgrapi_estendido/article/view/38323" target="_blank" rel="noopener noreferrer">LLM-Generated Dataset for Speech-Driven 3D Facial Animation Models with Text-Controlled Expressivity<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Pedro Rodrigues Corrêa and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Anais Estendidos da XXXVIII Conference on Graphics, Patterns and Images (SIBGRAPI 2025)</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2025</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://sol.sbc.org.br/index.php/sibgrapi_estendido/article/view/38323" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="moreno2025spsc">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.21437/SPSC.2025-1" target="_blank" rel="noopener noreferrer">Revealing Cross-Lingual Bias in Synthetic Speech Detection under Controlled Conditions<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Victor Moreno, João Lima, Flávio Simões, Ricardo Violato, Mário Uliani Neto, Fernando Runstein and Paula Costa</p>
+  <p class="publication-venue">Proceedings of the 5th Symposium on Security and Privacy in Speech Communication</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2025</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.21437/SPSC.2025-1" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a><a href="https://www.isca-archive.org/spsc_2025/moreno25_spsc.html" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="silveira2025vitmst">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1109/OJSP.2025.3544891" target="_blank" rel="noopener noreferrer">VITMST++: Efficient Hyperspectral Reconstruction Through Vision Transformer-Based Spatial Compression<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Ana C. Caznok Silveira, Diedre S. do Carmo, Lucas H. Ueda, Denis G. Fantinato, Paula D. Paro Costa and Leticia Rittner</p>
+  <p class="publication-venue">IEEE Open Journal of Signal Processing</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2025</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1109/OJSP.2025.3544891" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a><a href="https://ieeexplore.ieee.org/document/10900394" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+  </section>
+  <section class="publication-year-group" aria-label="Publications from 2024">
+    <h3 class="publication-year-heading">2024</h3>
+    <article class="publication-item" data-citation-key="berto2024motivationalbased">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1016/j.cogsys.2024.101278" target="_blank" rel="noopener noreferrer">A motivational-based learning model for mobile robots<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Letícia Mara Berto, Paula Dornhofer Paro Costa, Alexandre da Silva Simões, Ricardo Ribeiro Gudwin and Esther Luna Colombini</p>
+  <p class="publication-venue">Cognitive Systems Research</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2024</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1016/j.cogsys.2024.101278" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="delellisrossi2024procedural">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1007/s10846-024-02064-9" target="_blank" rel="noopener noreferrer">A Procedural Constructive Learning Mechanism with Deep Reinforcement Learning for Cognitive Agents<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Leonardo de Lellis Rossi, Eric Rohmer, Paula Dornhofer Paro Costa, Esther Luna Colombini, Alexandre da Silva Simões and Ricardo Ribeiro Gudwin</p>
+  <p class="publication-venue">Journal of Intelligent &amp; Robotic Systems</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2024</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1007/s10846-024-02064-9" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="souza2024propor">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://aclanthology.org/2024.propor-1.64/" target="_blank" rel="noopener noreferrer">A Speech-Driven Talking Head based on a Two-Stage Generative Framework<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Brayan Bernardo de Souza and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Proceedings of PROPOR 2024</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2024</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://aclanthology.org/2024.propor-1.64/" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="sanchez2024benchmarking">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1145/3686215.3688823" target="_blank" rel="noopener noreferrer">Benchmarking Speech-Driven Gesture Generation Models for Generalization to Unseen Voices and Noisy Environments<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Johsac Isbac Gomez Sanchez, Kevin Adier Inofuente Colque, Leonardo Boulitreau de Menezes Martins Marques, Paula Dornhofer Paro Costa and Rodolfo Luis Tonoli</p>
+  <p class="publication-venue">ICMI &#x27;24 Companion</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2024</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1145/3686215.3688823" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="souza2024airpollution">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1136/archdischild-2023-326214" target="_blank" rel="noopener noreferrer">Correlations between ambient air pollution and the prevalence of hospitalisations and emergency room visits for respiratory diseases in children: a systematic review<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Aline Priscila de Souza, Carla Cristina Souza Gomez, Maria Angela Goncalves de Oliveira Ribeiro, Paula Dornhofer Paro Costa and José Dirceu Ribeiro</p>
+  <p class="publication-venue">Archives of Disease in Childhood</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2024</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1136/archdischild-2023-326214" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="marques2024mstts">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.47749/T/UNICAMP.2024.1408746" target="_blank" rel="noopener noreferrer">Cross-speaker Style Transfer for TTS with Singing Voice Conversion Data Augmentation, Style Filtering and F0 Matching<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Leonardo Boulitreau de Menezes Martins Marques</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2024</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.47749/T/UNICAMP.2024.1408746" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a><a href="https://hdl.handle.net/20.500.12733/23566" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="tonoli2024gac">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1145/3686215.3688822" target="_blank" rel="noopener noreferrer">Gesture Area Coverage to Assess Gesture Expressiveness and Human-Likeness<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Rodolfo Luis Tonoli, Paula Dornhofer Paro Costa, Leonardo Boulitreau de Menezes Martins Marques and Lucas Hideki Ueda</p>
+  <p class="publication-venue">ICMI &#x27;24 Companion</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2024</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1145/3686215.3688822" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="oliveira2024tainacan">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://hdl.handle.net/20.500.12733/18730" target="_blank" rel="noopener noreferrer">Machine learning and cultural heritage: automatic metadata extraction from Brazilian museums&#x27; digital collections on the Tainacan platform<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Vagner Inacio de Oliveira</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2024</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://hdl.handle.net/20.500.12733/18730" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="souza2024msc">
+  <h3 class="publication-title">Speech-Driven 2D Facial Animation Based on a Two-Stage Generative Framework</h3>
+  <p class="publication-authors">Brayan Bernardo de Souza</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2024</span></div>
+  
+</article>
+    <article class="publication-item" data-citation-key="tonoli2024phd">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.47749/T/UNICAMP.2024.1499174" target="_blank" rel="noopener noreferrer">Speech-Driven Expressive Gesture Generation for Virtual Agents<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Rodolfo Luis Tonoli</p>
+  <p class="publication-venue">Universidade Estadual de Campinas</p>
+  <div class="publication-details"><span class="publication-type publication-type--phd">PhD thesis</span><span class="publication-item-year">2024</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.47749/T/UNICAMP.2024.1499174" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a><a href="https://hdl.handle.net/20.500.12733/30429" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="pozzobon2024toxicity">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.47749/T/UNICAMP.2024.1404237" target="_blank" rel="noopener noreferrer">Toxicity Mitigation with Retrieval-Augmented Language Models Applied to English and Portuguese Text Generation<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Luiza Amador Pozzobon</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2024</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.47749/T/UNICAMP.2024.1404237" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+  </section>
+  <section class="publication-year-group" aria-label="Publications from 2023">
+    <h3 class="publication-year-heading">2023</h3>
+    <article class="publication-item" data-citation-key="aguiar2023classificacao">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://prp.unicamp.br/inscricao-congresso/resumos/2023P21815A38666O5240.pdf" target="_blank" rel="noopener noreferrer">Classificação e mapeamento de sistemas aquíferos por aprendizado de máquina<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Ian dos Anjos Melo Aguiar, Ana Elisa Silva de Abreu and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Anais do XXXI Congresso de Iniciação Científica da Unicamp</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2023</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://prp.unicamp.br/inscricao-congresso/resumos/2023P21815A38666O5240.pdf" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="tonoli2023diffusiongesture">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1145/3610661.3616554" target="_blank" rel="noopener noreferrer">Gesture Generation with Diffusion Models Aided by Speech Activity Information<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Rodolfo Luis Tonoli, Leonardo Boulitreau de Menezes Martins Marques, Lucas Hideki Ueda and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">ICMI &#x27;23 Companion Publication</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2023</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1145/3610661.3616554" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a><a href="https://example.org/" target="_blank" rel="noopener noreferrer">Demo<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="pataca2023hidden">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1109/TAFFC.2022.3174721" target="_blank" rel="noopener noreferrer">Hidden Bawls, Whispers, and Yelps: Can Text Convey the Sound of Speech, Beyond Words?<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Caluã de Lacerda Pataca and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">IEEE Transactions on Affective Computing</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2023</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1109/TAFFC.2022.3174721" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="machado2023mapeamento">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://prp.unicamp.br/inscricao-congresso/resumos/2023P22025A38827O5240.pdf" target="_blank" rel="noopener noreferrer">Mapeamento de zonas homogêneas com base em dados hidroquímicos de um aquífero freático sujeito a contaminação por fossas em área periurbana de Campinas utilizando algoritmos de aprendizado de máquina<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Diego Xavier Machado, Paula Dornhofer Paro Costa and Ana Elisa Silva de Abreu</p>
+  <p class="publication-venue">Anais do XXXI Congresso de Iniciação Científica da Unicamp</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2023</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://prp.unicamp.br/inscricao-congresso/resumos/2023P22025A38827O5240.pdf" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="castellano2023mafaldaprojeto">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.20396/ijoce.v4i00.18449" target="_blank" rel="noopener noreferrer">Projeto M.A.F.A.L.D.A: Meninas na quimicA, Fisica e engenharia para Liderar o Desenvolvimento em ciencia<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">G. Castellano, L. R. de Freitas, C. M. I. de Souza, M. E. S. Takahashi, Paula D. P. Costa, F. Béron, R. R. Rossi, B. M. Carlos, A. C. de M. Zeri, D. Zanchet, C. Adriano, O. L. G. Peres and M. A. Cotta</p>
+  <p class="publication-venue">Revista Internacional de Extensão da UNICAMP</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2023</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.20396/ijoce.v4i00.18449" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+  </section>
+  <section class="publication-year-group" aria-label="Publications from 2022">
+    <h3 class="publication-year-heading">2022</h3>
+    <article class="publication-item" data-citation-key="grassiotto2022cogtomcst">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.5220/0010836300003116" target="_blank" rel="noopener noreferrer">CogToM-CST: An implementation of the Theory of Mind for the Cognitive Systems Toolkit<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Fabio Grassiotto, Esther Luna Colombini, Alexandre Simões, Ricardo Gudwin and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Proceedings of the 14th International Conference on Agents and Artificial Intelligence - Volume 3: ICAART</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2022</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.5220/0010836300003116" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="grassiotto2022msc">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://hdl.handle.net/20.500.12733/4313" target="_blank" rel="noopener noreferrer">CogToM-CST: an implementation of theory of mind for the cognitive systems toolkit<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Fábio Grassiotto</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2022</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://hdl.handle.net/20.500.12733/4313" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="dias2022crossdataset">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1016/j.jvcir.2021.103395" target="_blank" rel="noopener noreferrer">Cross-Dataset Emotion Recognition from Facial Expressions through Convolutional Neural Networks<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">William Dias, Fernanda Andaló, Rafael Padilha, Gabriel Bertocco, Waldir Almeida, Paula Dornhofer Paro Costa and Anderson Rocha</p>
+  <p class="publication-venue">Journal of Visual Communication and Image Representation</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2022</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1016/j.jvcir.2021.103395" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="plath2022minabr">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://journals-sol.sbc.org.br/index.php/reic/article/view/2696" target="_blank" rel="noopener noreferrer">Detecção de Discurso de Ódio Contra Mulheres em Textes em Português Brasileiro: Construção da Base MINA-BR e Modelo de Classificação<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Hannah de Oliveira Plath, Maria Estela de Oliveira Paiva, Danielle Lanzarini Pinto and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Revista Eletrônica de Iniciação Científica em Computação</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2022</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://journals-sol.sbc.org.br/index.php/reic/article/view/2696" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="marques2022diffusiontts">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1007/978-3-031-21686-2_18" target="_blank" rel="noopener noreferrer">Diffusion-Based Approach to Style Modeling in Expressive TTS<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Leonardo Boulitreau de Menezes Martins Marques, Lucas Hideki Ueda, Flávio Oliveira Simões, Mário Uliani Neto, Fernando Oliveira Runstein, Edson José Nagle, Bianca Dal Bó and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Intelligent Systems (BRACIS 2022)</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2022</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1007/978-3-031-21686-2_18" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="silva2022facialunit">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1007/s10044-021-01024-5" target="_blank" rel="noopener noreferrer">Facial Action Unit Detection Methodology with Application in Brazilian Sign Language Recognition<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Emely Pujólli da Silva, Paula Dornhofer Paro Costa, Kate Mamhy Oliveira Kumada and José Mario De Martino</p>
+  <p class="publication-venue">Pattern Analysis and Applications</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2022</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1007/s10044-021-01024-5" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a><a href="https://link.springer.com/article/10.1007/s10044-021-01024-5" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="araujo2022modelo">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://hdl.handle.net/20.500.12733/7308" target="_blank" rel="noopener noreferrer">Modelo baseado em dados para predição de inundação em bacia urbana de Campinas visando a construção de um sistema de alerta antecipado<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Vinicius Araujo</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2022</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://hdl.handle.net/20.500.12733/7308" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="sasso2022milpa">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://hdl.handle.net/20.500.12733/6264" target="_blank" rel="noopener noreferrer">Species distribution modeling applied to MILPA agroecological consortium in Brazil: Modelagem de distribuição de espécies aplicada ao consórcio agroecológico MILPA no Brasil<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Matheus Gustavo Alves Sasso</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2022</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://hdl.handle.net/20.500.12733/6264" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="lazari2022smartthermostat">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1109/SIoT56383.2022.10070286" target="_blank" rel="noopener noreferrer">Use of smart thermostat data to investigate harmful exposure to heat in Calgary, Canada<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Júlia Perassolli de Lázari, Arlene Oetomo, Paula Dornhofer Paro Costa and Plinio Pelegrini Morita</p>
+  <p class="publication-venue">Proceedings of the 2022 Symposium on Internet of Things (SIoT)</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2022</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1109/SIoT56383.2022.10070286" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+  </section>
+  <section class="publication-year-group" aria-label="Publications from 2021">
+    <h3 class="publication-year-heading">2021</h3>
+    <article class="publication-item" data-citation-key="silva2021analysis">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.19044/esj.2021.v17n22p1" target="_blank" rel="noopener noreferrer">Analysis of Facial Expressions in Brazilian Sign Language (Libras)<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Emely Pujólli da Silva, Kate Mamhy Oliveira Kumada and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">European Scientific Journal</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2021</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.19044/esj.2021.v17n22p1" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="ueda2021expressivetts">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.21437/SSW.2021-15" target="_blank" rel="noopener noreferrer">Are we truly modeling expressiveness? A study on expressive TTS in Brazilian Portuguese for real-life application styles<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Lucas Hideki Ueda, Paula Dornhofer Paro Costa, Flávio Oliveira Simões and Mário Uliani Neto</p>
+  <p class="publication-venue">11th ISCA Speech Synthesis Workshop (SSW 11)</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2021</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.21437/SSW.2021-15" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="sasso2021artificial">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.13031/aim.202100807" target="_blank" rel="noopener noreferrer">Artificial Intelligence Applied To Agroecology: A Model For Brazilian Territory<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Matheus Alves Sasso and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">2021 ASABE Annual International Virtual Meeting</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2021</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.13031/aim.202100807" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="plath2021pibic">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://proceedings.science/unicamp-pibic/pibic-2021/trabalhos/base-de-comentarios-de-discurso-de-odio-contra-mulheres-mina-br-da-concepcao-aos?lang=pt-br" target="_blank" rel="noopener noreferrer">Base de Comentários de Discurso de Ódio contra Mulheres MINA-BR: da Concepção aos Ataques por Robôs<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Hannah de Oliveira Plath, Maria Estela de Oliveira Paiva, Danielle Lanzarini Pinto and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Anais do XXIX Congresso de Iniciação Científica da Unicamp</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2021</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://proceedings.science/unicamp-pibic/pibic-2021/trabalhos/base-de-comentarios-de-discurso-de-odio-contra-mulheres-mina-br-da-concepcao-aos?lang=pt-br" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="grassiotto2021cogtom">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.5220/0010194205460553" target="_blank" rel="noopener noreferrer">CogToM: A Cognitive Architecture Implementation of the Theory of Mind<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Fabio Grassiotto and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Proceedings of the 13th International Conference on Agents and Artificial Intelligence - Volume 2: ICAART</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2021</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.5220/0010194205460553" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="ueda2021mstts">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://hdl.handle.net/20.500.12733/8140" target="_blank" rel="noopener noreferrer">Expressive Text-to-Speech Using Style Representations: Conversão texto-fala expressiva utilizando representações de estilo<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Lucas Hideki Ueda</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2021</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://hdl.handle.net/20.500.12733/8140" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="oliveira2021hotter">
+  <h3 class="publication-title">Hotter, longer and more frequent heatwaves: an observational study for the Brazilian city of Campinas, SP</h3>
+  <p class="publication-authors">Daniela Souza de Oliveira, Paula Dornhofer Paro Costa, Luiza Marchezan Bezerra, Ana Maria Heuminski de Avila and Eliana Cotta de Faria</p>
+  <p class="publication-venue">Revista Brasileira de Meteorologia</p>
+  <div class="publication-details"><span class="publication-type publication-type--journal-article">Journal article</span><span class="publication-item-year">2021</span></div>
+  
+</article>
+    <article class="publication-item" data-citation-key="bella2021coldwaves">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1117/12.2606220" target="_blank" rel="noopener noreferrer">How cold waves influence LDL cholesterol levels? A regional study for Campinas, São Paulo, Brazil<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Thiago Ribas Bella, Júlia Perassolli De Lázari, Welington Corozolla, Daniela S. Oliveira, Ana M. Heuminski de Avila, Eliana C. de Faria and Paula D. Paro Costa</p>
+  <p class="publication-venue">Proceedings of SPIE, 17th International Symposium on Medical Information Processing and Analysis</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2021</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1117/12.2606220" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="pedroso2021immvis">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://hdl.handle.net/20.500.12733/1641956" target="_blank" rel="noopener noreferrer">ImmVis Framework: establishing a bridge between immersive applications and data analysis<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Felipe Augusto Pedroso</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2021</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://hdl.handle.net/20.500.12733/1641956" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="sasso2021tcc">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://hdl.handle.net/20.500.12733/7103" target="_blank" rel="noopener noreferrer">Projeto de inteligência artificial aplicada a agroecologia: análise de dados geoclimáticos e biológicos<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Matheus Gustavo Alves Sasso</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--tcc">Undergraduate work</span><span class="publication-item-year">2021</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://hdl.handle.net/20.500.12733/7103" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="pataca2021speechmodulated">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://hdl.handle.net/20.500.12733/4048" target="_blank" rel="noopener noreferrer">Speech-Modulated Typography: Tipografia Modulada pela Fala<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Caluã de Lacerda Pataca</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2021</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://hdl.handle.net/20.500.12733/4048" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="jesusfilho2021msc">
+  <h3 class="publication-title">Síntese de Animação Facial Expressiva baseada em Modelos Ocultos de Markov</h3>
+  <p class="publication-authors">Silvano Ressurreição de Jesus Filho</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2021</span></div>
+  
+</article>
+  </section>
+  <section class="publication-year-group" aria-label="Publications from 2020">
+    <h3 class="publication-year-heading">2020</h3>
+    <article class="publication-item" data-citation-key="reis2020msc">
+  <h3 class="publication-title">A Generative Adversarial Network Approach to Visual Expressive Speech Synthesis with Emotion Control</h3>
+  <p class="publication-authors">Filipe Antonio de Barros Reis</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2020</span></div>
+  
+</article>
+    <article class="publication-item" data-citation-key="silva2020phd">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://hdl.handle.net/20.500.12733/1640485" target="_blank" rel="noopener noreferrer">Facial Expression Recognition in Brazilian Sign Language Using Facial Action Coding System<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Emely Pujólli da Silva</p>
+  <p class="publication-venue">Universidade Estadual de Campinas</p>
+  <div class="publication-details"><span class="publication-type publication-type--phd">PhD thesis</span><span class="publication-item-year">2020</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://hdl.handle.net/20.500.12733/1640485" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="silva2020recognition">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1007/978-3-030-66096-3_16" target="_blank" rel="noopener noreferrer">Recognition of Affective and Grammatical Facial Expressions: A Study for Brazilian Sign Language<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Emely Pujólli da Silva, Paula Dornhofer Paro Costa, Kate Mamhy Oliveira Kumada, José Mario De Martino and Gabriela Araújo Florentino</p>
+  <p class="publication-venue">Computer Vision -- ECCV 2020 Workshops</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2020</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1007/978-3-030-66096-3_16" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="silva2020silfa">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1109/FG47880.2020.00059" target="_blank" rel="noopener noreferrer">SILFA: Sign Language Facial Action Database for the Development of Assistive Technologies for the Deaf<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Emely Pujólli da Silva, Paula Dornhofer Paro Costa, Kate Mamhy Oliveira Kumada and José Mario De Martino</p>
+  <p class="publication-venue">2020 15th IEEE International Conference on Automatic Face and Gesture Recognition (FG)</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2020</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1109/FG47880.2020.00059" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="pataca2020iui">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1145/3377325.3377526" target="_blank" rel="noopener noreferrer">Speech Modulated Typography: Towards an Affective Representation Model<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Caluã de Lacerda Pataca and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Proceedings of the 25th International Conference on Intelligent User Interfaces (IUI ’20)</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2020</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1145/3377325.3377526" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+  </section>
+  <section class="publication-year-group" aria-label="Publications from 2019">
+    <h3 class="publication-year-heading">2019</h3>
+    <article class="publication-item" data-citation-key="ribeiro2019drivergaze-dataset">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.1109/FG.2019.8756592" target="_blank" rel="noopener noreferrer">Driver Gaze Zone Dataset with Depth Data<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Rafael Fernando Ribeiro and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">2019 14th IEEE International Conference on Automatic Face and Gesture Recognition (FG)</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2019</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.1109/FG.2019.8756592" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="valverde2019valence">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://hdl.handle.net/20.500.12733/1640137" target="_blank" rel="noopener noreferrer">Identification of Emotional Valence in Sentences of Children Tales<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Iliana Maritza Burguán Valverde</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2019</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://hdl.handle.net/20.500.12733/1640137" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="tonoli2019ms">
+  <h3 class="publication-title">Motion Retargeting Preserving Spatial Relationship</h3>
+  <p class="publication-authors">Rodolfo Luis Tonoli</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2019</span></div>
+  
+</article>
+    <article class="publication-item" data-citation-key="alves2019multimodal">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.5753/sibgrapi.est.2019.8309" target="_blank" rel="noopener noreferrer">Multimodal Social Scenario Perception Model for Initial Human-Robot Interaction<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Diego Cardoso Alves and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Proceedings of the 2019 32nd SIBGRAPI Conference on Graphics, Patterns and Images (SIBGRAPI)</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2019</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.5753/sibgrapi.est.2019.8309" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="ribeiro2019msc">
+  <h3 class="publication-title"><a class="publication-title-link" href="http://repositorio.unicamp.br/handle/REPOSIP/336261" target="_blank" rel="noopener noreferrer">Sistema de Detecção de Zona de Visão do Motorista Utilizando Câmera de Profundidade<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Rafael Fernando Ribeiro</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2019</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="http://repositorio.unicamp.br/handle/REPOSIP/336261" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="pataca2019tipografia">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.5151/9cidi-congic-4.0314" target="_blank" rel="noopener noreferrer">Tipografia modulada pela fala: avaliação de um algoritmo de geração de prosódia visual em textos<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Caluã de Lacerda Pataca and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Blucher Design Proceedings</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2019</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.5151/9cidi-congic-4.0314" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a><a href="https://www.proceedings.blucher.com.br/article-details/33769" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+  </section>
+  <section class="publication-year-group" aria-label="Publications from 2018">
+    <h3 class="publication-year-heading">2018</h3>
+    <article class="publication-item" data-citation-key="chinelatto2018mocap">
+  <h3 class="publication-title"><a class="publication-title-link" href="http://urlib.net/ibi/8JMKD3MGPAW/3S57AC5" target="_blank" rel="noopener noreferrer">Tecnologia de Captura de Movimento Facial Aplicada ao Estudo de Padrões Articulatórios da Fala<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Mateus A. Chinelatto and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Proceedings of the 31st Conference on Graphics, Patterns and Images (SIBGRAPI)</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2018</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="http://urlib.net/ibi/8JMKD3MGPAW/3S57AC5" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+  </section>
+  <section class="publication-year-group" aria-label="Publications from 2017">
+    <h3 class="publication-year-heading">2017</h3>
+    <article class="publication-item" data-citation-key="padovani2017identificacao">
+  <h3 class="publication-title">Identificação de Emoções Através da Análise de Expressões Faciais</h3>
+  <p class="publication-authors">Hugo Alexandre Padovani Guimarães de Camargo</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--tcc">Undergraduate work</span><span class="publication-item-year">2017</span></div>
+  
+</article>
+  </section>
+  <section class="publication-year-group" aria-label="Publications from 2015">
+    <h3 class="publication-year-heading">2015</h3>
+    <article class="publication-item" data-citation-key="ramos2015ensinoprogramacao">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.5753/wei.2015.10255" target="_blank" rel="noopener noreferrer">Ensino de programação para alunas de ensino médio: relato de uma experiência<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Nadja Ramos, Carmen Freitas, Sandra Avila, Paula D. P. Costa, Vanessa Testoni and Juliana Borin</p>
+  <p class="publication-venue">Anais do XXIII Workshop sobre Educação em Computação (WEI 2015)</p>
+  <div class="publication-details"><span class="publication-type publication-type--conference-paper">Conference paper</span><span class="publication-item-year">2015</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://doi.org/10.5753/wei.2015.10255" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a><a href="https://sol.sbc.org.br/index.php/wei/article/view/10255" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+    <article class="publication-item" data-citation-key="costa2015phd">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://repositorio.unicamp.br/acervo/detalhe/945977" target="_blank" rel="noopener noreferrer">Two-Dimensional Expressive Speech Animation<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Universidade Estadual de Campinas (UNICAMP), Faculdade de Engenharia Elétrica e de Computação</p>
+  <div class="publication-details"><span class="publication-type publication-type--phd">PhD thesis</span><span class="publication-item-year">2015</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://repositorio.unicamp.br/acervo/detalhe/945977" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+  </section>
+  <section class="publication-year-group" aria-label="Publications from 2009">
+    <h3 class="publication-year-heading">2009</h3>
+    <article class="publication-item" data-citation-key="costa2009msc">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://repositorio.unicamp.br/acervo/detalhe/467350" target="_blank" rel="noopener noreferrer">Animação facial 2D sincronizada com a fala baseada em imagens de visemas dependentes do contexto fonético<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Paula Dornhofer Paro Costa</p>
+  
+  <div class="publication-details"><span class="publication-type publication-type--msc">MSc dissertation</span><span class="publication-item-year">2009</span></div>
+  <div class="publication-links" aria-label="Publication links"><a href="https://repositorio.unicamp.br/acervo/detalhe/467350" target="_blank" rel="noopener noreferrer">Source<span aria-hidden="true"> ↗</span></a></div>
+</article>
+  </section>
+</div>
+<button class="publications-more" type="button" data-publications-more hidden>More publications <span aria-hidden="true">+</span></button>
+<!-- RESEARCH:PUBLICATIONS:END -->
       </div>
-
     </section>
 
-
-    <section
-      class="section"
-      id="patents"
-      aria-labelledby="patents-title"
-    >
-
-      <p class="section-label">
-        Patents
-      </p>
-
+    <section class="section research-section" id="patents" aria-labelledby="patents-title">
+      <p class="section-label">Patents</p>
       <div class="section-content">
-        <h2 id="patents-title">
-          Patents
-        </h2>
+        <h2 id="patents-title">Patents</h2>
+        <!-- RESEARCH:PATENTS:START -->
+<article class="publication-item" data-citation-key="silveira2024metodo">
+  <h3 class="publication-title">Método de Reconstrução de Imagens</h3>
+  <p class="publication-authors">Ana Clara C. Silveira, Diedre S. Do Carmo, L. H. Ueda, D. G. Fantinato, P. D. P. Costa and L. Rittner</p>
+  <p class="publication-venue">Universidade Estadual de Campinas</p>
+  <p class="publication-item-year">Patent no. BR1020240200640 · 2024</p>
+  
+</article>
+<article class="publication-item" data-citation-key="costa2023patenteTwoDimensional">
+  <h3 class="publication-title">Método de Síntese de Animação Facial 2D de Fala Expressiva</h3>
+  <p class="publication-authors">José Mario DE MARTINO and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Universidade Estadual de Campinas (UNICAMP)</p>
+  <p class="publication-item-year">Patent no. BR 102015020030-7 · 2023</p>
+  
+</article>
+<article class="publication-item" data-citation-key="costa2011patenteAnimaFace2D">
+  <h3 class="publication-title">Sistema de Síntese de Animação Facial por Computador Baseada na Manipulação de Imagens</h3>
+  <p class="publication-authors">Paula Dornhofer Paro Costa and José Mario DE MARTINO</p>
+  <p class="publication-venue">Universidade Estadual de Campinas (UNICAMP)</p>
+  <p class="publication-item-year">Patent no. PI 0903935-0 · 2011</p>
+  
+</article>
+<!-- RESEARCH:PATENTS:END -->
       </div>
-
     </section>
 
-
-    <section
-      class="section"
-      id="software"
-      aria-labelledby="software-title"
-    >
-
-      <p class="section-label">
-        Software
-      </p>
-
+    <section class="section research-section" id="software" aria-labelledby="software-title">
+      <p class="section-label">Software</p>
       <div class="section-content">
-        <h2 id="software-title">
-          Software
-        </h2>
+        <h2 id="software-title">Software</h2>
+        <!-- RESEARCH:SOFTWARE:START -->
+<article class="publication-item" data-citation-key="cardoso_do_nascimento_2026_20314869">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.5281/zenodo.20314869" target="_blank" rel="noopener noreferrer">World Machine Docker Image<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Elton Cardoso do Nascimento and Paula Costa</p>
+  <p class="publication-venue">Zenodo</p>
+  <p class="publication-item-year">Version 0.2.1 · 2026</p>
+  <div class="publication-links" aria-label="Research output links"><a href="https://doi.org/10.5281/zenodo.20314869" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+<!-- RESEARCH:SOFTWARE:END -->
       </div>
-
     </section>
 
-
-    <section
-      class="section"
-      id="data"
-      aria-labelledby="data-title"
-    >
-
-      <p class="section-label">
-        Data
-      </p>
-
+    <section class="section research-section" id="data" aria-labelledby="data-title">
+      <p class="section-label">Data</p>
       <div class="section-content">
-        <h2 id="data-title">
-          Data
-        </h2>
+        <h2 id="data-title">Data</h2>
+        <!-- RESEARCH:DATA:START -->
+<article class="publication-item" data-citation-key="plath2025minabr-dataset">
+  <h3 class="publication-title"><a class="publication-title-link" href="https://doi.org/10.25824/redu/MQD68Z" target="_blank" rel="noopener noreferrer">MINA-BR: base de dados para identificação de discurso de ódio contra a mulher na Internet<span aria-hidden="true"> ↗</span></a></h3>
+  <p class="publication-authors">Hannah de Oliveira Plath, Maria Estela de Oliveira Paiva, Danielle Lanzarini Pinto and Paula Dornhofer Paro Costa</p>
+  <p class="publication-venue">Repositório de Dados de Pesquisa da Unicamp</p>
+  <p class="publication-item-year">Version V1 · 2025</p>
+  <div class="publication-links" aria-label="Research output links"><a href="https://doi.org/10.25824/redu/MQD68Z" target="_blank" rel="noopener noreferrer">DOI<span aria-hidden="true"> ↗</span></a></div>
+</article>
+<!-- RESEARCH:DATA:END -->
       </div>
-
     </section>
-
   </main>
 
-
   <footer class="site-footer">
-
     <p class="institutional-line">
       AIMS ·
       <a href="https://www.fee.unicamp.br/">FEEC</a> ·
       <a href="https://www.unicamp.br/">UNICAMP</a>
     </p>
-
-    <p>
-      <a href="https://github.com/AI-Unicamp">
-        GitHub
-      </a>
-    </p>
-
+    <p><a href="https://github.com/AI-Unicamp">GitHub</a></p>
   </footer>
-
 </body>
 </html>

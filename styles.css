@@ -225,6 +225,37 @@ a:hover { text-decoration-thickness: 0.13em; }
   font-size: 1.04rem;
 }
 
+
+/* ---------------------------------------------------------
+   Research: full-width sections (no sidebar or duplicate label)
+   --------------------------------------------------------- */
+
+/* Research only: a compact, consistent vertical rhythm. */
+.research-page-hero {
+  padding-bottom: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.research-section {
+  display: block;
+  padding-block: clamp(2.25rem, 4vw, 3.5rem);
+}
+
+.research-section + .research-section {
+  padding-top: clamp(2.5rem, 4.5vw, 4rem);
+}
+
+.research-section > .section-label {
+  display: none;
+}
+
+.research-section > .section-content {
+  max-width: none;
+}
+
+.research-section > .section-content > h2 {
+  margin-top: 0;
+}
+
 /* People */
 .people-group { padding-block: clamp(2.5rem, 4vw, 4rem); }
 .people-group + .people-group { border-top: 1px solid var(--line); }
@@ -498,4 +529,241 @@ a:hover { text-decoration-thickness: 0.13em; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .person-keyword, .nav-dropdown { transition: none; }
+}
+
+/* ---------------------------------------------------------
+   Research publications — chronological list
+   --------------------------------------------------------- */
+
+.publications-list {
+  margin-top: 1.8rem;
+}
+
+.publication-year-group {
+  margin-top: 2.2rem;
+}
+
+.publication-year-heading {
+  margin: 0 0 0.8rem;
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.publication-item {
+  padding-block: 1.25rem 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.publication-title {
+  margin: 0 0 0.3rem;
+  font-size: clamp(1.08rem, 1.4vw, 1.22rem);
+  line-height: 1.38;
+  font-weight: 580;
+  letter-spacing: -0.012em;
+}
+
+.publication-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.publication-title-link:hover,
+.publication-title-link:focus-visible {
+  text-decoration: underline;
+}
+
+.publication-authors,
+.publication-venue {
+  margin: 0 0 0.25rem !important;
+  font-size: 0.95rem !important;
+  line-height: 1.55;
+}
+
+.publication-venue {
+  font-style: italic;
+}
+
+.publication-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.7rem;
+}
+
+.publication-type {
+  display: inline-block;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.16rem 0.6rem;
+  font-size: 0.79rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* Cheerful, restrained accents; legibility is not color-dependent. */
+.publication-type--journal-article { color: #1766b0; }
+.publication-type--conference-paper { color: #147a52; }
+.publication-type--phd { color: #8c48b4; }
+.publication-type--msc { color: #9a6700; }
+.publication-type--tcc { color: #b62975; }
+
+.publication-item-year {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.25rem;
+  margin-top: 0.7rem;
+  font-size: 0.92rem;
+}
+
+.publication-links a {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+.publications-more {
+  display: block;
+  margin: 1.6rem 0 0;
+  padding: 0.7rem 0.95rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.98rem;
+  cursor: pointer;
+  min-height: 2.75rem;
+}
+
+.publications-more:hover,
+.publications-more:focus-visible {
+  background: var(--surface);
+}
+
+/* Explicit [hidden] ensures author display rules do not override it. */
+.publication-item[hidden],
+.publication-year-group[hidden],
+.publications-more[hidden] {
+  display: none !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .publication-type--journal-article { color: #7cb9ff; }
+  .publication-type--conference-paper { color: #6ed9a0; }
+  .publication-type--phd { color: #cda1ff; }
+  .publication-type--msc { color: #f6d56a; }
+  .publication-type--tcc { color: #ff92c5; }
+}
+
+/* ---------------------------------------------------------
+   Research projects — full-width editorial listing
+   --------------------------------------------------------- */
+
+/* Grouping in Projects: compact spacing and restrained visual cues. */
+.project-group {
+  margin-top: clamp(1.35rem, 2.5vw, 2rem);
+}
+
+.project-group + .project-group {
+  margin-top: clamp(1.5rem, 3vw, 2.25rem);
+  padding-top: clamp(1.25rem, 2.5vw, 2rem);
+  border-top: 1px solid var(--line);
+}
+
+.project-group-title {
+  margin: 0 0 0.7rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+
+/* Short colored rule below each group title; colors never convey meaning alone. */
+.project-group-title::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  margin-top: 0.6rem;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+#project-group-research::after { background: #c99c19; }
+#project-group-centers::after { background: #36a77b; }
+#project-group-past::after { background: #d8649d; }
+
+.project-item {
+  padding-block: 1rem 1.15rem;
+  border-top: 1px solid var(--line);
+}
+
+.project-title {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.12rem, 1.6vw, 1.3rem);
+  font-weight: 580;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+.project-item--featured .project-title {
+  font-size: clamp(1.2rem, 1.9vw, 1.48rem);
+}
+
+.project-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-title-link:hover,
+.project-title-link:focus-visible {
+  text-decoration: underline;
+}
+
+.project-institutions {
+  margin: 0 0 0.45rem !important;
+  color: var(--muted);
+  font-size: 0.9rem !important;
+  letter-spacing: 0.015em;
+}
+
+.project-description {
+  max-width: 78ch !important;
+  margin: 0 0 0.5rem !important;
+  font-size: 1rem !important;
+  line-height: 1.65;
+}
+
+.project-links {
+  margin: 0.45rem 0 0 !important;
+  font-size: 0.93rem !important;
+}
+
+.project-links a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+/* Research mobile: preserve compact section rhythm across breakpoints. */
+@media (max-width: 44rem) {
+  .research-page-hero {
+    padding-bottom: 1.25rem;
+  }
+  .research-section {
+    padding-block: 2rem 2.5rem;
+  }
+  .research-section + .research-section {
+    padding-top: 2.5rem;
+  }
+  .project-item {
+    padding-block: 0.95rem 1.1rem;
+  }
 }
