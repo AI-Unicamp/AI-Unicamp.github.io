@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>AIMS Notícias</title>
+    <link>https://ai-unicamp.github.io/pt/news/</link>
+    <description>Notícias de pesquisa do AIMS na UNICAMP</description>
+    <language>pt-BR</language>
+    <atom:link href="https://ai-unicamp.github.io/pt/news/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AIMS no SIBGRAPI 2026</title>
+      <link>https://ai-unicamp.github.io/pt/news/#2026-09-sibgrapi</link>
+      <guid isPermaLink="false">urn:aims:news:2026-09-sibgrapi</guid>
+      <description>Maria Gabriela Lustosa, estudante de iniciação científica do AIMS, apresentou seu trabalho sobre antecipação de interações com objetos em curto prazo no SIBGRAPI 2026, em Goiânia. Sua pesquisa investiga como máquinas podem antecipar interações com objetos a partir de vídeos egocêntricos.</description>
+      <category>News</category>
+    </item>
+    <item>
+      <title>AIMS no Interspeech 2026</title>
+      <link>https://ai-unicamp.github.io/pt/news/#2026-09-interspeech</link>
+      <guid isPermaLink="false">urn:aims:news:2026-09-interspeech</guid>
+      <description>Pedro Corrêa apresentou o trabalho From Tokens to Faces: Investigating Discrete Speech Representations for 3D Facial Animation no Interspeech 2026. O trabalho investiga representações discretas da fala para gerar animação facial 3D. Ler o artigo ↗ · Projeto e demonstrações ↗</description>
+      <category>News</category>
+    </item>
+  </channel>
+</rss>

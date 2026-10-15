@@ -1,274 +1,216 @@
 #!/usr/bin/env python3
+"""Validate AIMS site navigation (EN/PT) without modifying files.
 
+Usage: python3 tools/check_navigation.py
+
+Checks all published index pages, desktop/mobile menus, language switchers,
+local navigation destinations and section anchors. Standard library only.
+"""
+
+from __future__ import annotations
+
+from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 import sys
-
 
 ROOT = Path(__file__).resolve().parent.parent
 
+# Every page linked by the public site navigation, plus the positions archive.
+PAGE_ROUTES = (
+    "/", "/people/", "/research/", "/news/",
+    "/news/positions/", "/news/positions/archive/", "/news/media/",
+    "/pt/", "/pt/people/", "/pt/research/", "/pt/news/",
+    "/pt/news/positions/", "/pt/news/positions/archive/", "/pt/news/media/",
+)
 
-PAGES = {
-    "EN home": ROOT / "index.html",
-    "EN people": ROOT / "people" / "index.html",
-    "EN research": ROOT / "research" / "index.html",
-    "EN news": ROOT / "news" / "index.html",
-
-    "PT home": ROOT / "pt" / "index.html",
-    "PT people": ROOT / "pt" / "people" / "index.html",
-    "PT research": ROOT / "pt" / "research" / "index.html",
-    "PT news": ROOT / "pt" / "news" / "index.html",
-}
-
-
-COMMON_MARKERS = {
-    "AIMS logo": 'src="/assets/identity/aims-logo.png"',
-    "desktop navigation": 'class="site-nav desktop-nav"',
-    "desktop language selector": 'class="utility-nav desktop-utility"',
-    "mobile language selector": 'class="mobile-utility"',
-    "mobile menu": 'class="mobile-menu"',
-    "mobile menu content": 'class="mobile-menu-content"',
-}
-
-
-EN_MARKERS = {
-    "Research": 'href="/research/"',
-    "Projects": 'href="/research/#projects"',
-    "Publications": 'href="/research/#publications"',
-    "Patents": 'href="/research/#patents"',
-    "Software": 'href="/research/#software"',
-    "Data": 'href="/research/#data"',
-
-    "News": 'href="/news/"',
-    "Latest": 'href="/news/#latest"',
-    "Open Positions": 'href="/news/#open-positions"',
-    "Press & Media": 'href="/news/#press-media"',
-
-    "People": 'href="/people/"',
-}
+RESEARCH_LINKS = (
+    ("Research", "/research/"),
+    ("Projects", "/research/#projects"),
+    ("Publications", "/research/#publications"),
+    ("Patents", "/research/#patents"),
+    ("Software", "/research/#software"),
+    ("Data", "/research/#data"),
+)
+NEWS_LINKS = (
+    ("News", "/news/"),
+    ("Latest News", "/news/"),
+    ("Open Positions", "/news/positions/"),
+    ("Press & Media", "/news/media/"),
+)
+PT_RESEARCH_LINKS = (
+    ("Pesquisa", "/pt/research/"),
+    ("Projetos", "/pt/research/#projects"),
+    ("Publicações", "/pt/research/#publications"),
+    ("Patentes", "/pt/research/#patents"),
+    ("Software", "/pt/research/#software"),
+    ("Dados", "/pt/research/#data"),
+)
+PT_NEWS_LINKS = (
+    ("Notícias", "/pt/news/"),
+    ("Novidades", "/pt/news/"),
+    ("Oportunidades", "/pt/news/positions/"),
+    ("Press & Media", "/pt/news/media/"),
+)
 
 
-PT_MARKERS = {
-    "Pesquisa": 'href="/pt/research/"',
-    "Projetos": 'href="/pt/research/#projects"',
-    "Publicações": 'href="/pt/research/#publications"',
-    "Patentes": 'href="/pt/research/#patents"',
-    "Software": 'href="/pt/research/#software"',
-    "Dados": 'href="/pt/research/#data"',
-
-    "Notícias": 'href="/pt/news/"',
-    "Novidades": 'href="/pt/news/#latest"',
-    "Oportunidades": 'href="/pt/news/#open-positions"',
-    "Press & Media": 'href="/pt/news/#press-media"',
-
-    "Pessoas": 'href="/pt/people/"',
-}
+def page_file(route: str) -> Path:
+    return ROOT / route.lstrip("/") / "index.html"
 
 
-FORBIDDEN_MARKERS = {
-    "obsolete mobile language block": 'class="mobile-language"',
-}
+def equivalent_routes(route: str) -> tuple[str, str]:
+    if route.startswith("/pt/"):
+        return "/" + route[4:], route
+    if route == "/pt/":
+        return "/", "/pt/"
+    return route, "/pt" + route
 
 
-def relative(path: Path) -> str:
-    return str(path.relative_to(ROOT))
+class NavigationParser(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.nav_stack: list[str | None] = []
+        self.header_depth = 0
+        self.anchors: list[dict] = []
+        self.current_anchor: dict | None = None
+        self.ids: set[str] = set()
+        self.logo_link_found = False
+        self.logo_image_found = False
+        self.mobile_menu_found = False
+        self.obsolete_mobile_language = False
+        self.lang: str | None = None
+        self.navs: dict[str, list[tuple[str, str]]] = {
+            "desktop": [], "mobile": [], "desktop_language": [], "mobile_language": []
+        }
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        classes = set(a.get("class", "").split())
+        if tag == "html":
+            self.lang = a.get("lang")
+        if a.get("id"):
+            self.ids.add(a["id"])
+        if tag == "header":
+            self.header_depth += 1
+        if self.header_depth:
+            if "mobile-language" in classes:
+                self.obsolete_mobile_language = True
+            if tag == "details" and "mobile-menu" in classes:
+                self.mobile_menu_found = True
+            if tag == "a" and "site-logo" in classes and a.get("href") in ("/", "/pt/"):
+                self.logo_link_found = True
+            if tag == "img" and a.get("src") == "/assets/identity/aims-logo.png":
+                self.logo_image_found = True
+            if tag == "nav":
+                kind = None
+                if {"site-nav", "desktop-nav"} <= classes:
+                    kind = "desktop"
+                elif "mobile-menu-content" in classes:
+                    kind = "mobile"
+                elif {"utility-nav", "desktop-utility"} <= classes:
+                    kind = "desktop_language"
+                elif "mobile-utility" in classes:
+                    kind = "mobile_language"
+                self.nav_stack.append(kind)
+            if tag == "a" and self.nav_stack and self.nav_stack[-1] is not None:
+                self.current_anchor = {"nav": self.nav_stack[-1], "href": a.get("href", ""), "text": []}
+
+    def handle_data(self, data):
+        if self.current_anchor is not None:
+            self.current_anchor["text"].append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "a" and self.current_anchor is not None:
+            a = self.current_anchor
+            label = " ".join("".join(a["text"]).split())
+            self.navs[a["nav"]].append((label, a["href"]))
+            self.current_anchor = None
+        if tag == "nav" and self.header_depth and self.nav_stack:
+            self.nav_stack.pop()
+        if tag == "header" and self.header_depth:
+            self.header_depth -= 1
 
 
-def check_file_exists(label: str, path: Path) -> list[str]:
-    if path.exists():
-        return []
-
-    return [
-        f"{label}: missing file {relative(path)}"
-    ]
-
-
-def check_markers(
-    label: str,
-    text: str,
-    markers: dict[str, str],
-) -> list[str]:
-
+def check_navigation(route: str, cache: dict[str, NavigationParser]) -> list[str]:
+    page = cache[route]
     errors = []
-
-    for description, marker in markers.items():
-        if marker not in text:
-            errors.append(
-                f"{label}: missing {description}"
-            )
-
-    return errors
-
-
-def check_forbidden_markers(
-    label: str,
-    text: str,
-) -> list[str]:
-
-    errors = []
-
-    for description, marker in FORBIDDEN_MARKERS.items():
-        if marker in text:
-            errors.append(
-                f"{label}: contains {description}"
-            )
-
-    return errors
-
-
-def check_language_pair(
-    label: str,
-    text: str,
-    path: Path,
-) -> list[str]:
-
-    errors = []
-
-    relative_path = relative(path)
-
-    if relative_path == "index.html":
-        expected_en = 'href="/"'
-        expected_pt = 'href="/pt/"'
-
-    elif relative_path == "people/index.html":
-        expected_en = 'href="/people/"'
-        expected_pt = 'href="/pt/people/"'
-
-    elif relative_path == "research/index.html":
-        expected_en = 'href="/research/"'
-        expected_pt = 'href="/pt/research/"'
-
-    elif relative_path == "news/index.html":
-        expected_en = 'href="/news/"'
-        expected_pt = 'href="/pt/news/"'
-
-    elif relative_path == "pt/index.html":
-        expected_en = 'href="/"'
-        expected_pt = 'href="/pt/"'
-
-    elif relative_path == "pt/people/index.html":
-        expected_en = 'href="/people/"'
-        expected_pt = 'href="/pt/people/"'
-
-    elif relative_path == "pt/research/index.html":
-        expected_en = 'href="/research/"'
-        expected_pt = 'href="/pt/research/"'
-
-    elif relative_path == "pt/news/index.html":
-        expected_en = 'href="/news/"'
-        expected_pt = 'href="/pt/news/"'
-
-    else:
-        return errors
-
-    if expected_en not in text:
-        errors.append(
-            f"{label}: missing corresponding EN link"
-        )
-
-    if expected_pt not in text:
-        errors.append(
-            f"{label}: missing corresponding PT link"
-        )
-
-    return errors
-
-
-def check_page(
-    label: str,
-    path: Path,
-) -> list[str]:
-
-    errors = []
-
-    errors.extend(
-        check_file_exists(label, path)
+    pt = route.startswith("/pt/")
+    en_route, pt_route = equivalent_routes(route)
+    expected_main = list(PT_RESEARCH_LINKS + PT_NEWS_LINKS + (("Pessoas", "/pt/people/"),)) if pt else list(
+        RESEARCH_LINKS + NEWS_LINKS + (("People", "/people/"),)
     )
+    expected_lang = [("EN", en_route), ("PT", pt_route)]
+    for name, expected in (("desktop", expected_main), ("mobile", expected_main),
+                           ("desktop_language", expected_lang), ("mobile_language", expected_lang)):
+        actual = page.navs[name]
+        if actual != expected:
+            # Show the first mismatch to keep diagnostics readable.
+            from itertools import zip_longest
+            for index, (found, want) in enumerate(zip_longest(actual, expected), 1):
+                if found != want:
+                    errors.append(f"{name} navigation link #{index}: expected {want!r}, got {found!r}")
+                    break
+    if page.lang != ("pt-BR" if pt else "en"):
+        errors.append(f"incorrect HTML language: {page.lang!r}")
+    if not page.logo_link_found or not page.logo_image_found:
+        errors.append("missing AIMS home logo link or image")
+    if not page.mobile_menu_found:
+        errors.append("missing mobile + menu")
+    if page.obsolete_mobile_language:
+        errors.append("obsolete language selector inside mobile menu")
 
-    if not path.exists():
-        return errors
-
-    text = path.read_text(encoding="utf-8")
-
-    errors.extend(
-        check_markers(
-            label,
-            text,
-            COMMON_MARKERS,
-        )
-    )
-
-    if label.startswith("EN"):
-        errors.extend(
-            check_markers(
-                label,
-                text,
-                EN_MARKERS,
-            )
-        )
-
-    if label.startswith("PT"):
-        errors.extend(
-            check_markers(
-                label,
-                text,
-                PT_MARKERS,
-            )
-        )
-
-    errors.extend(
-        check_forbidden_markers(
-            label,
-            text,
-        )
-    )
-
-    errors.extend(
-        check_language_pair(
-            label,
-            text,
-            path,
-        )
-    )
-
+    # Every internal menu destination must exist; #fragment must identify a real element.
+    for name in ("desktop", "mobile", "desktop_language", "mobile_language"):
+        for label, href in page.navs[name]:
+            parsed = urlsplit(href)
+            if parsed.scheme or parsed.netloc:
+                errors.append(f"external URL in navigation: {href}")
+                continue
+            dest = unquote(parsed.path)
+            if dest not in cache:
+                errors.append(f"{label}: destination {dest!r} is missing")
+            elif parsed.fragment and unquote(parsed.fragment) not in cache[dest].ids:
+                errors.append(f"{label}: anchor #{parsed.fragment} missing at {dest}")
     return errors
 
 
 def main() -> int:
-
     print("Checking AIMS navigation...\n")
+    cache: dict[str, NavigationParser] = {}
+    errors: dict[str, list[str]] = {}
+    for route in PAGE_ROUTES:
+        path = page_file(route)
+        if not path.is_file():
+            errors[route] = [f"missing {path.relative_to(ROOT)}"]
+            continue
+        try:
+            parser = NavigationParser()
+            parser.feed(path.read_text(encoding="utf-8"))
+            parser.close()
+            cache[route] = parser
+        except (OSError, UnicodeError, ValueError) as exc:
+            errors[route] = [f"cannot read/parse HTML: {exc}"]
 
-    all_errors = []
-
-    for label, path in PAGES.items():
-
-        errors = check_page(label, path)
-
-        if errors:
-            print(f"✗ {label}")
-            all_errors.extend(errors)
+    for route in PAGE_ROUTES:
+        if route in cache:
+            problems = check_navigation(route, cache)
+            if problems:
+                errors[route] = problems
+        if route in errors:
+            print(f"✗ {route}")
         else:
-            print(f"✓ {label}")
+            print(f"✓ {route}")
 
-    print()
-
-    if all_errors:
-
-        print("Navigation check failed:\n")
-
-        for error in all_errors:
-            print(f"  - {error}")
-
-        print(
-            f"\n{len(all_errors)} problem(s) found."
-        )
-
+    if errors:
+        print("\nNavigation check FAILED:\n")
+        for route, problems in errors.items():
+            for issue in problems:
+                print(f"  - {route}: {issue}")
+        print(f"\n{sum(len(x) for x in errors.values())} problem(s) found.")
         return 1
 
-    print(
-        "Navigation check passed. "
-        "All pages are consistent."
-    )
-
+    print(f"\nNavigation check passed. All {len(PAGE_ROUTES)} pages are consistent.")
+    print("No files modified.")
     return 0
 
 

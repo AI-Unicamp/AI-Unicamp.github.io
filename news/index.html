@@ -6,15 +6,20 @@
 
   <meta
     name="description"
-    content="News and updates from AIMS — Artificial Intelligence and Multimodal Signal Processing at UNICAMP."
+    content="News from AIMS — Artificial Intelligence and Multimodal Signal Processing at UNICAMP."
   >
 
   <title>News · AIMS</title>
 
   <link rel="stylesheet" href="/styles.css">
+  <link rel="alternate" type="application/rss+xml" title="AIMS News" href="/news/feed.xml">
+  <script defer src="/assets/js/news.js"></script>
 </head>
 
+
 <body>
+
+  <!-- GENERATED: AIMS NEWS INDEX -->
 
   <header class="site-header">
 
@@ -66,9 +71,9 @@
         </div>
 
         <div class="nav-dropdown">
-          <a href="/news/#latest">Latest</a>
-          <a href="/news/#open-positions">Open Positions</a>
-          <a href="/news/#press-media">Press &amp; Media</a>
+          <a href="/news/">Latest News</a>
+          <a href="/news/positions/">Open Positions</a>
+          <a href="/news/media/">Press &amp; Media</a>
         </div>
 
       </div>
@@ -178,9 +183,9 @@
           </a>
 
           <div class="mobile-menu-links">
-            <a href="/news/#latest">Latest</a>
-            <a href="/news/#open-positions">Open Positions</a>
-            <a href="/news/#press-media">Press &amp; Media</a>
+            <a href="/news/">Latest News</a>
+            <a href="/news/positions/">Open Positions</a>
+            <a href="/news/media/">Press &amp; Media</a>
           </div>
 
         </div>
@@ -203,85 +208,37 @@
 
   </header>
 
-
   <main>
-
-    <section
-      class="hero page-hero"
-      aria-labelledby="page-title"
-    >
-
-      <p class="eyebrow institutional-line">
-        AIMS ·
-        <a href="https://www.fee.unicamp.br/">FEEC</a> ·
-        <a href="https://www.unicamp.br/">UNICAMP</a>
-      </p>
-
-      <h1 id="page-title">
-        News
-      </h1>
-
-    </section>
-
-
-    <section
-      class="section"
-      id="latest"
-      aria-labelledby="latest-title"
-    >
-
-      <p class="section-label">
-        Latest
-      </p>
-
-      <div class="section-content">
-        <h2 id="latest-title">
-          Latest
-        </h2>
-      </div>
-
-    </section>
-
-
-    <section
-      class="section"
-      id="open-positions"
-      aria-labelledby="positions-title"
-    >
-
-      <p class="section-label">
-        Open Positions
-      </p>
-
-      <div class="section-content">
-        <h2 id="positions-title">
-          Open Positions
-        </h2>
-      </div>
-
-    </section>
-
-
-    <section
-      class="section"
-      id="press-media"
-      aria-labelledby="press-title"
-    >
-
-      <p class="section-label">
-        Press &amp; Media
-      </p>
-
-      <div class="section-content">
-        <h2 id="press-title">
-          Press &amp; Media
-        </h2>
-      </div>
-
-    </section>
-
+  <section class="hero page-hero news-page-hero" aria-labelledby="page-title">
+    <p class="eyebrow institutional-line">AIMS · <a href="https://www.fee.unicamp.br/">FEEC</a> · <a href="https://www.unicamp.br/">UNICAMP</a></p>
+    <h1 id="page-title">News</h1>
+  </section>
+  <section class="news-section" id="latest" aria-label="Latest news">
+    <p class="news-feed-link"><a href="/news/feed.xml">RSS ↗</a></p>
+    <div class="news-list" data-news-list data-page-size="5">
+      <!-- NEWS:START -->
+<article class="news-entry" id="2026-09-sibgrapi">
+  <p class="news-meta">September 2026</p>
+  <h2 class="news-title"><a href="/news/#2026-09-sibgrapi">AIMS at SIBGRAPI 2026</a></h2>
+  <div class="news-body"><p>Maria Gabriela Lustosa, an undergraduate researcher at AIMS, presented her work on short-term object interaction anticipation at SIBGRAPI 2026 in Goiânia, Brazil.</p>
+<p>Her research explores how machines can anticipate interactions with objects from egocentric video.</p></div>
+  
+  <figure class="news-figure"><img loading="lazy" src="/news/images/2026-09-sibgrapi.jpg" alt="Maria Gabriela Lustosa beside her research poster at SIBGRAPI 2026"></figure>
+</article>
+<article class="news-entry" id="2026-09-interspeech">
+  <p class="news-meta">September 2026</p>
+  <h2 class="news-title"><a href="/news/#2026-09-interspeech">AIMS at Interspeech 2026</a></h2>
+  <div class="news-body"><p>Pedro Corrêa presented <em>From Tokens to Faces: Investigating Discrete Speech Representations for 3D Facial Animation</em> at Interspeech 2026.</p>
+<p>The work investigates discrete speech representations for generating 3D facial animation.</p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://www.isca-archive.org/interspeech_2026/correa26_interspeech.html">Read the paper ↗</a> · <a target="_blank" rel="noopener noreferrer" href="https://prodcor.github.io/Token-to-Face/">Project and demos ↗</a></p></div>
+  
+  <figure class="news-figure"><img loading="lazy" src="/news/images/2026-09-paper-interspeech.jpeg" alt="Image accompanying the AIMS news item about Interspeech 2026"></figure>
+</article>
+<!-- NEWS:END -->
+    </div>
+    <button type="button" class="news-more" data-news-more hidden>More news +</button>
+  </section>
   </main>
-
 
   <footer class="site-footer">
 

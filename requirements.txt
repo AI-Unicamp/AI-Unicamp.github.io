@@ -1,0 +1,3 @@
+# AIMS News generator (tools/build_news.py)
+PyYAML>=6,<7
+Markdown>=3.4,<4

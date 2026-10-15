@@ -767,3 +767,190 @@ a:hover { text-decoration-thickness: 0.13em; }
     padding-block: 0.95rem 1.1rem;
   }
 }
+
+/* ---------------------------------------------------------
+   News — framed editorial cards, independent of Research/People
+   --------------------------------------------------------- */
+
+.news-page-hero {
+  padding-bottom: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+.news-section {
+  border-top: 1px solid var(--line);
+  padding-block: clamp(1.5rem, 3vw, 2.75rem) clamp(3rem, 5vw, 4.5rem);
+}
+
+.news-feed-link {
+  margin: 0 0 1.1rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  text-align: right;
+}
+
+.news-list {
+  max-width: 72rem;
+}
+
+/* Two real columns inside each news item: editorial text + image.
+   min-height keeps the cards visually consistent without clipping text. */
+.news-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  grid-template-rows: auto auto 1fr auto;
+  column-gap: clamp(1.35rem, 3vw, 2.5rem);
+  min-height: 20rem;
+  margin: 0 0 1.2rem;
+  padding: clamp(1.35rem, 2.6vw, 2rem);
+  border: 1px solid var(--line);
+  border-top: 6px solid #cadd53;
+  background: #ffffff;
+  color: var(--text);
+  scroll-margin-top: 1.5rem;
+}
+
+/* Palette sampled from the AIMS logo: five accents in chronological order.
+   The color is decorative; dates, titles and links remain the semantic cues. */
+.news-list > .news-entry:nth-of-type(5n + 1) { border-top-color: #cadd53; } /* yellow-green */
+.news-list > .news-entry:nth-of-type(5n + 2) { border-top-color: #ee683d; } /* orange */
+.news-list > .news-entry:nth-of-type(5n + 3) { border-top-color: #3b5385; } /* blue */
+.news-list > .news-entry:nth-of-type(5n + 4) { border-top-color: #5aa8a1; } /* teal */
+.news-list > .news-entry:nth-of-type(5n + 5) { border-top-color: #95b446; } /* green */
+
+/* In dark mode, News cards deliberately use the warm cream of the
+   site's light theme. Scoped variables keep all card text and links dark
+   without changing the header, other pages, or the RSS control. */
+@media (prefers-color-scheme: dark) {
+  .news-entry {
+    --text: #181817;
+    --muted: #686865;
+    --line: #d9d9d3;
+    --surface: #efefea;
+    background: #f0e9de;
+    color: var(--text);
+  }
+}
+
+.news-entry > .news-meta,
+.news-entry > .news-title,
+.news-entry > .news-body,
+.news-entry > .news-links {
+  grid-column: 1;
+  min-width: 0;
+}
+
+.news-meta {
+  margin: 0 0 0.55rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 550;
+  letter-spacing: 0.025em;
+}
+
+.news-title {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.3rem, 2.15vw, 1.85rem);
+  font-weight: 570;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+}
+
+.news-title a { text-decoration: none; }
+.news-title a:hover,
+.news-title a:focus-visible { text-decoration: underline; }
+
+.news-body {
+  max-width: 72ch;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.news-body p { margin: 0 0 0.85rem; }
+.news-body a,
+.news-links a { color: var(--text); }
+.news-links { margin: 0.85rem 0; font-size: 0.95rem; }
+
+/* An image frame of consistent size, without cropping posters or faces. */
+.news-entry > .news-figure {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  /* Transparent frame matches its parent card in both themes. */
+  background: transparent;
+}
+
+.news-entry > .news-figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 18rem;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* News without an image use the available width. */
+.news-entry:not(:has(> .news-figure)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+.news-entry:not(:has(> .news-figure)) .news-body {
+  max-width: 78ch;
+}
+
+.news-more {
+  min-height: 2.75rem;
+  margin: 0.7rem 0 0;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.news-more:hover,
+.news-more:focus-visible { background: var(--surface); }
+.news-entry[hidden],
+.news-more[hidden] { display: none !important; }
+
+/* Long-form news and static pages retain a comfortable reading width. */
+.news-static-page { max-width: 72ch; }
+.news-static-page p { margin: 0 0 1.15rem; color: var(--muted); }
+.news-long-article { padding-block: 1rem 4rem; }
+.news-long-article .news-body { max-width: 72ch; }
+.news-long-article .news-figure { margin: 1.15rem 0 0; }
+.news-long-article .news-figure img {
+  display: block;
+  max-width: 100%;
+  max-height: 28rem;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 48rem) {
+  .news-page-hero { padding-bottom: 1.25rem; }
+  .news-entry {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 1.2rem;
+  }
+  .news-entry > .news-figure {
+    flex: none;
+    width: 100%;
+    height: 16rem;
+    margin-top: 0.5rem;
+  }
+  .news-entry > .news-figure img {
+    max-height: 16rem;
+  }
+}
