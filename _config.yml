@@ -1,0 +1,4 @@
+exclude:
+  - news/data
+  - news/template.md
+  - news/README.md
