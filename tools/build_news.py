@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Generate AIMS News EN/PT HTML and RSS from bilingual Markdown.
+"""Generate AIMS News EN/PT HTML, RSS and Press & Media from source data.
 
 Usage: python3 tools/build_news.py [--check] [--site-url URL]
 
-Only NEWS:START/END regions of News index pages are modified. Source
-Markdown is never changed. Long articles have separate generated pages.
+Only NEWS:START/END and MEDIA:START/END regions are modified. Source
+Markdown and YAML are never changed. Long articles have generated pages.
 """
 from __future__ import annotations
 
@@ -221,6 +221,140 @@ def rss(posts, lang, site_url):
     return '<?xml version="1.0" encoding="UTF-8"?>\n' + ET.tostring(root, encoding='unicode') + '\n'
 
 
+
+# Press & Media is a separate editorial index. It shares this builder but
+# does not enter Latest News or the RSS feed.
+MEDIA_DATA = ROOT / 'news' / 'media' / 'media.yml'
+MEDIA_START = '<!-- MEDIA:START -->'
+MEDIA_END = '<!-- MEDIA:END -->'
+MEDIA_KINDS = {
+    'research-coverage': ('Research coverage', 'Cobertura de pesquisa'),
+    'research-feature': ('Research feature', 'Reportagem especial'),
+    'student-research': ('Student research', 'Pesquisa de estudante'),
+    'expert-commentary': ('Expert commentary', 'Comentário de especialista'),
+    'international-coverage': ('International coverage', 'Cobertura internacional'),
+    'podcast': ('Podcast', 'Podcast'),
+}
+MEDIA_ID = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
+
+
+def read_media():
+    """Read original-language press records; do not translate source content."""
+    from urllib.parse import urlsplit
+
+    if not MEDIA_DATA.is_file():
+        raise ValueError(f'Missing Press & Media source: {MEDIA_DATA}')
+    records = yaml.safe_load(MEDIA_DATA.read_text(encoding='utf-8'))
+    if not isinstance(records, list):
+        raise ValueError('news/media/media.yml: expected a YAML list')
+    result = []
+    seen = set()
+    for number, record in enumerate(records, 1):
+        where = f'media.yml item {number}'
+        if not isinstance(record, dict):
+            raise ValueError(f'{where}: expected mapping')
+        for key in ('id', 'outlet', 'url', 'kind', 'headline', 'title', 'description', 'language'):
+            if not isinstance(record.get(key), str) or not record[key].strip():
+                raise ValueError(f'{where}: missing or empty {key}')
+        # Reject the obsolete bilingual fields to prevent accidental duplication.
+        obsolete = {'title_en', 'title_pt', 'description_en', 'description_pt'} & record.keys()
+        if obsolete:
+            raise ValueError(f'{where}: obsolete translated fields: {sorted(obsolete)}')
+        # Keep summaries brief enough for compact editorial cards.
+        # Physical line count varies with viewport and font size.
+        if len(record['description'].strip()) > 160:
+            raise ValueError(f'{where}: description exceeds 160 characters')
+        if re.search(r'(?i)\b(?:paula dornhofer(?: paro costa)?|professora paula)\b',
+                     record['headline'] + ' ' + record['description']):
+            raise ValueError(f'{where}: use "Profa. Paula" in editorial headline/description')
+        slug = record['id']
+        if not MEDIA_ID.fullmatch(slug):
+            raise ValueError(f'{where}: id must be lowercase hyphenated text')
+        if slug in seen:
+            raise ValueError(f'{where}: duplicate id {slug}')
+        seen.add(slug)
+        if record['kind'] not in MEDIA_KINDS:
+            raise ValueError(f'{where}: unknown kind {record["kind"]!r}')
+        if not re.fullmatch(r'[a-z]{2}(?:-[A-Za-z]{2,4})?', record['language']):
+            raise ValueError(f'{where}: invalid language tag')
+        url = urlsplit(record['url'])
+        if url.scheme not in ('https', 'http') or not url.netloc or url.username or url.password:
+            raise ValueError(f'{where}: url must be an absolute http(s) URL')
+        raw_date = record.get('date')
+        if isinstance(raw_date, (date, datetime)):
+            raw_date = raw_date.isoformat()[:10]
+        if raw_date is not None:
+            raw_date = str(raw_date)
+            if not DATE_PATTERN.fullmatch(raw_date):
+                raise ValueError(f'{where}: date must be YYYY-MM, YYYY-MM-DD or null')
+            try:
+                date.fromisoformat(raw_date if len(raw_date) == 10 else raw_date + '-01')
+            except ValueError as exc:
+                raise ValueError(f'{where}: invalid date {raw_date}') from exc
+        custom = record.get('date_display')
+        if custom is not None and (not isinstance(custom, str) or not custom.strip()):
+            raise ValueError(f'{where}: invalid date_display')
+        result.append({**record, 'date': raw_date})
+    # Dated records first, newest to oldest; unknown dates last.
+    result.sort(key=lambda item: (item['date'] is not None,
+                                  item['date'] or '', item['id']), reverse=True)
+    return result
+
+
+def render_media(records, lang):
+    """Show original-language editorial headlines and source titles on both pages."""
+    lang_idx = 0 if lang == 'en' else 1
+    rows = []
+    for item in records:
+        headline = escape(item['headline'])
+        original_title = escape(item['title'])
+        description = escape(item['description'])
+        outlet = escape(item['outlet'])
+        url = escape(item['url'], quote=True)
+        kind = escape(MEDIA_KINDS[item['kind']][lang_idx])
+        if item.get('date_display'):
+            label = item['date_display']
+        elif item['date']:
+            label = date_label(item['date'], lang)
+        else:
+            label = 'Date to confirm' if lang == 'en' else 'Data a confirmar'
+        date_html = (f'<time datetime="{escape(item["date"], quote=True)}">'
+                     f'{escape(label)}</time>' if item['date'] else escape(label))
+        original_label = 'Original publication' if lang == 'en' else 'Publicação original'
+        # Original title and the editorial headline are separate: do not
+        # present an AIMS-authored headline as the publisher's own headline.
+        rows.append(
+            f'<article class="media-entry" id="{escape(item["id"], quote=True)}">\n'
+            f'  <div class="media-entry-meta">'
+            f'<span class="media-source">{outlet}</span>'
+            f'<span class="media-date">{date_html}</span></div>\n'
+            f'  <div class="media-entry-body">\n'
+            f'    <p class="media-kind">{kind}</p>\n'
+            f'    <div lang="{escape(item["language"], quote=True)}">\n'
+            f'      <h2 class="media-entry-title">{headline}</h2>\n'
+            f'      <p class="media-entry-summary">{description}</p>\n'
+            f'    </div>\n'
+            f'    <p class="media-original"><span class="media-original-label">'
+            f'{escape(original_label)}:</span> '
+            f'<a href="{url}" target="_blank" rel="noopener noreferrer" '
+            f'lang="{escape(item["language"], quote=True)}">{original_title} '
+            f'<span aria-hidden="true">↗</span></a></p>\n'
+            f'  </div>\n</article>'
+        )
+    return '\n'.join(rows) if rows else (
+        '<p>No press coverage has been listed yet.</p>' if lang == 'en'
+        else '<p>Ainda não há registros de imprensa nesta página.</p>'
+    )
+
+
+def replace_media(html, content):
+    if html.count(MEDIA_START) != 1 or html.count(MEDIA_END) != 1:
+        raise ValueError('Expected exactly one MEDIA:START and MEDIA:END in each media page')
+    left, rest = html.split(MEDIA_START, 1)
+    _, right = rest.split(MEDIA_END, 1)
+    return left + MEDIA_START + '\n' + content + '\n' + MEDIA_END + right
+
+
 def sync(path, content, check, changes):
     previous = path.read_text(encoding='utf-8') if path.exists() else None
     if previous == content:
@@ -258,6 +392,13 @@ def main():
                     if long_path.exists() and '<!-- GENERATED: AIMS NEWS LONG POST -->' not in long_path.read_text(encoding='utf-8'):
                         raise ValueError(f'Refusing to overwrite non-generated page: {long_path}')
                     sync(long_path, render_long_page(post, lang, template), args.check, changes)
+        media = read_media()
+        for lang in ('en', 'pt'):
+            media_path = ROOT / ('news/media/index.html' if lang == 'en'
+                                 else 'pt/news/media/index.html')
+            media_template = media_path.read_text(encoding='utf-8')
+            sync(media_path, replace_media(media_template, render_media(media, lang)),
+                 args.check, changes)
         for post in posts:
             img = post['meta'].get('image')
             if img and not (ROOT / img.lstrip('/')).is_file():
@@ -268,7 +409,7 @@ def main():
             if args.check:
                 print(f'FAIL: {len(changes)} output(s) need regeneration.')
                 return 1
-        print(f'PASS: {len(posts)} bilingual news item(s); EN/PT HTML and RSS up to date.')
+        print(f'PASS: {len(posts)} bilingual news item(s), {len(media)} media record(s); EN/PT HTML and RSS up to date.')
         return 0
     except (OSError, ValueError, yaml.YAMLError) as exc:
         print('ERROR:', exc, file=sys.stderr)

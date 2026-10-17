@@ -1,0 +1,111 @@
+# AIMS Press & Media — one original-language editorial source for EN/PT pages.
+# headline: editorial title foregrounding AIMS people or research; not the source title.
+# title: exact original title from the publisher, kept in its original language.
+# description: very short factual summary (max. 160 characters; aim for 3 visual lines).
+# Refer to Paula Dornhofer Paro Costa as "Profa. Paula" in headline/description.
+# Never rewrite the original publisher title to satisfy this style rule.
+# language: source language (BCP 47). date: YYYY-MM-DD, YYYY-MM, or null.
+# Keep existing IDs stable; they are permanent HTML anchors.
+# Read news/media/EDITORIAL_GUIDELINES.md before adding new records.
+- id: unicamp-robotica-assistiva-2025
+  date: '2025-06-16'
+  outlet: Jornal da Unicamp
+  kind: research-coverage
+  url: https://jornal.unicamp.br/noticias/2025/06/16/equipe-da-unicamp-vence-competicao-internacional-de-robotica-assistiva/
+  language: pt
+  title: Equipe da Unicamp vence competição internacional de robótica assistiva
+  description: Profa. Paula e Elton Cardoso do Nascimento, do AIMS e H.IAAC, integraram a equipe vencedora da Unicamp
+    na ICRA 2025, em Atlanta.
+  headline: Profa. Paula e Elton Cardoso integram equipe vencedora em robótica assistiva
+- id: contexto-nobel-ia-2024
+  date: '2024-11-12'
+  outlet: Jornal Contexto
+  kind: expert-commentary
+  url: https://contextojornalismo.com/2024/11/12/premio-nobel-para-a-ia/
+  language: pt
+  title: Prêmio Nobel para a IA
+  description: Profa. Paula comenta os Prêmios Nobel de 2024 e a importância da inteligência artificial para a pesquisa
+    científica.
+  headline: Profa. Paula comenta o reconhecimento da IA pelo Nobel
+- id: g1-reconhecimento-emocoes-2024
+  date: '2024-11-04'
+  outlet: g1 Campinas
+  kind: research-coverage
+  url: https://g1.globo.com/sp/campinas-regiao/noticia/2024/11/04/entenda-como-pesquisa-da-unicamp-pode-tornar-inteligencia-artificial-capaz-de-reconhecer-emocoes.ghtml
+  language: pt
+  title: Entenda como pesquisa da Unicamp pode tornar inteligência artificial capaz de reconhecer emoções
+  description: O g1 apresenta pesquisas da Unicamp sobre reconhecimento de emoções por IA, relacionadas à computação
+    afetiva e à percepção multimodal.
+  headline: Pesquisa ligada ao AIMS sobre reconhecimento de emoções é destaque no g1
+- id: unicamp-computacao-afetiva-2024
+  date: '2024-09-30'
+  outlet: Jornal da Unicamp
+  kind: research-feature
+  url: https://jornal.unicamp.br/edicao/714/entre-bits-e-emocoes-computacao-afetiva-e-fronteira-tecnologica/
+  language: pt
+  title: Entre bits e emoções, computação afetiva é fronteira tecnológica
+  description: A reportagem apresenta estudos em computação afetiva que investigam fala, expressões faciais e gestos
+    na interação com sistemas inteligentes.
+  date_display: 30 set – 13 out 2024
+  headline: Pesquisas do AIMS em computação afetiva são destaque no Jornal da Unicamp
+- id: unicamp-patrimonio-cultural-2024
+  date: '2024-09-23'
+  outlet: Jornal da Unicamp
+  kind: student-research
+  url: https://jornal.unicamp.br/noticias/2024/09/23/inteligencia-artificial-pode-ajudar-na-preservacao-do-patrimonio-cultural/
+  language: pt
+  title: Inteligência Artificial pode ajudar na preservação do patrimônio cultural
+  description: A reportagem apresenta o uso de IA na pesquisa de Vagner de Oliveira para extrair metadados de documentos
+    e coleções históricas.
+  headline: Pesquisa de Vagner de Oliveira sobre patrimônio cultural ganha destaque na Unicamp
+- id: unicamp-emocoes-ao-pe-da-letra-2023
+  date: '2023-05-22'
+  outlet: Jornal da Unicamp
+  kind: research-feature
+  url: https://jornal.unicamp.br/edicao/687/emocoes-ao-pe-da-letra/
+  language: pt
+  title: Emoções ao pé da letra
+  description: A matéria apresenta a pesquisa de Caluã Pataca sobre como a tipografia pode expressar aspectos da
+    fala e da emoção.
+  date_display: 22 mai – 4 jun 2023
+  headline: Pesquisa de Caluã Pataca sobre tipografia expressiva é destaque na Unicamp
+- id: dw-patrimonio-cultural
+  date: '2025-01-11'
+  outlet: Deutsche Welle
+  kind: international-coverage
+  url: https://www.dw.com/pt-br/como-a-ia-pode-ajudar-o-brasil-a-preservar-seu-patrim%C3%B4nio-cultural-e-hist%C3%B3rico/a-71126700
+  language: pt
+  title: IA pode ajudar o Brasil a preservar seu patrimônio cultural
+  description: A Deutsche Welle apresenta a pesquisa de Vagner de Oliveira sobre IA aplicada à documentação e à
+    preservação de coleções históricas.
+  headline: Pesquisa de Vagner de Oliveira sobre IA e patrimônio cultural repercute na DW
+- id: spotify-podcast
+  date: '2026-08-26'
+  outlet: Webedia Brasil
+  kind: podcast
+  url: https://open.spotify.com/episode/0fauUMADKzZ5ZtFiSCChbm
+  language: pt
+  title: Webedia no SP2B | Ep. 3 | Como a tecnologia está redesenhando nossas vidas e negócios
+  description: Profa. Paula participou de conversa com Nina Talks, conduzida por Isabella Cacélia, sobre os impactos
+    da IA na sociedade e nos negócios.
+  headline: Profa. Paula participa do podcast Webedia no SP2B
+- id: metropoles-reconhecimento-facial-2026
+  date: '2026-08-24'
+  outlet: Metrópoles
+  kind: expert-commentary
+  url: https://www.metropoles.com/ciencia/reconhecimento-facial-transforma-dados-do-rosto-em-modelo-matematico
+  language: pt
+  title: Reconhecimento facial transforma dados do rosto em modelo matemático
+  headline: Profa. Paula explica funcionamento e limites do reconhecimento facial
+  description: Em entrevista ao Metrópoles, Profa. Paula explica como rostos viram dados biométricos e quais fatores
+    afetam a confiabilidade dos sistemas.
+- id: globo-reporter-deepfakes-2024
+  date: '2024-11-22'
+  outlet: Globo Repórter
+  kind: expert-commentary
+  url: https://g1.globo.com/globo-reporter/video/deepfakes-pesquisadores-desenvolvem-algoritmos-que-conseguem-detectar-audios-e-videos-falsos-13124204.ghtml
+  language: pt
+  title: 'Deepfakes: pesquisadores desenvolvem algoritmos que conseguem detectar áudios e vídeos falsos'
+  headline: Profa. Paula apresenta pesquisa sobre deepfakes no Globo Repórter
+  description: Profa. Paula falou ao Globo Repórter sobre pesquisas do H.IAAC para detectar áudios e vídeos falsos
+    gerados por inteligência artificial.

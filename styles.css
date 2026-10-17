@@ -53,7 +53,7 @@ a:hover { text-decoration-thickness: 0.13em; }
   grid-template-columns: 1fr auto auto;
   align-items: center;
   gap: clamp(1.5rem, 3vw, 2.75rem);
-  border-bottom: 1px solid var(--line);
+  /* No dividing line: the header blends into the page. */
 }
 .site-logo {
   display: inline-flex;
@@ -702,7 +702,7 @@ a:hover { text-decoration-thickness: 0.13em; }
 
 .project-item {
   padding-block: 1rem 1.15rem;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid color-mix(in srgb, var(--line) 65%, transparent);
 }
 
 .project-title {
@@ -954,3 +954,90 @@ a:hover { text-decoration-thickness: 0.13em; }
     max-height: 16rem;
   }
 }
+
+/* ---------------------------------------------------------
+   AIMS identity refresh (October 2026)
+   Color is limited to main page titles; navigation is unchanged.
+   Keep homepage hero, research lists and News cards as approved.
+   --------------------------------------------------------- */
+:root {
+  --aims-blue: #3b5385;
+  --aims-teal: #5aa8a1;
+  --aims-lime: #cadd53;
+  --aims-green: #95b446;
+  --aims-orange: #ee683d;
+
+  /* Contrast-adjusted headline colors for light backgrounds. */
+  --aims-research-heading: #3b5385;
+  --aims-news-heading: #b84720;
+  --aims-people-heading: #236d66;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --aims-research-heading: #88a8e3;
+    --aims-news-heading: #ff906b;
+    --aims-people-heading: #7bcac0;
+  }
+}
+
+/* Stronger headings only on internal pages (not the homepage). */
+.page-hero h1 {
+  font-size: clamp(2.5rem, 4.3vw, 3.9rem);
+  font-weight: 530;
+}
+.research-page-hero h1 { color: var(--aims-research-heading); }
+.news-page-hero h1 { color: var(--aims-news-heading); }
+/* People has no dedicated class; target the People listing that follows. */
+.page-hero:has(+ .people-group) h1 { color: var(--aims-people-heading); }
+
+@media (max-width: 44rem) {
+  .page-hero h1 { font-size: clamp(2.3rem, 10vw, 3.15rem); }
+}
+
+/* ---------------------------------------------------------
+   Press & Media — bilingual editorial index
+   --------------------------------------------------------- */
+.media-section { padding-block: clamp(1rem, 2vw, 1.8rem) clamp(3.5rem, 6vw, 5rem); }
+.media-intro { max-width: 58ch; margin: 0 0 2.2rem; color: var(--muted); font-size: clamp(1.05rem, 1.5vw, 1.2rem); line-height: 1.6; }
+.media-entries { display: grid; gap: 0.85rem; }
+.media-entry {
+  --media-accent: var(--aims-lime);
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.25fr) minmax(0, 1fr);
+  gap: clamp(1.3rem, 4vw, 3.2rem);
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  background: #fff;
+  color: #181817;
+  border-left: 5px solid var(--media-accent);
+  min-width: 0;
+}
+.media-entry:nth-child(5n+2) { --media-accent: var(--aims-orange); }
+.media-entry:nth-child(5n+3) { --media-accent: var(--aims-blue); }
+.media-entry:nth-child(5n+4) { --media-accent: var(--aims-teal); }
+.media-entry:nth-child(5n+5) { --media-accent: var(--aims-green); }
+.media-entry-meta { display: flex; flex-direction: column; gap: 0.15rem; font-size: 0.9rem; line-height: 1.5; }
+.media-source { font-weight: 680; }
+.media-date { color: #60605c; }
+.media-kind { margin: 0 0 0.35rem; font-size: 0.73rem; font-weight: 750; text-transform: uppercase; letter-spacing: 0.085em; color: #686865; }
+.media-entry-title { margin: 0 0 0.5rem; font-size: clamp(1.2rem, 2vw, 1.65rem); font-weight: 650; letter-spacing: -0.025em; line-height: 1.27; }
+.media-entry-title a { text-decoration: none; }
+.media-entry-title a:hover, .media-entry-title a:focus-visible { text-decoration: underline; }
+.media-entry-summary { max-width: 72ch; margin: 0; color: #5e5e58; font-size: 0.98rem; line-height: 1.6; }
+@media (prefers-color-scheme: dark) { .media-entry { background: #f0e9de; } }
+@media (max-width: 44rem) {
+  .media-entry { grid-template-columns: 1fr; gap: 0.85rem; }
+  .media-entry-meta { flex-direction: row; flex-wrap: wrap; gap: 0.4rem 0.85rem; }
+  .media-entry-title { font-size: 1.23rem; }
+}
+
+/* Editorial headline belongs to AIMS; original publisher headline is linked below. */
+.media-original {
+  margin: 0.9rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #51514c;
+}
+.media-original-label { font-weight: 650; }
+.media-original a { color: #252521; text-underline-offset: 0.2em; }
+.media-original a:hover, .media-original a:focus-visible { text-decoration-thickness: 0.13em; }

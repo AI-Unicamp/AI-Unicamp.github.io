@@ -65,14 +65,76 @@ The previous HTML contained image references:
 
 **The image files themselves were not provided in this package.** Copy the actual images to `news/images/` when available, then rerun the generator. Until then, both news items remain readable without images.
 
-### News navigation rollout
+### Navigation
 
-The new News pages link to `/news/`, `/news/positions/`, `/news/media/` and their PT equivalents. **Other site pages still contain the older News `#latest`, `#open-positions` and `#press-media` anchors.** Update their headers and `tools/check_navigation.py` together in a later, deliberate synchronization step; until then the existing navigation checker may report a mismatch. Do not publish the transition half-completed.
+News menu links are independent pages (`/news/`, `/news/positions/`, `/news/media/` and PT equivalents). Keep global navigation and `tools/check_navigation.py` synchronized when destinations change.
 
 ### Positions and media
 
-`news/positions/`, `news/positions/archive/` and `news/media/` (and their PT equivalents) are currently **minimal static placeholders**, not generated from News Markdown. They should receive their own data contract only when actual records are ready. The public LinkedIn link is `https://www.linkedin.com/company/146693552/`, not the administrative analytics URL.
+`news/positions/` and `news/positions/archive/` (and PT equivalents) remain static placeholders. **Press & Media is now generated from one bilingual YAML file**, `news/media/media.yml`, by the same `tools/build_news.py`. The public LinkedIn link for positions is `https://www.linkedin.com/company/146693552/`, not the administrative analytics URL.
+
+## Press & Media — original-language editorial archive
+
+`/news/media/` and `/pt/news/media/` show **the same original-language titles and
+summaries**, from **one** file: `news/media/media.yml`. Only navigation, dates
+and editorial type labels follow the selected interface language. The source
+publication's language is declared in `language`, and its title/description
+are displayed unchanged in both HTML pages. No translated fields are needed.
+
+Each record has `id`, `date`, `outlet`, `kind`, `url`, `language`, `headline`, `title`,
+`description`; `date_display` is optional for source edition ranges. The `headline` is written by AIMS to explain the connection with the group; `title` is the publisher’s exact original headline. **Read `news/media/EDITORIAL_GUIDELINES.md` before adding records.** Example:
+
+```yaml
+- id: example-interview-2026
+  date: '2026-10-16'
+  outlet: Example Journal
+  kind: expert-commentary
+  language: pt
+  url: https://example.org/interview
+  headline: Pesquisadora do AIMS participa de entrevista
+  title: Entrevista de exemplo
+  description: Breve descrição da participação no idioma original.
+```
+
+Accepted `kind`: `research-coverage`, `research-feature`, `student-research`,
+`expert-commentary`, `international-coverage`, `podcast`. Labels are translated
+by the generator. Use a stable `id`, as it becomes a permanent HTML anchor.
+
+**Dates:** `YYYY-MM-DD`, `YYYY-MM` or `null`. When only the day/month is known,
+keep `date: null` and optionally use `date_display`, e.g. `26 de agosto
+(ano a confirmar)`. Never invent a year or day for chronological sorting.
+Undated items appear at the end. For dated items, the interface can localize
+the date label; source-specific edition ranges remain as written.
+
+**Add a new item:** append a YAML entry and run:
+
+```bash
+python3 tools/build_news.py
+python3 tools/build_news.py --check
+python3 tools/check_navigation.py
+```
+
+The builder replaces only `<!-- MEDIA:START -->` to `<!-- MEDIA:END -->` in
+both media pages. Other pages, Latest News and RSS are unchanged. `--check`
+never writes files. Source YAML is never rewritten. Commit `media.yml` and
+the two generated HTML files after reviewing them in desktop/mobile, light/dark.
+
+**Editorial notes:** the Deutsche Welle publication date is confirmed as
+11 January 2025; the Webedia Brasil podcast episode date is **26 August 2026**.
+The assistive robotics report covers a collaborative Unicamp team: Paula Dornhofer
+Paro Costa and Elton Cardoso do Nascimento, members of both AIMS and H.IAAC,
+participated, but the achievement must not be presented as an AIMS-only win.
+Every item has an AIMS-authored `headline`, a factual `description`, and the
+source’s exact `title` linked separately. See the editorial guidelines for
+verification rules and a reusable prompt for future agent-assisted updates.
+
+The repository's `.nojekyll` file must remain at the root: GitHub Pages
+should publish generated static HTML without Jekyll processing the data files.
 
 ### Manual maintenance reminder
 
 Document the full publishing workflow, RSS, image handling, URL stability, `--check`, global navigation synchronization and Python dependencies in the future AIMS homepage maintenance manual.
+
+**Future idea, not implemented:** consider a root `AGENTS.md` for repository-wide agent instructions when the broader maintenance manual is written. Do not create it as part of Press & Media.
+
+**Press & Media editorial rule (Oct 2026):** Keep `description` within 160 characters (about three visual lines on desktop). Refer to Paula Dornhofer Paro Costa as **“Profa. Paula”** in editorial `headline` and `description`; never modify an original publisher `title`. The builder validates these conventions. See `news/media/EDITORIAL_GUIDELINES.md`.
