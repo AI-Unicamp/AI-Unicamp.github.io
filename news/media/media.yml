@@ -1,12 +1,10 @@
-# AIMS Press & Media — one original-language editorial source for EN/PT pages.
-# headline: editorial title foregrounding AIMS people or research; not the source title.
-# title: exact original title from the publisher, kept in its original language.
-# description: very short factual summary (max. 160 characters; aim for 3 visual lines).
-# Refer to Paula Dornhofer Paro Costa as "Profa. Paula" in headline/description.
-# Never rewrite the original publisher title to satisfy this style rule.
-# language: source language (BCP 47). date: YYYY-MM-DD, YYYY-MM, or null.
-# Keep existing IDs stable; they are permanent HTML anchors.
-# Read news/media/EDITORIAL_GUIDELINES.md before adding new records.
+# AIMS Press & Media — one bilingual YAML, two generated interfaces.
+# headline_en / headline_pt: AIMS editorial headline highlighting the documented AIMS connection.
+# description_en / description_pt: short editorial summary, <= 160 characters per language.
+# title: original publisher title, NEVER translate; language: original source language.
+# In editorial fields use "Profa. Paula" (PT) and "Prof. Paula" (EN).
+# Dates: YYYY-MM-DD, YYYY-MM, or null. IDs and URLs should remain stable.
+# Read news/media/EDITORIAL_GUIDELINES.md before editing.
 - id: unicamp-robotica-assistiva-2025
   date: '2025-06-16'
   outlet: Jornal da Unicamp
@@ -14,9 +12,12 @@
   url: https://jornal.unicamp.br/noticias/2025/06/16/equipe-da-unicamp-vence-competicao-internacional-de-robotica-assistiva/
   language: pt
   title: Equipe da Unicamp vence competição internacional de robótica assistiva
-  description: Profa. Paula e Elton Cardoso do Nascimento, do AIMS e H.IAAC, integraram a equipe vencedora da Unicamp
-    na ICRA 2025, em Atlanta.
-  headline: Profa. Paula e Elton Cardoso integram equipe vencedora em robótica assistiva
+  headline_pt: Profa. Paula e Elton Cardoso integram equipe vencedora em robótica assistiva
+  description_pt: Profa. Paula e Elton Cardoso do Nascimento, do AIMS e H.IAAC, integraram a equipe vencedora da Unicamp na
+    ICRA 2025, em Atlanta.
+  headline_en: Prof. Paula and Elton Cardoso join award-winning assistive robotics team
+  description_en: Prof. Paula and Elton Cardoso, members of AIMS and H.IAAC, joined Unicamp’s winning team at ICRA 2025 in
+    Atlanta.
 - id: contexto-nobel-ia-2024
   date: '2024-11-12'
   outlet: Jornal Contexto
@@ -24,9 +25,12 @@
   url: https://contextojornalismo.com/2024/11/12/premio-nobel-para-a-ia/
   language: pt
   title: Prêmio Nobel para a IA
-  description: Profa. Paula comenta os Prêmios Nobel de 2024 e a importância da inteligência artificial para a pesquisa
+  headline_pt: Profa. Paula comenta o reconhecimento da IA pelo Nobel
+  description_pt: Profa. Paula comenta os Prêmios Nobel de 2024 e a importância da inteligência artificial para a pesquisa
     científica.
-  headline: Profa. Paula comenta o reconhecimento da IA pelo Nobel
+  headline_en: Prof. Paula comments on the Nobel recognition of AI
+  description_en: Prof. Paula discusses the 2024 Nobel Prizes and the growing role of artificial intelligence in scientific
+    research.
 - id: g1-reconhecimento-emocoes-2024
   date: '2024-11-04'
   outlet: g1 Campinas
@@ -34,9 +38,11 @@
   url: https://g1.globo.com/sp/campinas-regiao/noticia/2024/11/04/entenda-como-pesquisa-da-unicamp-pode-tornar-inteligencia-artificial-capaz-de-reconhecer-emocoes.ghtml
   language: pt
   title: Entenda como pesquisa da Unicamp pode tornar inteligência artificial capaz de reconhecer emoções
-  description: O g1 apresenta pesquisas da Unicamp sobre reconhecimento de emoções por IA, relacionadas à computação
-    afetiva e à percepção multimodal.
-  headline: Pesquisa ligada ao AIMS sobre reconhecimento de emoções é destaque no g1
+  headline_pt: Pesquisa ligada ao AIMS sobre reconhecimento de emoções é destaque no g1
+  description_pt: O g1 apresenta pesquisas da Unicamp sobre reconhecimento de emoções por IA, relacionadas à computação afetiva
+    e à percepção multimodal.
+  headline_en: AIMS-related emotion recognition research featured on g1
+  description_en: g1 covers Unicamp research on AI-based emotion recognition, affective computing and multimodal perception.
 - id: unicamp-computacao-afetiva-2024
   date: '2024-09-30'
   outlet: Jornal da Unicamp
@@ -44,10 +50,12 @@
   url: https://jornal.unicamp.br/edicao/714/entre-bits-e-emocoes-computacao-afetiva-e-fronteira-tecnologica/
   language: pt
   title: Entre bits e emoções, computação afetiva é fronteira tecnológica
-  description: A reportagem apresenta estudos em computação afetiva que investigam fala, expressões faciais e gestos
-    na interação com sistemas inteligentes.
   date_display: 30 set – 13 out 2024
-  headline: Pesquisas do AIMS em computação afetiva são destaque no Jornal da Unicamp
+  headline_pt: Pesquisas do AIMS em computação afetiva são destaque no Jornal da Unicamp
+  description_pt: A reportagem apresenta estudos em computação afetiva que investigam fala, expressões faciais e gestos na
+    interação com sistemas inteligentes.
+  headline_en: AIMS affective computing research featured in Jornal da Unicamp
+  description_en: The feature explores research on speech, facial expressions and gestures in human–AI interaction.
 - id: unicamp-patrimonio-cultural-2024
   date: '2024-09-23'
   outlet: Jornal da Unicamp
@@ -55,9 +63,11 @@
   url: https://jornal.unicamp.br/noticias/2024/09/23/inteligencia-artificial-pode-ajudar-na-preservacao-do-patrimonio-cultural/
   language: pt
   title: Inteligência Artificial pode ajudar na preservação do patrimônio cultural
-  description: A reportagem apresenta o uso de IA na pesquisa de Vagner de Oliveira para extrair metadados de documentos
+  headline_pt: Pesquisa de Vagner de Oliveira sobre patrimônio cultural ganha destaque na Unicamp
+  description_pt: A reportagem apresenta o uso de IA na pesquisa de Vagner de Oliveira para extrair metadados de documentos
     e coleções históricas.
-  headline: Pesquisa de Vagner de Oliveira sobre patrimônio cultural ganha destaque na Unicamp
+  headline_en: Vagner de Oliveira’s cultural heritage research featured by Unicamp
+  description_en: The article covers Vagner de Oliveira’s use of AI to extract metadata from historical documents and collections.
 - id: unicamp-emocoes-ao-pe-da-letra-2023
   date: '2023-05-22'
   outlet: Jornal da Unicamp
@@ -65,10 +75,12 @@
   url: https://jornal.unicamp.br/edicao/687/emocoes-ao-pe-da-letra/
   language: pt
   title: Emoções ao pé da letra
-  description: A matéria apresenta a pesquisa de Caluã Pataca sobre como a tipografia pode expressar aspectos da
-    fala e da emoção.
   date_display: 22 mai – 4 jun 2023
-  headline: Pesquisa de Caluã Pataca sobre tipografia expressiva é destaque na Unicamp
+  headline_pt: Pesquisa de Caluã Pataca sobre tipografia expressiva é destaque na Unicamp
+  description_pt: A matéria apresenta a pesquisa de Caluã Pataca sobre como a tipografia pode expressar aspectos da fala e
+    da emoção.
+  headline_en: Caluã Pataca’s expressive typography research featured by Unicamp
+  description_en: The article presents Caluã Pataca’s research on how typography can convey speech and emotion.
 - id: dw-patrimonio-cultural
   date: '2025-01-11'
   outlet: Deutsche Welle
@@ -76,9 +88,11 @@
   url: https://www.dw.com/pt-br/como-a-ia-pode-ajudar-o-brasil-a-preservar-seu-patrim%C3%B4nio-cultural-e-hist%C3%B3rico/a-71126700
   language: pt
   title: IA pode ajudar o Brasil a preservar seu patrimônio cultural
-  description: A Deutsche Welle apresenta a pesquisa de Vagner de Oliveira sobre IA aplicada à documentação e à
-    preservação de coleções históricas.
-  headline: Pesquisa de Vagner de Oliveira sobre IA e patrimônio cultural repercute na DW
+  headline_pt: Pesquisa de Vagner de Oliveira sobre IA e patrimônio cultural repercute na DW
+  description_pt: A Deutsche Welle apresenta a pesquisa de Vagner de Oliveira sobre IA aplicada à documentação e à preservação
+    de coleções históricas.
+  headline_en: Vagner de Oliveira’s AI and cultural heritage research featured by DW
+  description_en: Deutsche Welle covers Vagner de Oliveira’s research on using AI to document and preserve historical collections.
 - id: spotify-podcast
   date: '2026-08-26'
   outlet: Webedia Brasil
@@ -86,9 +100,12 @@
   url: https://open.spotify.com/episode/0fauUMADKzZ5ZtFiSCChbm
   language: pt
   title: Webedia no SP2B | Ep. 3 | Como a tecnologia está redesenhando nossas vidas e negócios
-  description: Profa. Paula participou de conversa com Nina Talks, conduzida por Isabella Cacélia, sobre os impactos
-    da IA na sociedade e nos negócios.
-  headline: Profa. Paula participa do podcast Webedia no SP2B
+  headline_pt: Profa. Paula participa do podcast Webedia no SP2B
+  description_pt: Profa. Paula participou de conversa com Nina Talks, conduzida por Isabella Cacélia, sobre os impactos da
+    IA na sociedade e nos negócios.
+  headline_en: Prof. Paula joins Webedia podcast while at SP2B
+  description_en: Prof. Paula joins Nina Talks in a conversation hosted by Isabella Cacélia about AI’s impact on society and
+    business.
 - id: metropoles-reconhecimento-facial-2026
   date: '2026-08-24'
   outlet: Metrópoles
@@ -96,9 +113,12 @@
   url: https://www.metropoles.com/ciencia/reconhecimento-facial-transforma-dados-do-rosto-em-modelo-matematico
   language: pt
   title: Reconhecimento facial transforma dados do rosto em modelo matemático
-  headline: Profa. Paula explica funcionamento e limites do reconhecimento facial
-  description: Em entrevista ao Metrópoles, Profa. Paula explica como rostos viram dados biométricos e quais fatores
-    afetam a confiabilidade dos sistemas.
+  headline_pt: Profa. Paula explica funcionamento e limites do reconhecimento facial
+  description_pt: Em entrevista ao Metrópoles, Profa. Paula explica como rostos viram dados biométricos e quais fatores afetam
+    a confiabilidade dos sistemas.
+  headline_en: Prof. Paula explains facial recognition and its limitations
+  description_en: In Metrópoles, Prof. Paula explains how faces become biometric data and what affects the reliability of
+    these systems.
 - id: globo-reporter-deepfakes-2024
   date: '2024-11-22'
   outlet: Globo Repórter
@@ -106,6 +126,8 @@
   url: https://g1.globo.com/globo-reporter/video/deepfakes-pesquisadores-desenvolvem-algoritmos-que-conseguem-detectar-audios-e-videos-falsos-13124204.ghtml
   language: pt
   title: 'Deepfakes: pesquisadores desenvolvem algoritmos que conseguem detectar áudios e vídeos falsos'
-  headline: Profa. Paula apresenta pesquisa sobre deepfakes no Globo Repórter
-  description: Profa. Paula falou ao Globo Repórter sobre pesquisas do H.IAAC para detectar áudios e vídeos falsos
-    gerados por inteligência artificial.
+  headline_pt: Profa. Paula apresenta pesquisa sobre deepfakes no Globo Repórter
+  description_pt: Profa. Paula falou ao Globo Repórter sobre pesquisas do H.IAAC para detectar áudios e vídeos falsos gerados
+    por inteligência artificial.
+  headline_en: Prof. Paula discusses deepfake detection research on Globo Repórter
+  description_en: Prof. Paula discusses H.IAAC research into detecting manipulated audio and video on Globo Repórter.

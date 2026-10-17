@@ -239,7 +239,7 @@ MEDIA_ID = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
 
 
 def read_media():
-    """Read original-language press records; do not translate source content."""
+    """Read bilingual AIMS editorial fields, preserving original publisher titles."""
     from urllib.parse import urlsplit
 
     if not MEDIA_DATA.is_file():
@@ -253,20 +253,24 @@ def read_media():
         where = f'media.yml item {number}'
         if not isinstance(record, dict):
             raise ValueError(f'{where}: expected mapping')
-        for key in ('id', 'outlet', 'url', 'kind', 'headline', 'title', 'description', 'language'):
+        for key in ('id', 'outlet', 'url', 'kind', 'headline_en', 'headline_pt', 'title', 'description_en', 'description_pt', 'language'):
             if not isinstance(record.get(key), str) or not record[key].strip():
                 raise ValueError(f'{where}: missing or empty {key}')
-        # Reject the obsolete bilingual fields to prevent accidental duplication.
-        obsolete = {'title_en', 'title_pt', 'description_en', 'description_pt'} & record.keys()
+        obsolete = {'title_en', 'title_pt', 'headline', 'description'} & record.keys()
         if obsolete:
-            raise ValueError(f'{where}: obsolete translated fields: {sorted(obsolete)}')
-        # Keep summaries brief enough for compact editorial cards.
-        # Physical line count varies with viewport and font size.
-        if len(record['description'].strip()) > 160:
-            raise ValueError(f'{where}: description exceeds 160 characters')
-        if re.search(r'(?i)\b(?:paula dornhofer(?: paro costa)?|professora paula)\b',
-                     record['headline'] + ' ' + record['description']):
-            raise ValueError(f'{where}: use "Profa. Paula" in editorial headline/description')
+            raise ValueError(f'{where}: obsolete media fields: {sorted(obsolete)}')
+        for lang in ('en', 'pt'):
+            description = record[f'description_{lang}'].strip()
+            headline = record[f'headline_{lang}'].strip()
+            if len(description) > 160:
+                raise ValueError(f'{where}: description_{lang} exceeds 160 characters')
+            if re.search(r'(?i)\b(?:paula dornhofer(?: paro costa)?|professora paula)\b',
+                         headline + ' ' + description):
+                raise ValueError(f'{where}: use short honorific in editorial fields')
+            short = 'Prof. Paula' if lang == 'en' else 'Profa. Paula'
+            if re.search(r'(?i)\bprof(?:a|essora|essor)?\.?\s+paula\b', headline + ' ' + description):
+                if short not in headline + ' ' + description:
+                    raise ValueError(f'{where}: use {short} in {lang} editorial fields')
         slug = record['id']
         if not MEDIA_ID.fullmatch(slug):
             raise ValueError(f'{where}: id must be lowercase hyphenated text')
@@ -302,13 +306,13 @@ def read_media():
 
 
 def render_media(records, lang):
-    """Show original-language editorial headlines and source titles on both pages."""
+    """Localize AIMS-authored copy, preserving the publisher title and link."""
     lang_idx = 0 if lang == 'en' else 1
     rows = []
     for item in records:
-        headline = escape(item['headline'])
+        headline = escape(item[f'headline_{lang}'])
         original_title = escape(item['title'])
-        description = escape(item['description'])
+        description = escape(item[f'description_{lang}'])
         outlet = escape(item['outlet'])
         url = escape(item['url'], quote=True)
         kind = escape(MEDIA_KINDS[item['kind']][lang_idx])
@@ -330,7 +334,7 @@ def render_media(records, lang):
             f'<span class="media-date">{date_html}</span></div>\n'
             f'  <div class="media-entry-body">\n'
             f'    <p class="media-kind">{kind}</p>\n'
-            f'    <div lang="{escape(item["language"], quote=True)}">\n'
+            f'    <div lang="{lang}">\n'
             f'      <h2 class="media-entry-title">{headline}</h2>\n'
             f'      <p class="media-entry-summary">{description}</p>\n'
             f'    </div>\n'
